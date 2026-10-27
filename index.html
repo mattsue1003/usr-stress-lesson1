@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>覺察壓力｜卸下負擔</title>
+<meta name="description" content="耕莘健康管理專科學校 USR 計畫第一堂：覺察壓力、動態伸展與按摩放鬆的實證與實作簡報">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#7B4FB3; --amber:#C9B3E6; --teal:#5E4B8B; --ink:#2B1B3D;
+  --cream:#F8F5FC; --paper:#FFFFFF; --sand:#EEE7F7; --mist:#F1EDF8; --line:#DDD4EA;
+  --text:#2B1B3D; --muted:#6B6280; --good:#2E8B57; --bad:#B8405E;
+  --shadow:0 10px 30px rgba(43,27,61,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei","PingFang TC","Heiti TC",sans-serif;color:var(--text);overflow:hidden}
+button{font-family:inherit;cursor:pointer}
+
+/* ---------- 舞台與縮放 ---------- */
+#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--ink)}
+#stage{width:1600px;height:900px;flex:none;position:relative;background:var(--cream);transform-origin:center center;box-shadow:0 0 0 1px rgba(255,255,255,.06);overflow:hidden}
+.slide{position:absolute;inset:0;padding:60px 96px 126px;display:none;flex-direction:column;background:var(--cream)}
+.slide.active{display:flex;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- 共用元件 ---------- */
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:22px;font-weight:700;color:var(--teal);letter-spacing:.08em;margin-bottom:14px}
+.tag::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--amber);border:3px solid var(--orange)}
+h1{font-size:52px;font-weight:900;line-height:1.2;color:var(--ink);margin-bottom:18px}
+h1 em{font-style:normal;color:var(--orange)}
+h2{font-size:34px;font-weight:700;color:var(--ink);margin-bottom:12px}
+.lead{font-size:30px;line-height:1.55;color:var(--muted);margin-bottom:22px}
+.lead b,.card b,.row b{color:var(--orange);font-weight:700}
+.body{flex:1;display:flex;flex-direction:column;min-height:0}
+.src{position:absolute;left:96px;right:96px;bottom:70px;font-size:17px;color:var(--muted);line-height:1.35;max-height:48px;overflow:hidden}
+.src::before{content:"來源：";font-weight:700;color:var(--teal)}
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--paper);border:2px solid var(--line);border-radius:22px;padding:24px 26px;font-size:27px;line-height:1.5;box-shadow:var(--shadow)}
+.card h3{font-size:30px;font-weight:900;color:var(--teal);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.card .ic{font-size:40px;line-height:1}
+.card.hi{border-color:var(--orange);background:linear-gradient(180deg,#fff 0%,var(--sand) 100%)}
+.card.teal{background:var(--mist);border-color:#CFC3E6}
+.card.small{font-size:24px;padding:18px 22px}
+.card.small h3{font-size:26px}
+.card p+p{margin-top:6px}
+.pill{display:inline-block;background:var(--amber);color:var(--ink);font-weight:700;border-radius:999px;padding:4px 16px;font-size:22px;margin-right:8px}
+.pill.t{background:var(--teal);color:#fff}
+.pill.o{background:var(--orange);color:#fff}
+.pill.g{background:var(--good);color:#fff}
+.pill.r{background:var(--bad);color:#fff}
+.pill.gray{background:#DDD6E8;color:var(--ink)}
+ul.list{list-style:none;font-size:28px;line-height:1.5}
+ul.list li{padding-left:44px;position:relative;margin-bottom:10px}
+ul.list li::before{content:"●";position:absolute;left:8px;color:var(--orange);font-size:20px;top:4px}
+ol.steps{list-style:none;counter-reset:s;display:grid;gap:16px}
+ol.steps li{counter-increment:s;background:#fff;border:2px solid var(--line);border-radius:18px;padding:16px 22px 16px 96px;position:relative;font-size:27px;line-height:1.45;box-shadow:var(--shadow)}
+ol.steps li::before{content:counter(s);position:absolute;left:20px;top:50%;transform:translateY(-50%);width:56px;height:56px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;font-size:30px;display:flex;align-items:center;justify-content:center}
+ol.steps li b{color:var(--teal)}
+table.tb{width:100%;border-collapse:separate;border-spacing:0;font-size:22px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);border:2px solid var(--line)}
+table.tb th{background:var(--ink);color:#fff;padding:10px 16px;text-align:left;font-size:23px;font-weight:700}
+table.tb td{padding:10px 16px;border-top:1px solid var(--line);vertical-align:top;line-height:1.45}
+table.tb tr.hi td{background:var(--sand)}
+table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
+.verdict{display:flex;flex-direction:row!important;gap:26px;align-items:stretch}
+.verdict .big{flex:0 0 420px;background:var(--ink);color:#fff;border-radius:26px;padding:30px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.verdict .big .ans{font-size:64px;font-weight:900;color:var(--amber);line-height:1.1}
+.verdict .big .sub{font-size:26px;line-height:1.45;color:#DCD3EA}
+.verdict .rest{flex:1;display:grid;gap:12px}
+.verdict .rest .card{font-size:23px;padding:14px 20px;line-height:1.45}
+.verdict .rest .card h3{font-size:25px;margin-bottom:4px}
+.verdict .big{flex:0 0 380px;padding:24px}
+.verdict .big .ans{font-size:56px}
+.verdict .big .sub{font-size:23px}
+.stat{display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;border-radius:22px;border:2px solid var(--line);padding:22px 16px;text-align:center;box-shadow:var(--shadow)}
+.stat .n{font-size:66px;font-weight:900;color:var(--orange);line-height:1.05}
+.stat .u{font-size:22px;color:var(--teal);font-weight:700;margin-top:4px}
+.stat .d{font-size:24px;line-height:1.4;margin-top:10px;color:var(--text)}
+.note-box{background:var(--mist);border-left:10px solid var(--teal);border-radius:14px;padding:16px 22px;font-size:26px;line-height:1.5;margin-top:auto}
+.note-box b{color:var(--teal)}
+.warn{background:#F3ECF9;border-left:10px solid var(--orange);border-radius:14px;padding:16px 22px;font-size:26px;line-height:1.5}
+.warn b{color:var(--orange)}
+
+/* 封面與章節 */
+.cover{background:radial-gradient(1200px 700px at 20% 10%,#E6DCF4 0%,var(--cream) 55%);justify-content:center;padding:80px 120px}
+.cover .kicker{font-size:28px;color:var(--teal);font-weight:700;letter-spacing:.1em;margin-bottom:18px}
+.cover h1{font-size:92px;line-height:1.15;margin-bottom:20px}
+.cover .sub{font-size:36px;color:var(--muted);line-height:1.5;margin-bottom:40px}
+.cover .meta{display:flex;gap:16px;flex-wrap:wrap}
+.cover .meta span{background:#fff;border:2px solid var(--line);border-radius:999px;padding:10px 24px;font-size:24px;font-weight:700;color:var(--ink)}
+.blob{position:absolute;right:-120px;bottom:-160px;width:620px;height:620px;border-radius:50%;background:var(--amber);opacity:.45}
+.blob2{position:absolute;right:180px;bottom:-240px;width:420px;height:420px;border-radius:50%;background:var(--orange);opacity:.18}
+.section{background:var(--ink);color:#fff;justify-content:center;align-items:flex-start;padding:100px 140px}
+.section .num{font-size:120px;font-weight:900;color:var(--amber);line-height:1}
+.section h1{color:#fff;font-size:84px;margin:10px 0 18px}
+.section .lead{color:#D9CFEA;font-size:34px;max-width:1100px}
+.section .tag{color:var(--amber)}
+
+/* 導覽列 */
+#bar{position:absolute;left:0;right:0;bottom:0;height:60px;background:rgba(43,27,61,.94);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:20px;z-index:50;backdrop-filter:blur(6px)}
+#bar .l,#bar .r{display:flex;align-items:center;gap:10px}
+#bar button{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:10px;padding:7px 14px;font-size:19px;font-weight:700}
+#bar button:hover{background:var(--orange);border-color:var(--orange)}
+#bar .brand{font-weight:700;color:var(--amber);letter-spacing:.05em}
+#bar .cnt{font-variant-numeric:tabular-nums;font-weight:700;min-width:90px;text-align:center}
+#prog{position:absolute;left:0;top:0;height:8px;background:var(--orange);width:0;z-index:60;transition:width .3s}
+
+/* 講師提示抽屜 */
+#notes{position:absolute;top:0;right:0;bottom:60px;width:480px;background:#fff;border-left:6px solid var(--orange);box-shadow:-10px 0 30px rgba(0,0,0,.15);transform:translateX(100%);transition:transform .25s;z-index:70;display:flex;flex-direction:column}
+#notes.open{transform:none}
+#notes header{background:var(--sand);color:var(--ink);font-weight:900;font-size:22px;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+#notes header button{background:transparent;border:none;font-size:26px;color:var(--ink)}
+#notes .nb{padding:20px 22px;font-size:21px;line-height:1.6;overflow:auto;white-space:pre-line}
+#notes .nb b{color:var(--orange)}
+
+/* 目錄 */
+#toc{position:absolute;inset:0;background:rgba(43,27,61,.96);z-index:80;display:none;padding:50px 80px 80px;color:#fff;overflow:auto}
+#toc.open{display:block}
+#toc h2{color:var(--amber);font-size:36px;margin-bottom:20px}
+#toc .items{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 24px}
+#toc button{text-align:left;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;border-radius:12px;padding:10px 14px;font-size:20px;display:flex;gap:10px;align-items:center}
+#toc button:hover{background:var(--orange)}
+#toc button .k{color:var(--amber);font-weight:900;min-width:36px}
+#toc .close{position:absolute;top:24px;right:36px;font-size:40px;background:none;border:none;color:#fff}
+
+/* 彈窗 */
+#modal{position:absolute;inset:0;background:rgba(43,27,61,.55);z-index:90;display:none;align-items:center;justify-content:center}
+#modal.open{display:flex}
+#modal .box{width:900px;max-width:90%;background:#fff;border-radius:30px;padding:40px 46px;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:pop .3s ease}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:none;opacity:1}}
+#modal .t{font-size:44px;font-weight:900;color:var(--orange);margin-bottom:14px}
+#modal .b{font-size:28px;line-height:1.55}
+#modal .b b{color:var(--teal)}
+#modal button{margin-top:26px;background:var(--teal);color:#fff;border:none;border-radius:14px;padding:12px 30px;font-size:24px;font-weight:700}
+
+/* 互動：評分 */
+.scale{display:flex;gap:12px;justify-content:space-between;margin:14px 0 8px}
+.scale button{flex:1;height:96px;border-radius:18px;border:3px solid var(--line);background:#fff;font-size:40px;font-weight:900;color:var(--ink);transition:.15s}
+.scale button:hover{transform:translateY(-4px);border-color:var(--amber)}
+.scale button.on{background:var(--orange);color:#fff;border-color:var(--orange);transform:translateY(-4px)}
+.scale-lbl{display:flex;justify-content:space-between;font-size:24px;color:var(--muted);font-weight:700}
+.result{font-size:30px;font-weight:700;color:var(--teal);min-height:48px;margin-top:16px}
+
+/* 互動：選擇題 */
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.opts button{background:#fff;border:3px solid var(--line);border-radius:20px;padding:22px 26px;font-size:29px;font-weight:700;text-align:left;color:var(--ink);display:flex;gap:16px;align-items:center;box-shadow:var(--shadow);transition:.15s}
+.opts button .k{width:52px;height:52px;border-radius:50%;background:var(--teal);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:26px;flex:none}
+.opts button:hover{border-color:var(--amber);transform:translateY(-3px)}
+.opts button.ok{border-color:var(--good);background:#EAF7EE}
+.opts button.ok .k{background:var(--good)}
+.opts button.no{border-color:var(--bad);background:#FBEDEB;opacity:.75}
+.opts button.no .k{background:var(--bad)}
+
+/* 互動：勾選 */
+.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.checks label{display:flex;gap:16px;align-items:center;background:#fff;border:2px solid var(--line);border-radius:18px;padding:16px 20px;font-size:27px;line-height:1.4;cursor:pointer;box-shadow:var(--shadow)}
+.checks input{width:34px;height:34px;accent-color:var(--orange);flex:none}
+.checks label.on{border-color:var(--teal);background:var(--mist)}
+
+/* 互動：計時 */
+.timer{display:flex;gap:30px;align-items:center}
+.timer .ring{width:300px;height:300px;border-radius:50%;background:conic-gradient(var(--orange) var(--p,0%),#E7E0F1 0);display:flex;align-items:center;justify-content:center;flex:none;position:relative}
+.timer .ring::after{content:"";position:absolute;inset:22px;border-radius:50%;background:#fff}
+.timer .ring span{position:relative;font-size:84px;font-weight:900;color:var(--ink);font-variant-numeric:tabular-nums}
+.timer .cue{flex:1;background:#fff;border:2px solid var(--line);border-radius:24px;padding:28px 32px;font-size:40px;font-weight:700;line-height:1.4;min-height:220px;display:flex;align-items:center;box-shadow:var(--shadow)}
+.timer .cue small{display:block;font-size:24px;color:var(--muted);font-weight:400;margin-top:10px}
+.btn{background:var(--teal);color:#fff;border:none;border-radius:14px;padding:12px 28px;font-size:26px;font-weight:700;box-shadow:var(--shadow)}
+.btn.o{background:var(--orange)}
+.btn.ghost{background:#fff;color:var(--ink);border:2px solid var(--line)}
+
+/* 互動：呼吸 */
+.breath{display:flex;gap:40px;align-items:center}
+.breath .orb{width:300px;height:300px;flex:none;display:flex;align-items:center;justify-content:center}
+.breath .orb div{width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#E3D6F5,var(--orange));box-shadow:0 0 60px rgba(123,79,179,.35);transition:transform 1s linear}
+.breath .cue{flex:1;font-size:44px;font-weight:900;color:var(--ink);line-height:1.3}
+.breath .cue small{display:block;font-size:26px;color:var(--muted);font-weight:400;margin-top:12px;line-height:1.5}
+
+/* 排行榜 */
+.rank{display:grid;grid-template-columns:1fr 1fr;gap:10px 40px}
+.rank .r{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;font-size:23px}
+.rank .r .k{font-weight:900;color:var(--orange);font-size:30px;text-align:center}
+.rank .r .nm{font-weight:900;color:var(--ink);font-size:25px;display:flex;justify-content:space-between;align-items:baseline}
+.rank .r .nm small{font-weight:700;color:var(--teal);font-size:21px}
+.rank .r .barw{height:14px;background:#E7E0F1;border-radius:8px;overflow:hidden;margin:4px 0}
+.rank .r .bar{height:100%;background:linear-gradient(90deg,var(--teal),var(--amber));width:0;transition:width 1s ease}
+.rank .r .ev{font-size:19px;color:var(--muted);line-height:1.3}
+.rank .r.today .nm::before{content:"今天會做";background:var(--orange);color:#fff;font-size:16px;border-radius:999px;padding:2px 10px;margin-right:8px;font-weight:700}
+
+/* 身體圖 */
+.bodymap{display:flex;flex-direction:row!important;gap:30px;align-items:stretch}
+.bodymap svg{flex:none;width:340px;height:530px}
+.bodymap .pts{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bodymap .pts .card{font-size:22px;padding:14px 18px;line-height:1.4}
+.bodymap .pts .card h3{font-size:25px;margin-bottom:4px}
+
+/* 動作卡 */
+.moves{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.moves .m{background:#fff;border:2px solid var(--line);border-radius:20px;padding:16px 20px;box-shadow:var(--shadow);font-size:23px;line-height:1.45;display:flex;flex-direction:column;gap:6px}
+.moves .m .t{font-size:27px;font-weight:900;color:var(--ink);display:flex;gap:10px;align-items:center}
+.moves .m .t .n{width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;font-size:22px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.moves .m .cue{color:var(--orange);font-weight:700}
+.moves .m .why{color:var(--muted);font-size:21px}
+
+.kbd{display:inline-block;border:1px solid rgba(255,255,255,.3);border-radius:6px;padding:0 8px;font-size:16px;margin-left:4px}
+.ref{display:block;font-size:17px;line-height:1.45;columns:2;column-gap:40px;color:var(--text)}
+.ref p{break-inside:avoid;margin-bottom:10px;padding-left:1.2em;text-indent:-1.2em}
+</style>
+</head>
+<body>
+<div id="viewport">
+<div id="stage">
+<div id="prog"></div>
+
+<!-- 1 封面 -->
+<section class="slide cover" data-title="封面" data-note="開場先不要講理論。請大家坐好，先問一句：「今天走進來的時候，肩膀是鬆的還是緊的？」讓現場先動起來。
+介紹自己與愛迪樂，說明三堂課的脈絡：第一堂覺察與放鬆、第二堂身心修復、第三堂藝術輔療。
+提醒：今天的動作全部可以坐著做，不舒服就停。">
+  <div class="blob"></div><div class="blob2"></div>
+  <div class="kicker">耕莘健康管理專科學校｜大學社會責任計畫（USR）｜第一堂</div>
+  <h1>覺察壓力<br><em>卸下負擔</em></h1>
+  <div class="sub">動態伸展與按摩放鬆的實證與實作<br>掌握真正有研究支持的身心減壓技巧</div>
+  <div class="meta"><span>🏫 耕莘專校宜蘭校區</span><span>👥 老師・學生・長照夥伴・社區長者</span><span>💜 愛迪樂</span></div>
+</section>
+
+<!-- 2 今天的路線 -->
+<section class="slide" data-title="今天的路線" data-note="講清楚今天的節奏：先用 20 分鐘談實證，再用大部分時間做身體。
+強調：研究是用來「幫我們選對方法」，不是用來背的。帶大家看一眼就好。">
+  <div class="tag">今天的路線</div>
+  <h1>先用<em>證據</em>選方法，再用<em>身體</em>學會它</h1>
+  <div class="body">
+    <ol class="steps" style="grid-template-columns:1fr 1fr">
+      <li><b>有效嗎？</b>正念、按摩、運動的研究怎麼說</li>
+      <li><b>覺察是什麼？</b>怎麼知道自己有在覺察、覺察的步驟</li>
+      <li><b>前十名減壓技巧</b>依統合分析效果量排序</li>
+      <li><b>伸展</b>靜態、動態、配音樂，哪一種比較放鬆</li>
+      <li><b>按摩</b>筋膜、運動按摩、按摩球，按哪裡最有用</li>
+      <li><b>帶回家</b>每天十分鐘的放鬆菜單</li>
+    </ol>
+    <div class="note-box"><b>今天的約定：</b>所有動作都可以坐著做。覺得痛、頭暈、喘不過氣，就停下來，舉手讓我知道。</div>
+  </div>
+</section>
+
+<!-- 3 先量一下 -->
+<section class="slide" data-title="先量一下：現在幾分" data-note="請每個人在心裡選一個數字，也可以請幾位說出來。講師在投影機上點一個「全場代表值」即可。
+說明：這就是覺察的第一步，先注意到，不急著改變。課程最後會再量一次。">
+  <div class="tag">開始之前</div>
+  <h1>現在，你的身體<em>緊繃幾分</em>？</h1>
+  <p class="lead">閉上眼睛三秒，感覺一下肩膀、下巴、眉頭。0 分是完全放鬆，10 分是繃到最緊。</p>
+  <div class="body">
+    <div class="scale" id="scaleBefore"></div>
+    <div class="scale-lbl"><span>0 完全放鬆</span><span>5 普通</span><span>10 緊到不行</span></div>
+    <div class="result" id="resBefore">點一個數字，我們記下來，最後再量一次。</div>
+    <div class="note-box"><b>這就是覺察的第一步：</b>不用改變它，只要先注意到它。很多人是這一刻才發現，自己的肩膀一直聳著。</div>
+  </div>
+</section>
+
+<!-- 4 壓力在身體裡 -->
+<section class="slide" data-title="壓力在身體裡長什麼樣" data-note="用白話講：壓力反應是身體在「備戰」。短期是好事，長期不關機才是問題。
+請大家對照右邊的訊號，問：「哪一個你最近常有？」舉手統計。
+不要恐嚇。重點是：這些訊號是身體在說話，我們今天學的是怎麼聽，怎麼回應。">
+  <div class="tag">壓力的生理學，白話版</div>
+  <h1>壓力不是敵人，<em>一直不關機</em>才是</h1>
+  <div class="body grid g2">
+    <div class="card hi">
+      <h3><span class="ic">⚡</span>身體的「備戰模式」</h3>
+      <p>大腦覺得有威脅，交感神經與壓力荷爾蒙（皮質醇、腎上腺素）就啟動：心跳變快、肌肉收緊、呼吸變淺。</p>
+      <p>短期這是保護。問題是現代的威脅不會跑掉：帳單、照顧、工作、家人。</p>
+      <p><b>今天的目標：</b>學會按下「關機鍵」，也就是啟動副交感神經（迷走神經）。</p>
+    </div>
+    <div class="card teal">
+      <h3><span class="ic">🔍</span>身體常見的壓力訊號</h3>
+      <ul class="list">
+        <li>肩頸僵硬、下巴咬緊、眉頭常皺</li>
+        <li>呼吸淺、常嘆氣、胸口悶</li>
+        <li>睡不好、淺眠、早醒</li>
+        <li>腸胃不舒服、沒胃口或暴食</li>
+        <li>容易煩躁、注意力不集中、健忘</li>
+      </ul>
+    </div>
+  </div>
+  <div class="src">McEwen BS. (2007) Physiology of stress and allostatic load. Physiol Rev. 綜合整理。</div>
+</section>
+
+<!-- 5 正念有效嗎 -->
+<section class="slide" data-title="正念真的有效嗎？" data-note="先問全場：「你覺得正念有效嗎？」舉手。
+再公布：有效，但是「中等效果」，不是神藥。效果量 0.3 到 0.5 的意思是：平均來說，有做的人比沒做的人好一截，但不是每個人都一樣。
+講 Goyal 2014 是 JAMA 內科的大型回顧，Khoury 2015 專看健康人。">
+  <div class="tag">大哉問 ①</div>
+  <h1>正念真的有效嗎？</h1>
+  <div class="body verdict">
+    <div class="big"><div class="ans">有效<br><span style="font-size:40px">但是中等效果</span></div><div class="sub">對焦慮、憂鬱、壓力有一致的改善，效果大小屬「中等」，不是萬靈丹。</div></div>
+    <div class="rest">
+      <div class="card"><h3>Goyal 等 2014・JAMA Internal Medicine</h3><p>整理 <b>47 個隨機試驗、3,515 人</b>。正念冥想對焦慮（效果量約 0.38）、憂鬱（約 0.30）、疼痛有中等程度的證據。</p></div>
+      <div class="card"><h3>Khoury 等 2015・J Psychosom Res</h3><p>專看<b>健康人</b>的正念減壓（MBSR）：對壓力、焦慮、憂鬱有<b>中等程度</b>的改善，各研究差異大。</p></div>
+      <div class="card small teal"><p><b>怎麼解讀：</b>效果量 0.2 小、0.5 中、0.8 大。正念不是「有沒有效」的問題，而是「做多久、做得對不對」的問題。</p></div>
+    </div>
+  </div>
+  <div class="src">Goyal M, et al. JAMA Intern Med 2014;174(3):357-368. Khoury B, et al. J Psychosom Res 2015;78(6):519-528.</div>
+</section>
+
+<!-- 6 按摩有效嗎 -->
+<section class="slide" data-title="按摩真的有效嗎？" data-note="這一頁是今天最有力的證據之一。
+Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究、將近 13,000 人。
+請特別強調三點：一、頭臉部的觸摸效果比較好；二、次數比時間長短重要；三、連單純休息都有效，所以「停下來」本身就是一種治療。">
+  <div class="tag">大哉問 ②</div>
+  <h1>按摩真的有效嗎？</h1>
+  <div class="body verdict">
+    <div class="big"><div class="ans">有效<br><span style="font-size:40px">效果中到大</span></div><div class="sub">觸摸與按摩對焦慮、憂鬱、疼痛、皮質醇都有中等到偏大的改善。</div></div>
+    <div class="rest">
+      <div class="card"><h3>Packheiser 等 2024・Nature Human Behaviour</h3><p><b>212 篇研究、12,966 人</b>。觸摸介入降低皮質醇（效果量 0.78）、疼痛（0.69）、憂鬱（0.59）、狀態焦慮（0.64）。<b>頭臉部</b>的觸摸比軀幹更有幫助；<b>次數多</b>比每次時間長更重要。</p></div>
+      <div class="card"><h3>Moyer 等 2004・Psychological Bulletin</h3><p>37 個隨機研究。單次按摩就能降低狀態焦慮、血壓、心跳；<b>多次療程</b>對特質焦慮與憂鬱的改善幅度，接近心理治療。</p></div>
+      <div class="card small teal"><p><b>Meier 等 2020：</b>頭頸部中等力道按摩十分鐘，副交感指標（HF-HRV）明顯上升。連單純躺著休息十分鐘，主觀壓力也會下降。</p></div>
+    </div>
+  </div>
+  <div class="src">Packheiser J, et al. Nat Hum Behav 2024;8:1088-1107. Moyer CA, et al. Psychol Bull 2004;130(1):3-18. Meier M, et al. Sci Rep 2020;10:14774.</div>
+</section>
+
+<!-- 7 運動有效嗎 -->
+<section class="slide" data-title="運動真的有效嗎？" data-note="Singh 2023 是目前最大的傘狀回顧，發表在英國運動醫學期刊。
+重點：所有類型的運動都有效、強度高一點效果更好、12 週內的短期計畫效果反而最明顯。
+對長輩的翻譯：不用跑馬拉松，今天這種伸展加上走路就算。">
+  <div class="tag">大哉問 ③</div>
+  <h1>運動真的有效嗎？</h1>
+  <div class="body verdict">
+    <div class="big"><div class="ans">有效<br><span style="font-size:40px">而且很一致</span></div><div class="sub">對憂鬱、焦慮、心理困擾都是中等效果，各種運動型態都算數。</div></div>
+    <div class="rest">
+      <div class="card"><h3>Singh 等 2023・Br J Sports Med 傘狀回顧</h3><p>整理 <b>97 篇回顧、1,039 個試驗、約 128,000 人</b>。身體活動改善憂鬱（效果量 −0.43）、焦慮（−0.42）、<b>心理困擾（−0.60）</b>。強度較高效果較大；12 週以內的短期計畫效果最明顯。</p></div>
+      <div class="card"><h3>Noetel 等 2024・BMJ 網絡統合分析</h3><p>218 個試驗。走路或慢跑、瑜伽、肌力訓練對憂鬱都有效，<b>強度愈高效果愈好</b>，但任何強度都比不動好。</p></div>
+      <div class="card small teal"><p><b>翻成白話：</b>不必跑步。今天這種動態伸展、快走、太極，都屬於「有效的身體活動」。關鍵是持續做。</p></div>
+    </div>
+  </div>
+  <div class="src">Singh B, et al. Br J Sports Med 2023;57:1203-1209. Noetel M, et al. BMJ 2024;384:e075847.</div>
+</section>
+
+<!-- 8 共同機制 -->
+<section class="slide" data-title="三種方法的共同機制" data-note="這一頁把三個答案串起來：正念、按摩、運動看起來不同，其實都在按同一顆「關機鍵」，也就是迷走神經和副交感系統。
+講 HRV 可以用「心跳的彈性」比喻：彈性好的心跳，代表身體有能力在緊張後快速回到平靜。
+這頁講完，大家會理解為什麼今天的伸展和按摩都要「慢」、要「配呼吸」。">
+  <div class="tag">把三個答案串起來</div>
+  <h1>方法不同，<em>按的是同一顆關機鍵</em></h1>
+  <div class="body grid g3">
+    <div class="card"><h3><span class="ic">🫀</span>啟動副交感</h3><p>慢呼吸、中等力道的觸摸、緩慢伸展，都會提高迷走神經活性，表現為<b>心率變異（HRV）上升</b>、心跳下降。</p><p>HRV 可以想成「心跳的彈性」，彈性好，緊張後才回得來。</p></div>
+    <div class="card"><h3><span class="ic">🧠</span>把注意力拉回身體</h3><p>壓力多半來自「想過去、想未來」。注意呼吸、注意肌肉被拉開的感覺，大腦的預設模式網絡就會安靜下來。</p><p>這就是覺察在做的事。</p></div>
+    <div class="card"><h3><span class="ic">📉</span>把身體訊號調低</h3><p>肌肉放鬆、呼吸變慢，身體回傳給大腦的訊號是「沒事了」，大腦才願意解除備戰。</p><p>所以<b>身體先放鬆，情緒才跟得上</b>。</p></div>
+  </div>
+  <div class="note-box"><b>今天的設計原則：</b>慢、配合呼吸、中等力道、把注意力放在身體上。每一個動作都是在練這四件事。</div>
+  <div class="src">Thayer JF, Lane RD. (2009) Neurosci Biobehav Rev. Porges SW. (2007) Biol Psychol. 綜合整理。</div>
+</section>
+
+<!-- 9 前十名 -->
+<section class="slide" data-title="研究中前十名的減壓技巧" data-note="這張榜單是依各統合分析的效果量由大到小整理，不是單一研究的排名，請誠實告訴學員：不同研究的族群不同，排名只是參考。
+請先讓大家猜第一名是什麼，再按下「揭曉」讓長條動起來。
+標了「今天會做」的，就是這堂課的內容。">
+  <div class="tag">研究怎麼排名</div>
+  <h1>依統合分析效果量排序的<em>前十名減壓技巧</em></h1>
+  <div class="body">
+    <div class="rank" id="rank"></div>
+    <div style="display:flex;gap:16px;align-items:center;margin-top:14px"><button class="btn o" id="rankBtn">揭曉排名</button><span style="font-size:22px;color:var(--muted)">長條長度代表效果量（0.2 小、0.5 中、0.8 大），不同研究的族群不同，排名僅供參考。</span></div>
+  </div>
+  <div class="src">Packheiser 2024；Singh 2023；Khoury 2015；de Witte 2020（Health Psychol Rev，104 個 RCT）；Manzoni 2008（BMC Psychiatry）；Pascoe 2017（Psychoneuroendocrinology）；Fincham 2023（Sci Rep）；Montero-Marín 2013；Hunter 2019（Front Psychol）；Holt-Lunstad 2010（PLoS Med）。</div>
+</section>
+
+<!-- 10 怎麼讀榜單 -->
+<section class="slide" data-title="怎麼讀這張榜單" data-note="避免大家回去只做第一名。
+三個提醒：效果量是平均值；次數比時間長重要（Packheiser 2024）；最有效的方法永遠是你會持續做的那一個。
+可以問：「哪一個你覺得自己做得到、而且會做？」">
+  <div class="tag">榜單的三個提醒</div>
+  <h1>最好的技巧，是<em>你會持續做</em>的那一個</h1>
+  <div class="body grid g3">
+    <div class="card hi"><h3><span class="ic">📏</span>效果量是「平均」</h3><p>0.5 的意思是：有做的人平均比沒做的人好半個標準差。有人幫助很大，有人沒感覺。</p><p>所以要<b>自己試、自己量</b>，今天最後會再量一次。</p></div>
+    <div class="card hi"><h3><span class="ic">🔁</span>次數比時間長重要</h3><p>觸摸研究發現：<b>做幾次</b>比<b>每次做多久</b>更能預測效果。</p><p>每天十分鐘，勝過每月一次兩小時。</p></div>
+    <div class="card hi"><h3><span class="ic">🧩</span>組合比單一強</h3><p>今天的課刻意把<b>覺察 ＋ 呼吸 ＋ 伸展 ＋ 按摩 ＋ 音樂</b>疊在一起。</p><p>它們按的是同一顆關機鍵，疊起來更容易按到。</p></div>
+  </div>
+  <div class="note-box"><b>問自己一句：</b>榜單上哪一個，是我明天早上起來真的會做的？那個就是你的第一名。</div>
+</section>
+
+<!-- 11 章節：覺察 -->
+<section class="slide section" data-title="第二部分：覺察" data-note="轉場。可以請大家先把雙腳踩穩、背離開椅背坐直，準備進入身體練習。">
+  <div class="tag">第二部分</div>
+  <div class="num">02</div>
+  <h1>什麼是覺察？</h1>
+  <p class="lead">覺察不是放空，也不是想很多。它是一種可以練習、也可以測量的能力。</p>
+</section>
+
+<!-- 12 覺察定義 -->
+<section class="slide" data-title="覺察是什麼" data-note="用 Kabat-Zinn 的定義，但翻成白話：「有意地注意現在，不急著評價」。
+對比三種狀態：想事情、評價、覺察。可用例子：肩膀痠。想事情＝「等一下要去買菜」；評價＝「我怎麼又痠了，真糟」；覺察＝「右邊肩膀有一股緊緊的、熱熱的感覺」。
+心思遊蕩 47% 的數字很好記，哈佛用手機 App 追蹤兩千多人得到的。">
+  <div class="tag">覺察的定義</div>
+  <h1>覺察＝<em>有意地注意現在</em>，不急著評價</h1>
+  <div class="body grid g2">
+    <div class="card teal">
+      <h3><span class="ic">💬</span>三種狀態，差在哪裡？</h3>
+      <p><span class="pill gray">想事情</span>肩膀痠的時候：「等一下還要去買菜、接孫子……」</p>
+      <p><span class="pill r">評價</span>「我怎麼又痠了，年紀大了真沒用。」</p>
+      <p><span class="pill g">覺察</span>「右邊肩膀有一股緊緊的、熱熱的感覺，呼吸的時候它會動。」</p>
+      <p style="margin-top:10px"><b>覺察只有第三種。</b>它描述，不解釋，也不罵自己。</p>
+    </div>
+    <div style="display:grid;gap:18px">
+      <div class="stat"><div class="n">47%</div><div class="u">清醒時間，心思不在當下</div><div class="d">哈佛用手機追蹤 2,250 人，發現心思遊蕩時，人比較不快樂，不管在想什麼。</div></div>
+      <div class="card small"><p><b>Kabat-Zinn 的原話：</b>「以特定的方式去注意：有意地、在當下、不帶評價。」覺察是一種<b>可以練的肌肉</b>，不是一種天分。</p></div>
+    </div>
+  </div>
+  <div class="src">Killingsworth MA, Gilbert DT. Science 2010;330:932. Kabat-Zinn J. (1994) Wherever You Go, There You Are.</div>
+</section>
+
+<!-- 13 我怎麼知道自己有在覺察 -->
+<section class="slide" data-title="我怎麼判斷自己有在覺察？" data-note="這是學員很常問的問題。用五個可以自我檢核的訊號，改寫自正念量表（FFMQ）的五個面向：觀察、描述、有意識地行動、不評價、不反應。
+請大家現場勾：剛剛那一分鐘，你做到了幾個？三個以上就已經在覺察了。
+強調「發現自己跑掉了，就是覺察」，很多人以為分心代表失敗，其實發現分心的那一刻就是成功。">
+  <div class="tag">自我檢核</div>
+  <h1>我怎麼知道自己<em>有在覺察</em>？五個訊號</h1>
+  <div class="body">
+    <div class="checks" id="awareChecks">
+      <label><input type="checkbox"><span><b>說得出身體感覺</b>：現在能講出三個身體感覺（例如腳底壓著地、呼吸在哪裡、哪裡緊）。</span></label>
+      <label><input type="checkbox"><span><b>抓得到跑掉的那一刻</b>：發現自己剛剛在想別的事，並且回來了。</span></label>
+      <label><input type="checkbox"><span><b>用描述代替批評</b>：心裡出現的是「肩膀緊緊的」，不是「我怎麼這麼糟」。</span></label>
+      <label><input type="checkbox"><span><b>感覺來了不急著反應</b>：有不舒服，但可以多看它幾秒再決定要不要動。</span></label>
+      <label><input type="checkbox"><span><b>知道自己正在做什麼</b>：吃飯知道在吃飯，走路知道在走路，不是自動駕駛。</span></label>
+      <label><input type="checkbox"><span><b>能分辨想法和事實</b>：「我一定做不好」是一個念頭，不是事情的結果。</span></label>
+    </div>
+    <div class="result" id="awareRes">勾選剛剛那一分鐘你做到的項目。</div>
+  </div>
+  <div class="src">改寫自 Baer RA, et al. (2006) Five Facet Mindfulness Questionnaire, Assessment 13(1):27-45 的五個面向。</div>
+</section>
+
+<!-- 14 覺察的步驟 -->
+<section class="slide" data-title="覺察的四個步驟 STOP" data-note="STOP 是正念減壓課程常用的口訣，好記、隨時可做。
+第三步「說出名字」有腦科學根據：Lieberman 2007 用 fMRI 發現，把情緒說出名字（「我現在很煩」），杏仁核的活動會下降。
+請全場一起做一次 STOP，大約 30 秒。">
+  <div class="tag">覺察的步驟</div>
+  <h1>四步口訣：<em>S・T・O・P</em></h1>
+  <div class="body grid g4">
+    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">S</span>Stop 停</h3><p>不管在做什麼，先停一秒。手放下、腳踩穩。</p><p><b>口訣：</b>「先停。」</p></div>
+    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">T</span>Take a breath 吸一口</h3><p>慢慢吸氣、更慢吐氣。吐氣比吸氣長，副交感就會啟動。</p><p><b>口訣：</b>「吐長一點。」</p></div>
+    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">O</span>Observe 看一看</h3><p>身體哪裡緊？心裡是什麼情緒？<b>說出名字</b>：「我現在很煩」「肩膀很緊」。</p><p><b>口訣：</b>「它叫什麼？」</p></div>
+    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">P</span>Proceed 再繼續</h3><p>帶著剛剛看到的，決定下一步：伸展一下、喝口水、或就繼續做。</p><p><b>口訣：</b>「我選擇。」</p></div>
+  </div>
+  <div class="note-box"><b>為什麼要說出名字？</b>腦造影研究發現，把情緒用語言標記出來，杏仁核（警報中心）的活動會下降，前額葉會接手。這叫「情緒標記」（affect labeling）。</div>
+  <div class="src">Lieberman MD, et al. Psychol Sci 2007;18(5):421-428. STOP 口訣出自正念減壓（MBSR）課程常用教材。</div>
+</section>
+
+<!-- 15 實作：60 秒 -->
+<section class="slide" data-title="實作：六十秒身體掃描" data-note="按下開始後，每十秒換一個部位。講師只要照螢幕的提示念，語速放慢。
+結束後問：「有人發現自己原本沒注意到的緊繃嗎？」通常會有人說下巴或肩膀。
+這就是覺察的直接體驗，不用解釋太多。">
+  <div class="tag">實作 ①</div>
+  <h1>六十秒<em>身體掃描</em></h1>
+  <p class="lead">閉眼或看著地板都可以。不用放鬆它，只要注意它。</p>
+  <div class="body">
+    <div class="timer">
+      <div class="ring" id="scanRing"><span id="scanNum">60</span></div>
+      <div class="cue" id="scanCue">按下開始，跟著提示把注意力移到每個部位。<small>每十秒換一個部位：頭與臉、肩頸、胸與呼吸、肚子、雙手、雙腳。</small></div>
+    </div>
+    <div style="display:flex;gap:16px;margin-top:22px"><button class="btn o" id="scanStart">開始六十秒</button><button class="btn ghost" id="scanReset">重來</button></div>
+  </div>
+</section>
+
+<!-- 16 覺察的實證 -->
+<section class="slide" data-title="覺察的實證" data-note="這一頁回答「覺察真的有用嗎」。四個證據：情緒標記、身體掃描、短期訓練也有效、長期大腦變化。
+講到 Balban 2023 時可預告：等一下伸展前會教「循環嘆息」，每天五分鐘就有效。">
+  <div class="tag">覺察的實證</div>
+  <h1>覺察不是玄學，<em>腦和身體都量得到</em></h1>
+  <div class="body grid g2">
+    <div class="card"><h3><span class="ic">🧠</span>說出情緒，警報就降</h3><p>用語言標記情緒時，杏仁核活動下降、右腹外側前額葉活動上升。這是「說出來就好一點」的腦科學版本。</p><p class="src-inline" style="font-size:20px;color:var(--muted)">Lieberman 2007, Psychol Sci</p></div>
+    <div class="card"><h3><span class="ic">🧘</span>八週課程，壓力中等改善</h3><p>正念減壓（MBSR）在健康人身上對壓力有中等效果；對焦慮、憂鬱也一致有效。</p><p style="font-size:20px;color:var(--muted)">Khoury 2015, J Psychosom Res；Goyal 2014, JAMA Intern Med</p></div>
+    <div class="card"><h3><span class="ic">🌬️</span>每天五分鐘呼吸，一個月見效</h3><p>隨機試驗比較三種呼吸法與正念冥想：每天五分鐘的<b>循環嘆息</b>（兩次吸、一次長吐）改善心情、降低呼吸速率的效果最好。</p><p style="font-size:20px;color:var(--muted)">Balban 2023, Cell Rep Med</p></div>
+    <div class="card"><h3><span class="ic">🫁</span>呼吸訓練降壓力</h3><p>12 個隨機試驗、785 人的統合分析：呼吸練習降低自評壓力，效果量約 0.35（小到中）。</p><p style="font-size:20px;color:var(--muted)">Fincham 2023, Sci Rep</p></div>
+  </div>
+  <div class="src">Lieberman MD, et al. 2007. Khoury B, et al. 2015. Balban MY, et al. Cell Rep Med 2023;4(1):100895. Fincham GW, et al. Sci Rep 2023;13:432.</div>
+</section>
+
+<!-- 17 實作：循環嘆息 -->
+<section class="slide" data-title="實作：循環嘆息" data-note="這是伸展前的暖身呼吸，也是今天最容易帶回家的技巧。
+動作：鼻子吸一口到七分滿，再快速補吸一小口到全滿，然後用嘴巴慢慢吐到底。吐氣要比吸氣長。
+按開始，跟著圓球做五輪，大約一分鐘。長輩若頭暈就改成一般慢呼吸。">
+  <div class="tag">實作 ②</div>
+  <h1><em>循環嘆息</em>：兩次吸，一次長吐</h1>
+  <div class="body">
+    <div class="breath">
+      <div class="orb"><div id="orb"></div></div>
+      <div class="cue" id="breathCue">按下開始，跟著圓球呼吸。<small>鼻子吸一口（七分滿）→ 再補吸一小口（全滿）→ 嘴巴慢慢吐到底。吐氣要比吸氣長。做五輪，約一分鐘。頭暈就停，改成一般慢呼吸。</small></div>
+    </div>
+    <div style="display:flex;gap:16px;margin-top:26px;align-items:center"><button class="btn o" id="breathStart">開始五輪</button><button class="btn ghost" id="breathStop">停止</button><span style="font-size:24px;color:var(--muted)">研究做法：每天五分鐘，連續一個月，心情改善幅度優於同時間的正念冥想。</span></div>
+  </div>
+  <div class="src">Balban MY, Neri E, Kogon MM, et al. Brief structured respiration practices enhance mood and reduce physiological arousal. Cell Rep Med 2023.</div>
+</section>
+
+<!-- 18 章節：伸展 -->
+<section class="slide section" data-title="第三部分：伸展" data-note="轉場。請大家站起來或坐直，脫掉外套，準備動。">
+  <div class="tag">第三部分</div>
+  <div class="num">03</div>
+  <h1>哪種伸展，比較能減壓？</h1>
+  <p class="lead">靜態、動態、還是配音樂？研究其實有答案，而且關鍵不在「哪一種」。</p>
+</section>
+
+<!-- 19 伸展選擇題 -->
+<section class="slide" data-title="選擇題：伸展減壓的關鍵" data-note="先讓大家猜，再公布。正確答案是「慢、配呼吸、持續做」。
+不要急著解釋，請先問：「選 A 的舉手？選 B 的？」再點答案。">
+  <div class="tag">先猜猜看</div>
+  <h1>伸展要<em>放鬆身心</em>，研究發現關鍵是？</h1>
+  <div class="body">
+    <div class="opts" id="q1">
+      <button data-i="0"><span class="k">A</span>拉得愈開、愈痠愈有效</button>
+      <button data-i="1"><span class="k">B</span>動作慢、配合呼吸、持續做</button>
+      <button data-i="2"><span class="k">C</span>一定要動態伸展才有效</button>
+      <button data-i="3"><span class="k">D</span>每次至少要三十分鐘</button>
+    </div>
+    <div class="note-box" style="margin-top:26px"><b>提示：</b>想想剛剛講的「關機鍵」。什麼樣的動作，會讓身體回傳「沒事了」的訊號？</div>
+  </div>
+</section>
+
+<!-- 20 三種伸展比較 -->
+<section class="slide" data-title="靜態、動態、配音樂：怎麼選" data-note="結論：三種都有用，但角色不同。
+動態伸展適合開頭「把僵掉的身體叫醒」，靜態伸展配慢呼吸是真正啟動副交感的主角，音樂是加分。
+特別提醒：單次靜態伸展對心率變異的研究結果不一致，但「持續做幾週」的研究一致看到焦慮下降、血壓下降、HRV 上升。所以要講「持續」。">
+  <div class="tag">三種伸展，角色不同</div>
+  <h1>先<em>動態</em>叫醒身體，再<em>靜態</em>配呼吸放鬆，音樂是<em>加分</em></h1>
+  <div class="body">
+    <table class="tb">
+      <tr><th style="width:170px">類型</th><th>做法</th><th>對減壓的證據</th><th style="width:300px">今天的角色</th></tr>
+      <tr><td>動態伸展</td><td>有節奏地把關節帶到活動範圍末端再回來，不停留。肩繞環、手臂擺盪、轉體、原地踏步。</td><td>屬於輕度身體活動，可提升體溫、血流與警醒度；身體活動本身對心理困擾有中等效果（Singh 2023）。</td><td><span class="pill o">開頭五分鐘</span>把僵掉的身體叫醒，釋放「僵住」的能量。</td></tr>
+      <tr class="hi"><td>靜態伸展<br>＋慢呼吸</td><td>拉到「痠但不痛」停住 30 到 60 秒，吐氣時再放鬆一點。</td><td>工作者每天 10 分鐘、持續 3 個月：焦慮與倦怠下降（Montero-Marín 2013 RCT）。28 天每天 15 分鐘：心率變異上升、靜止心跳下降（Mueck-Weymann 2004）。長者 8 週：降血壓效果優於快走（Ko 2021 RCT）。</td><td><span class="pill t">主角</span>真正啟動副交感的是「慢 ＋ 吐氣 ＋ 停留」。</td></tr>
+      <tr><td>配音樂</td><td>用慢節奏（約 60 到 80 拍）、自己喜歡、沒有歌詞或很熟悉的音樂。</td><td>音樂介入本身對壓力有效：心理指標效果量 0.55、生理指標 0.38，對心跳的效果最明顯（de Witte 2020，104 個 RCT）。</td><td><span class="pill">加分</span>幫助呼吸放慢、注意力留在身體上。</td></tr>
+    </table>
+    <div class="warn" style="margin-top:12px;font-size:23px;padding:12px 20px"><b>誠實提醒：</b>單次靜態伸展對心率變異的研究結果不一致，有些甚至短暫上升交感。證據一致的是「持續做幾週」。所以答案不是哪一種，而是<b>慢、配呼吸、持續</b>。</div>
+  </div>
+  <div class="src">Montero-Marín J, et al. Aten Primaria 2013;45(7):376-383. Mueck-Weymann M, et al. Clin Auton Res 2004;14(1):15-18. Ko J, et al. J Phys Act Health 2021;18(1):21-28. de Witte M, et al. Health Psychol Rev 2020;14(2):294-324.</div>
+</section>
+
+<!-- 21 伸展細則 -->
+<section class="slide" data-title="減壓伸展的細則" data-note="這一頁是操作規格，可以請學員拍下來。
+最重要的三條：不憋氣、不彈震、痠不痛。
+對長者：停留可以拉長到 30 到 60 秒，因為組織彈性較低、需要較長時間；所有動作都有坐姿版本。">
+  <div class="tag">操作規格</div>
+  <h1>減壓伸展的<em>七條細則</em></h1>
+  <div class="body grid g2" style="gap:16px">
+    <ol class="steps" style="gap:12px">
+      <li><b>強度：</b>拉到「痠痠的、可以忍」就停，大約 10 分痛裡的 3 到 4 分。不追求更開。</li>
+      <li><b>時間：</b>每個姿勢停 15 到 30 秒；長者或較僵硬的人停 30 到 60 秒。</li>
+      <li><b>次數：</b>每個部位做 2 到 4 回，每週至少 2 到 3 天，每天更好。</li>
+      <li><b>呼吸：</b>吐氣時再鬆一點點。全程不憋氣。</li>
+    </ol>
+    <ol class="steps" style="gap:12px;counter-reset:s 4">
+      <li><b>速度：</b>慢慢進去、慢慢出來。不彈震、不甩。</li>
+      <li><b>注意力：</b>眼睛可以閉上，注意被拉開的那條肌肉的感覺。這就是把覺察放進伸展。</li>
+      <li><b>安全：</b>有關節置換、骨質疏鬆、急性發炎、剛手術的部位，先問醫師或治療師；頭暈立刻停。</li>
+    </ol>
+  </div>
+  <div class="src">依 ACSM Guidelines for Exercise Testing and Prescription（第 11 版）柔軟度運動建議整理；長者停留時間依 ACSM 老年人建議。</div>
+</section>
+
+<!-- 22 動態伸展 -->
+<section class="slide" data-title="實作：動態伸展六式" data-note="站著或坐著都可以。每式做 8 到 10 下，節奏像走路一樣，不用快。
+講師示範時嘴巴要一直講提示語，讓長輩跟得上。
+可以放一首大家熟悉的、節奏約 90 到 100 拍的歌當背景，讓氣氛動起來。">
+  <div class="tag">實作 ③ 動態伸展</div>
+  <h1>六式<em>把身體叫醒</em>，每式 8 到 10 下</h1>
+  <div class="body">
+    <div class="moves">
+      <div class="m"><div class="t"><span class="n">1</span>肩膀畫大圓</div><div>雙肩向後、向上、向前慢慢繞圈，再反方向。</div><div class="cue">提示：「像在把背包甩掉。」</div><div class="why">打開上斜方肌與胸口，最常緊繃的地方。</div></div>
+      <div class="m"><div class="t"><span class="n">2</span>手臂前後擺盪</div><div>雙臂放鬆，像走路一樣前後擺，幅度慢慢加大。</div><div class="cue">提示：「手臂是兩條繩子。」</div><div class="why">讓肩關節在無負重下活動。</div></div>
+      <div class="m"><div class="t"><span class="n">3</span>轉體看後面</div><div>雙手交疊胸前，上半身慢慢左轉、右轉，眼睛跟著看。</div><div class="cue">提示：「看看後面有誰。」</div><div class="why">活動胸椎與腰部，呼吸會變深。</div></div>
+      <div class="m"><div class="t"><span class="n">4</span>原地踏步抬膝</div><div>坐著或站著，交替抬膝，手臂自然擺動。</div><div class="cue">提示：「像在走去市場。」</div><div class="why">提升心跳與體溫，這就是「身體活動」。</div></div>
+      <div class="m"><div class="t"><span class="n">5</span>側彎摘果子</div><div>一手高舉向對側慢慢伸，像摘高處的東西，再換邊。</div><div class="cue">提示：「摘最上面那顆。」</div><div class="why">拉開側腰與肋間，讓肺有空間。</div></div>
+      <div class="m"><div class="t"><span class="n">6</span>腳踝畫圈、甩手</div><div>腳踝順逆各轉，再把雙手輕甩 10 秒。</div><div class="cue">提示：「把緊張從指尖甩出去。」</div><div class="why">末梢循環，也是一個「卸下」的儀式。</div></div>
+    </div>
+    <div class="note-box" style="margin-top:14px"><b>重點：</b>節奏像走路，不喘、不甩、不憋氣。做完問一句：「現在身體比剛剛醒了幾分？」</div>
+  </div>
+</section>
+
+<!-- 23 靜態伸展 -->
+<section class="slide" data-title="實作：靜態伸展六式" data-note="這是今天的主菜。換成慢音樂，燈可以稍微調暗。
+每式停 30 到 60 秒，講師帶呼吸：「吸……吐……吐的時候再鬆一點點。」
+每式之間停三秒，請大家感覺一下剛剛被拉開的地方。這就是伸展加覺察。">
+  <div class="tag">實作 ④ 靜態伸展＋慢呼吸</div>
+  <h1>六式<em>配吐氣放鬆</em>，每式停 30 到 60 秒</h1>
+  <div class="body">
+    <div class="moves">
+      <div class="m"><div class="t"><span class="n">1</span>頸側伸展</div><div>右手輕放頭左側，頭慢慢向右倒，左肩往下沉。換邊。</div><div class="cue">吐氣：「肩膀往地板沉。」</div><div class="why">上斜方肌，壓力最愛住的地方。</div></div>
+      <div class="m"><div class="t"><span class="n">2</span>低頭看口袋</div><div>雙手交扣輕放後腦，頭慢慢低下，手不用壓，只是重量。</div><div class="cue">吐氣：「後頸慢慢變長。」</div><div class="why">後頸肌群，常與緊張性頭痛有關。</div></div>
+      <div class="m"><div class="t"><span class="n">3</span>開胸擴背</div><div>雙手在背後交扣（或各抓椅背），胸口向前、向上打開。</div><div class="cue">吸氣：「胸口打開。」</div><div class="why">反轉整天低頭含胸的姿勢，讓呼吸變深。</div></div>
+      <div class="m"><div class="t"><span class="n">4</span>坐姿抱膝扭轉</div><div>坐著，右腳跨左腿上（或踩地），身體向右轉，左手抱膝。換邊。</div><div class="cue">吐氣：「再轉一點點。」</div><div class="why">臀部與下背，久坐族必做。</div></div>
+      <div class="m"><div class="t"><span class="n">5</span>坐姿大腿後側</div><div>坐椅子前緣，一腳伸直腳跟著地，背打直從髖部前傾。換邊。</div><div class="cue">吐氣：「背是直的，往前倒。」</div><div class="why">大腿後側緊，骨盆與腰都會跟著緊。</div></div>
+      <div class="m"><div class="t"><span class="n">6</span>雙手上舉、整身嘆氣</div><div>吸氣雙手上舉，吐氣時「哈」一聲放下，全身垮下來。做三次。</div><div class="cue">「把今天的重量放下。」</div><div class="why">收尾的儀式，結合循環嘆息。</div></div>
+    </div>
+    <div class="note-box" style="margin-top:14px"><b>講師口令：</b>「吸……吐……吐的時候再鬆一點點。」每式之間停三秒，請大家感覺剛剛被拉開的那個地方。</div>
+  </div>
+</section>
+
+<!-- 24 音樂怎麼選 -->
+<section class="slide" data-title="音樂怎麼選" data-note="具體規格：動態伸展用 90 到 100 拍的熟悉歌曲；靜態伸展與按摩用 60 到 80 拍、沒有歌詞或大家很熟的慢歌。
+研究提示：由參與者自己選喜歡的音樂，效果不會比較差，長輩熟悉的台語老歌、鄧麗君都很適合。
+音量以「可以正常講話」為準。">
+  <div class="tag">音樂的規格</div>
+  <h1>音樂怎麼選，才能<em>幫忙放鬆</em>？</h1>
+  <div class="body grid g3">
+    <div class="card"><h3><span class="ic">🥁</span>節奏跟著目標走</h3><p><b>動態伸展：</b>約 90 到 100 拍，熟悉、想跟著動的歌。</p><p><b>靜態伸展、按摩：</b>約 60 到 80 拍，接近放鬆時的心跳。</p></div>
+    <div class="card"><h3><span class="ic">🎵</span>熟悉、喜歡最重要</h3><p>統合分析顯示音樂介入對壓力有效，而且<b>自己喜歡的音樂</b>效果不輸研究者挑的。</p><p>長輩熟的台語老歌、輕音樂、自然聲都可以。</p></div>
+    <div class="card"><h3><span class="ic">🔈</span>音量與歌詞</h3><p>音量以「可以正常講話」為準。靜態階段選<b>沒有歌詞或很熟的</b>，才不會搶走注意力。</p><p>音樂是背景，呼吸才是主角。</p></div>
+  </div>
+  <div class="note-box"><b>一句話：</b>動的時候用會想跟著動的歌，鬆的時候用會想閉眼睛的歌。</div>
+  <div class="src">de Witte M, et al. Effects of music interventions on stress-related outcomes. Health Psychol Rev 2020;14(2):294-324. 節拍範圍依該回顧與放鬆音樂研究常用區間整理。</div>
+</section>
+
+<!-- 25 章節：按摩 -->
+<section class="slide section" data-title="第四部分：按摩" data-note="轉場。請大家把手搓熱，準備自我按摩。">
+  <div class="tag">第四部分</div>
+  <div class="num">04</div>
+  <h1>按摩：怎麼按、按哪裡？</h1>
+  <p class="lead">筋膜滾筒、運動按摩、按摩球、穴位，哪一種真的有減壓的證據？</p>
+</section>
+
+<!-- 26 按摩選擇題 -->
+<section class="slide" data-title="選擇題：哪種力道比較放鬆" data-note="先投票再公布。很多人會選 C，因為台灣的按摩文化是「愈痛愈有效」。
+研究結果：中等力道才放鬆，太輕反而讓人警醒，太痛會啟動交感神經。">
+  <div class="tag">先猜猜看</div>
+  <h1>要<em>放鬆</em>，哪種力道的按摩最有效？</h1>
+  <div class="body">
+    <div class="opts" id="q2">
+      <button data-i="0"><span class="k">A</span>輕輕撫摸，像羽毛一樣</button>
+      <button data-i="1"><span class="k">B</span>中等力道，壓下去皮膚會凹、覺得舒服</button>
+      <button data-i="2"><span class="k">C</span>愈痛愈好，痛才有鬆開</button>
+      <button data-i="3"><span class="k">D</span>力道不重要，時間長才重要</button>
+    </div>
+    <div class="note-box" style="margin-top:26px"><b>提示：</b>有一個研究把人分成輕壓、中壓兩組，測腦波和心跳。結果其中一組反而變得更清醒。</div>
+  </div>
+</section>
+
+<!-- 27 哪種按摩有證據 -->
+<section class="slide" data-title="哪種按摩有減壓的證據" data-note="結論：減壓最有證據的是「中等力道、慢速、頭頸肩的放鬆式按摩」，而且自己按也算。
+筋膜滾筒和按摩球的證據主要在「痠痛和柔軟度」，對自律神經的研究結果不一致，所以今天把它們當「配角」，用在腳底和臀部。
+運動按摩是給運動後恢復用的，不是減壓工具。">
+  <div class="tag">證據怎麼說</div>
+  <h1>減壓最有證據的，是<em>中等力道的放鬆式按摩</em></h1>
+  <div class="body">
+    <table class="tb">
+      <tr><th style="width:190px">類型</th><th>它擅長什麼</th><th>減壓證據</th><th style="width:260px">今天怎麼用</th></tr>
+      <tr class="hi"><td>放鬆式按摩<br>（瑞典式、頭頸肩）</td><td>慢速、中等力道、有節奏地按壓與推撫。</td><td><b>最強。</b>單次就降狀態焦慮、血壓、心跳；多次療程效果接近心理治療（Moyer 2004）。頭頸部十分鐘即提升副交感（Meier 2020）。頭臉部效果優於軀幹（Packheiser 2024）。</td><td><span class="pill t">主角</span>自我按摩五站</td></tr>
+      <tr><td>筋膜滾筒</td><td>減少運動後痠痛、短期增加柔軟度（Wiewelhove 2019 統合分析）。</td><td><b>不一致。</b>多個研究發現單次滾筒對心率變異沒有系統性改變；對痠痛有效。</td><td><span class="pill">配角</span>有滾筒者用在大腿、小腿</td></tr>
+      <tr><td>按摩球</td><td>方便、可坐著做；腳底滾球能增加大腿後側柔軟度（Grieve 2015）。</td><td><b>較少。</b>多為柔軟度與疼痛研究，減壓證據薄弱，但它是「頭頸肩以外」最容易自己做的工具。</td><td><span class="pill">配角</span>腳底、臀部</td></tr>
+      <tr><td>運動按摩</td><td>運動後恢復、延遲性痠痛（Davis 2020 統合分析）。</td><td><b>目標不同。</b>設計給運動員恢復，不是壓力介入。</td><td><span class="pill gray">今天不用</span></td></tr>
+    </table>
+  </div>
+  <div class="src">Moyer 2004；Meier 2020；Packheiser 2024；Wiewelhove T, et al. Front Physiol 2019;10:376；Grieve R, et al. J Bodyw Mov Ther 2015；Davis HL, et al. BMJ Open Sport Exerc Med 2020;6:e000614；Wilkerson 2021、Kopec 2020 滾筒 HRV 研究。</div>
+</section>
+
+<!-- 28 按哪裡 -->
+<section class="slide" data-title="按哪裡最有幫助" data-note="點身體圖上的部位或看右邊卡片。排名第一是頭與臉，第二是後頸，第三是肩膀，然後是手和腳。
+講 Packheiser 2024 的發現：頭臉部的觸摸效果大於軀幹。Meier 2020 的「迷走神經按摩」就是按頭頸。
+手部按摩在失智長者的研究顯示能降低躁動，是長照夥伴可以直接用的。">
+  <div class="tag">按哪裡</div>
+  <h1>對減壓最有幫助的<em>五個部位</em></h1>
+  <div class="body bodymap">
+    <svg viewBox="0 0 360 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="#EDE6F6" stroke="#BBAAD4" stroke-width="3">
+        <ellipse cx="180" cy="70" rx="46" ry="54"/>
+        <rect x="160" y="118" width="40" height="34" rx="12"/>
+        <path d="M110 150 Q180 135 250 150 L268 300 Q180 320 92 300 Z"/>
+        <path d="M110 150 L60 180 L40 330 L80 335 L100 220 Z"/>
+        <path d="M250 150 L300 180 L320 330 L280 335 L260 220 Z"/>
+        <path d="M100 300 L92 480 L140 480 L160 320 Z"/>
+        <path d="M260 300 L268 480 L220 480 L200 320 Z"/>
+        <ellipse cx="60" cy="350" rx="22" ry="26"/><ellipse cx="300" cy="350" rx="22" ry="26"/>
+        <ellipse cx="116" cy="500" rx="30" ry="18"/><ellipse cx="244" cy="500" rx="30" ry="18"/>
+      </g>
+      <g font-family="Noto Sans TC, Microsoft JhengHei, sans-serif" font-weight="900" font-size="22" text-anchor="middle">
+        <circle cx="180" cy="40" r="22" fill="#7B4FB3"/><text x="180" y="48" fill="#fff">1</text>
+        <circle cx="180" cy="135" r="22" fill="#7B4FB3"/><text x="180" y="143" fill="#fff">2</text>
+        <circle cx="128" cy="168" r="22" fill="#C9B3E6"/><text x="128" y="176" fill="#2B1B3D">3</text>
+        <circle cx="232" cy="168" r="22" fill="#C9B3E6"/><text x="232" y="176" fill="#2B1B3D">3</text>
+        <circle cx="60" cy="350" r="22" fill="#5E4B8B"/><text x="60" y="358" fill="#fff">4</text>
+        <circle cx="300" cy="350" r="22" fill="#5E4B8B"/><text x="300" y="358" fill="#fff">4</text>
+        <circle cx="116" cy="500" r="22" fill="#5E4B8B"/><text x="116" y="508" fill="#fff">5</text>
+        <circle cx="244" cy="500" r="22" fill="#5E4B8B"/><text x="244" y="508" fill="#fff">5</text>
+      </g>
+    </svg>
+    <div class="pts">
+      <div class="card hi"><h3>① 頭皮與臉</h3><p>統合分析：頭臉部觸摸的效益大於身體其他部位。頭皮、太陽穴、眉骨、下巴都是好入口。</p></div>
+      <div class="card hi"><h3>② 後頸（枕骨下）</h3><p>Meier 2020 的「迷走神經按摩」就是按頭與頸：中等力道，十分鐘，副交感指標上升。</p></div>
+      <div class="card"><h3>③ 肩膀（上斜方肌）</h3><p>壓力最先住進來的地方。肌肉放鬆的訊號回傳大腦，是「身體先鬆、情緒才鬆」的關鍵。</p></div>
+      <div class="card"><h3>④ 手掌與手指</h3><p>手部按摩在住宿型長者與失智者的研究中可降低焦慮與躁動，長照夥伴五分鐘就能做。</p></div>
+      <div class="card" style="grid-column:span 2"><h3>⑤ 腳底</h3><p>腳底按摩與反射區研究對焦慮有中等品質的證據；用按摩球坐著滾，是長者最安全的自助做法。</p></div>
+    </div>
+  </div>
+  <div class="src">Packheiser 2024；Meier 2020；Snyder M, et al. (1995) Hand massage and agitation in dementia；Remington R. Nurs Res 2002；足部反射區焦慮相關系統性回顧綜合整理。</div>
+</section>
+
+<!-- 29 怎麼按 -->
+<section class="slide" data-title="怎麼按：力道、時間、速度、頻率" data-note="四個規格。力道講 Diego 2004：中等力道心跳下降、腦波出現放鬆模式；輕壓反而更清醒。
+時間講 Meier 2020：十分鐘就夠。頻率講 Packheiser 2024：次數比時長重要。
+速度：慢。一個部位至少五秒一下。">
+  <div class="tag">操作規格</div>
+  <h1>怎麼按：<em>中等力道、慢速、十分鐘、常常做</em></h1>
+  <div class="body grid g4">
+    <div class="card hi"><h3><span class="ic">✋</span>力道：中等</h3><p>壓下去皮膚會凹、覺得「舒服的痠」，約 10 分痛裡的 4 到 6 分。</p><p>研究：中等力道心跳下降、腦波出現放鬆型態；<b>輕壓反而讓人更清醒</b>。</p></div>
+    <div class="card hi"><h3><span class="ic">🐢</span>速度：慢</h3><p>每一下至少 3 到 5 秒。慢，身體才會判定「安全」。</p><p>快速、用力的搓揉比較像在喚醒，不是放鬆。</p></div>
+    <div class="card hi"><h3><span class="ic">⏱️</span>時間：十分鐘夠</h3><p>頭頸部中等力道十分鐘，副交感指標就明顯上升。</p><p>不必按到一小時。</p></div>
+    <div class="card hi"><h3><span class="ic">📅</span>頻率：常常</h3><p>統合分析：<b>做幾次</b>比<b>每次多久</b>更能預測效果。</p><p>每天五到十分鐘，比每月一次長按有效。</p></div>
+  </div>
+  <div class="note-box"><b>自己按也算：</b>觸摸研究發現，由專業人員或熟人、隔著衣服或直接接觸，效果沒有顯著差異。所以今天教的自我按摩，是真的有用的。</div>
+  <div class="src">Diego MA, Field T, et al. Int J Neurosci 2004;114(1):31-44. Meier M, et al. Sci Rep 2020. Packheiser J, et al. Nat Hum Behav 2024.</div>
+</section>
+
+<!-- 30 實作：自我按摩五站 -->
+<section class="slide" data-title="實作：自我按摩五站" data-note="全部坐著做。先把手搓熱。每站約兩分鐘，講師一邊示範一邊念提示語。
+力道以學員自己的「舒服的痠」為準，不比較。
+第五站可以兩人一組互相按手，長照夥伴回去可以直接用在服務對象身上。">
+  <div class="tag">實作 ⑤ 自我按摩</div>
+  <h1>自我按摩<em>五站</em>，每站約兩分鐘</h1>
+  <div class="body">
+    <div class="moves" style="grid-template-columns:repeat(5,1fr);gap:12px">
+      <div class="m"><div class="t"><span class="n">1</span>頭皮</div><div>十指指腹像洗頭，從前額往後、往兩側，慢慢畫圓。</div><div class="cue">「像在幫自己洗頭。」</div><div class="why">頭部觸摸效益最高。</div></div>
+      <div class="m"><div class="t"><span class="n">2</span>太陽穴、眉骨、下巴</div><div>中指指腹在太陽穴慢慢畫圓；拇指沿眉骨從內往外推；指腹鬆開咬肌。</div><div class="cue">「下巴放鬆，牙齒分開。」</div><div class="why">緊張最常咬在下巴。</div></div>
+      <div class="m"><div class="t"><span class="n">3</span>後頸枕骨下</div><div>雙手拇指或四指放在後腦與頸交界的凹處，中等力道按壓、小畫圓，頭微微後靠。</div><div class="cue">「頭的重量交給手。」</div><div class="why">Meier 2020 迷走神經區。</div></div>
+      <div class="m"><div class="t"><span class="n">4</span>肩膀上斜方肌</div><div>右手抓左肩的肌肉，像捏麵糰一樣抓、放；再換邊。手肘可靠在桌上省力。</div><div class="cue">「抓住，吐氣，放開。」</div><div class="why">配合吐氣放開最有感。</div></div>
+      <div class="m"><div class="t"><span class="n">5</span>手掌與手指</div><div>拇指在手掌心慢慢畫圓；每根手指從根部往指尖捏推；最後搓熱雙手蓋在眼睛上。</div><div class="cue">「兩人一組也可以。」</div><div class="why">長照現場最實用。</div></div>
+    </div>
+    <div class="grid g2" style="margin-top:14px;gap:14px">
+      <div class="card small teal"><p><b>按摩球加碼（有球的人）：</b>坐著把球放腳底，從腳跟慢慢滾到腳趾，一腳一分鐘；或放在椅子上坐在臀部肌肉下，小幅度移動。</p></div>
+      <div class="card small teal"><p><b>穴位加分（輔助，不是主角）：</b>神門（手腕橫紋小指側）、內關（腕橫紋上三指）、合谷（虎口）、太衝（腳背第一二趾間）。穴位按壓對焦慮有中等證據，每點按 1 分鐘。</p></div>
+    </div>
+  </div>
+  <div class="src">Au DWH, et al. Effects of acupressure on anxiety: a systematic review and meta-analysis. Acupunct Med 2015;33(5):353-359。</div>
+</section>
+
+<!-- 31 安全 -->
+<section class="slide" data-title="伸展與按摩的安全注意" data-note="請確實念完。長照機構同仁特別注意抗凝血藥物與骨質疏鬆。
+前頸不按，因為有頸動脈竇。腰椎正中不用滾筒。
+任何動作出現頭暈、刺痛、麻，立刻停。">
+  <div class="tag">安全第一</div>
+  <h1>這些情況，<em>先問再做</em>或<em>不要做</em></h1>
+  <div class="body grid g2">
+    <div class="card"><h3><span class="ic">🚫</span>按摩不要按的地方</h3>
+      <ul class="list">
+        <li><b>前頸</b>（喉嚨兩側）：有頸動脈竇，可能影響血壓與心跳。</li>
+        <li><b>脊椎正中</b>與關節骨頭：滾筒、按摩球避開。</li>
+        <li><b>紅腫熱痛、瘀青、傷口、靜脈曲張</b>的部位。</li>
+        <li><b>小腿深處壓痛且單側腫脹</b>：可能是血栓，不按，就醫。</li>
+      </ul>
+    </div>
+    <div class="card"><h3><span class="ic">⚠️</span>要先問醫師或治療師</h3>
+      <ul class="list">
+        <li>吃<b>抗凝血藥</b>、血小板低：力道改輕，或只做伸展。</li>
+        <li><b>骨質疏鬆、關節置換、剛手術</b>：避開該部位的伸展與按壓。</li>
+        <li><b>血壓不穩、心臟病</b>：避免憋氣與頭低於心臟的動作。</li>
+        <li>任何動作出現<b>頭暈、刺痛、麻、喘</b>：立刻停，舉手。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="warn"><b>原則：</b>減壓的動作一定是「舒服的」。痛、麻、暈都不是放鬆，是身體在喊停。</div>
+</section>
+
+<!-- 32 再量一次 -->
+<section class="slide" data-title="再量一次：現在幾分" data-note="請大家再閉眼三秒，感覺肩膀、下巴、眉頭，選一個數字。
+點完會自動和一開始比較。請幾位分享差了幾分、哪裡最有感。
+如果有人沒變或更緊，也很正常，請肯定他的誠實：這也是覺察。">
+  <div class="tag">結束之前</div>
+  <h1>現在，你的身體<em>緊繃幾分</em>？</h1>
+  <p class="lead">同樣閉眼三秒。感覺肩膀、下巴、眉頭。不用比別人，只跟一開始的自己比。</p>
+  <div class="body">
+    <div class="scale" id="scaleAfter"></div>
+    <div class="scale-lbl"><span>0 完全放鬆</span><span>5 普通</span><span>10 緊到不行</span></div>
+    <div class="result" id="resAfter">點一個數字，和一開始比一比。</div>
+    <div class="note-box"><b>沒變也沒關係：</b>能誠實說出「我還是 7 分」，本身就是覺察。有些人的身體需要多做幾次才會相信「可以放鬆了」。</div>
+  </div>
+</section>
+
+<!-- 33 帶回家 -->
+<section class="slide" data-title="帶回家：每天十分鐘" data-note="把今天的內容濃縮成每天十分鐘的菜單，請學員拍照。
+強調：做幾次比做多久重要；哪一個做得到就先做哪一個。
+下週同一時間第二堂：身心修復。">
+  <div class="tag">帶回家</div>
+  <h1>每天<em>十分鐘</em>的放鬆菜單</h1>
+  <div class="body grid g4">
+    <div class="stat"><div class="n">1<span style="font-size:30px">分</span></div><div class="u">STOP 覺察</div><div class="d">停、吸一口、看一看、說出名字。隨時隨地。</div></div>
+    <div class="stat"><div class="n">2<span style="font-size:30px">分</span></div><div class="u">循環嘆息</div><div class="d">兩次吸、一次長吐，十輪。頭暈就改慢呼吸。</div></div>
+    <div class="stat"><div class="n">4<span style="font-size:30px">分</span></div><div class="u">伸展</div><div class="d">動態 1 分鐘叫醒，靜態 3 式各 40 秒配吐氣。</div></div>
+    <div class="stat"><div class="n">3<span style="font-size:30px">分</span></div><div class="u">自我按摩</div><div class="d">頭皮、後頸、肩膀各一分鐘，中等力道、慢。</div></div>
+  </div>
+  <div class="note-box" style="margin-top:22px"><b>只記三句話：</b>做幾次比做多久重要。慢、配吐氣、中等力道。最好的方法是你明天真的會做的那一個。</div>
+  <div class="src">下一堂：身心修復｜練習身心運動，找回天然的自癒力。聯絡人：許晊豪老師。</div>
+</section>
+
+<!-- 34 參考文獻（一） -->
+<section class="slide" data-title="參考文獻（一）" data-note="這兩頁給想深入的老師和學生看，不用逐條講。可以說：「今天每一個數字，都查得到。」">
+  <div class="tag">參考文獻</div>
+  <h1>今天引用的研究（一）</h1>
+  <div class="body ref">
+    <p>Au DWH, Tsang HWH, Ling PPM, et al. Effects of acupressure on anxiety: a systematic review and meta-analysis. Acupunct Med. 2015;33(5):353-359.</p>
+    <p>Baer RA, Smith GT, Hopkins J, et al. Using self-report assessment methods to explore facets of mindfulness. Assessment. 2006;13(1):27-45.</p>
+    <p>Balban MY, Neri E, Kogon MM, et al. Brief structured respiration practices enhance mood and reduce physiological arousal. Cell Rep Med. 2023;4(1):100895.</p>
+    <p>Davis HL, Alabed S, Chico TJA. Effect of sports massage on performance and recovery: a systematic review and meta-analysis. BMJ Open Sport Exerc Med. 2020;6:e000614.</p>
+    <p>de Witte M, Spruit A, van Hooren S, et al. Effects of music interventions on stress-related outcomes: a systematic review and two meta-analyses. Health Psychol Rev. 2020;14(2):294-324.</p>
+    <p>Diego MA, Field T, Sanders C, Hernandez-Reif M. Massage therapy of moderate and light pressure and vibrator effects on EEG and heart rate. Int J Neurosci. 2004;114(1):31-44.</p>
+    <p>Fincham GW, Strauss C, Montero-Marin J, Cavanagh K. Effect of breathwork on stress and mental health: a meta-analysis of randomised-controlled trials. Sci Rep. 2023;13:432.</p>
+    <p>Goyal M, Singh S, Sibinga EMS, et al. Meditation programs for psychological stress and well-being: a systematic review and meta-analysis. JAMA Intern Med. 2014;174(3):357-368.</p>
+    <p>Hunter MR, Gillespie BW, Chen SYP. Urban nature experiences reduce stress in the context of daily life based on salivary biomarkers. Front Psychol. 2019;10:722.</p>
+    <p>Khoury B, Sharma M, Rush SE, Fournier C. Mindfulness-based stress reduction for healthy individuals: a meta-analysis. J Psychosom Res. 2015;78(6):519-528.</p>
+    <p>Killingsworth MA, Gilbert DT. A wandering mind is an unhappy mind. Science. 2010;330(6006):932.</p>
+    <p>Ko J, Deprez D, Shaw K, et al. Stretching is superior to brisk walking for reducing blood pressure in people with high-normal blood pressure or stage I hypertension. J Phys Act Health. 2021;18(1):21-28.</p>
+  </div>
+</section>
+
+<!-- 35 參考文獻（二） -->
+<section class="slide" data-title="參考文獻（二）" data-note="同上。若有學員想要文獻清單，可將簡報檔直接分享。">
+  <div class="tag">參考文獻</div>
+  <h1>今天引用的研究（二）</h1>
+  <div class="body ref">
+    <p>Lieberman MD, Eisenberger NI, Crockett MJ, et al. Putting feelings into words: affect labeling disrupts amygdala activity. Psychol Sci. 2007;18(5):421-428.</p>
+    <p>Manzoni GM, Pagnini F, Castelnuovo G, Molinari E. Relaxation training for anxiety: a ten-years systematic review with meta-analysis. BMC Psychiatry. 2008;8:41.</p>
+    <p>Meier M, Unternaehrer E, Dimitroff SJ, et al. Standardized massage interventions as protocols for the induction of psychophysiological relaxation in the laboratory. Sci Rep. 2020;10:14774.</p>
+    <p>Montero-Marín J, Asún S, Estrada-Marcén N, et al. Effectiveness of a stretching program on anxiety levels of workers in a logistic platform: a randomized controlled study. Aten Primaria. 2013;45(7):376-383.</p>
+    <p>Moyer CA, Rounds J, Hannum JW. A meta-analysis of massage therapy research. Psychol Bull. 2004;130(1):3-18.</p>
+    <p>Mueck-Weymann M, Janshoff G, Mueck H. Stretching increases heart rate variability in healthy athletes complaining about limited muscular flexibility. Clin Auton Res. 2004;14(1):15-18.</p>
+    <p>Noetel M, Sanders T, Gallardo-Gómez D, et al. Effect of exercise for depression: systematic review and network meta-analysis of randomised controlled trials. BMJ. 2024;384:e075847.</p>
+    <p>Packheiser J, Hartmann H, Fredriksen K, et al. A systematic review and multivariate meta-analysis of the physical and mental health benefits of touch interventions. Nat Hum Behav. 2024;8:1088-1107.</p>
+    <p>Pascoe MC, Thompson DR, Ski CF. Yoga, mindfulness-based stress reduction and stress-related physiological measures: a meta-analysis. Psychoneuroendocrinology. 2017;86:152-168.</p>
+    <p>Singh B, Olds T, Curtis R, et al. Effectiveness of physical activity interventions for improving depression, anxiety and distress: an overview of systematic reviews. Br J Sports Med. 2023;57:1203-1209.</p>
+    <p>Wiewelhove T, Döweling A, Schneider C, et al. A meta-analysis of the effects of foam rolling on performance and recovery. Front Physiol. 2019;10:376.</p>
+  </div>
+</section>
+
+<!-- 導覽列 -->
+<div id="bar">
+  <div class="l"><span class="brand">愛迪樂 × 耕莘 USR</span><button id="tocBtn">目錄 <span class="kbd">M</span></button></div>
+  <div class="r">
+    <button id="prevBtn">◀ 上一頁</button>
+    <span class="cnt" id="cnt">1 / 35</span>
+    <button id="nextBtn">下一頁 ▶</button>
+    <button id="noteBtn">講師提示 <span class="kbd">N</span></button>
+    <button id="fsBtn">全螢幕 <span class="kbd">F</span></button>
+  </div>
+</div>
+
+<aside id="notes"><header><span>講師提示</span><button id="noteClose">✕</button></header><div class="nb" id="noteBody"></div></aside>
+<div id="toc"><button class="close" id="tocClose">✕</button><h2>目錄</h2><div class="items" id="tocItems"></div></div>
+<div id="modal"><div class="box"><div class="t" id="mT"></div><div class="b" id="mB"></div><button id="mClose">知道了</button></div></div>
+
+</div><!-- /stage -->
+</div><!-- /viewport -->
+
+<script>
+(function(){
+  const slides=[...document.querySelectorAll('.slide')];
+  const N=slides.length;
+  let cur=0;
+  const state={before:null,after:null};
+
+  /* 縮放 */
+  const stage=document.getElementById('stage');
+  function fit(){const s=Math.min(innerWidth/1600,innerHeight/900);stage.style.transform=`scale(${s})`;}
+  addEventListener('resize',fit);fit();
+
+  /* 導覽 */
+  const cnt=document.getElementById('cnt'),prog=document.getElementById('prog'),noteBody=document.getElementById('noteBody');
+  function go(i){
+    i=Math.max(0,Math.min(N-1,i));
+    slides[cur].classList.remove('active');cur=i;slides[cur].classList.add('active');
+    cnt.textContent=`${cur+1} / ${N}`;prog.style.width=((cur+1)/N*100)+'%';
+    noteBody.innerHTML=(slides[cur].dataset.note||'（本頁無提示）').replace(/\n/g,'<br>');
+    location.hash='#/'+(cur+1);
+  }
+  document.getElementById('prevBtn').onclick=()=>go(cur-1);
+  document.getElementById('nextBtn').onclick=()=>go(cur+1);
+  const notes=document.getElementById('notes'),toc=document.getElementById('toc'),modal=document.getElementById('modal');
+  document.getElementById('noteBtn').onclick=()=>notes.classList.toggle('open');
+  document.getElementById('noteClose').onclick=()=>notes.classList.remove('open');
+  document.getElementById('tocBtn').onclick=()=>toc.classList.toggle('open');
+  document.getElementById('tocClose').onclick=()=>toc.classList.remove('open');
+  document.getElementById('fsBtn').onclick=()=>{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();};
+  document.getElementById('mClose').onclick=()=>modal.classList.remove('open');
+  const tocItems=document.getElementById('tocItems');
+  slides.forEach((s,i)=>{const b=document.createElement('button');b.innerHTML=`<span class="k">${i+1}</span>${s.dataset.title||''}`;b.onclick=()=>{toc.classList.remove('open');go(i)};tocItems.appendChild(b);});
+  addEventListener('keydown',e=>{
+    if(e.target.tagName==='INPUT')return;
+    const k=e.key;
+    if(k==='ArrowRight'||k===' '||k==='PageDown'||k==='Enter'){e.preventDefault();go(cur+1)}
+    else if(k==='ArrowLeft'||k==='PageUp'){e.preventDefault();go(cur-1)}
+    else if(k==='Home')go(0); else if(k==='End')go(N-1);
+    else if(k==='n'||k==='N')notes.classList.toggle('open');
+    else if(k==='m'||k==='M')toc.classList.toggle('open');
+    else if(k==='f'||k==='F')document.getElementById('fsBtn').click();
+    else if(k==='Escape'){notes.classList.remove('open');toc.classList.remove('open');modal.classList.remove('open')}
+  });
+  let tx=null;addEventListener('touchstart',e=>tx=e.touches[0].clientX);
+  addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>60)go(dx<0?cur+1:cur-1);tx=null;});
+  function showModal(t,b){document.getElementById('mT').textContent=t;document.getElementById('mB').innerHTML=b;modal.classList.add('open');}
+
+  /* 評分 */
+  function buildScale(id,resId,key){
+    const box=document.getElementById(id),res=document.getElementById(resId);
+    for(let i=0;i<=10;i++){const b=document.createElement('button');b.textContent=i;b.onclick=()=>{
+      [...box.children].forEach(c=>c.classList.remove('on'));b.classList.add('on');state[key]=i;
+      if(key==='before'){res.textContent=`記下來了：一開始是 ${i} 分。先不用改變它，只要知道它在那裡。`;}
+      else{
+        if(state.before===null){res.textContent=`現在是 ${i} 分。`;return;}
+        const d=state.before-i;
+        res.textContent=d>0?`從 ${state.before} 分降到 ${i} 分，鬆了 ${d} 分。身體剛剛收到了「沒事了」的訊號。`:d===0?`一開始 ${state.before} 分，現在也是 ${i} 分。能誠實說出來，就是覺察。多做幾次，身體會慢慢相信。`:`從 ${state.before} 分變成 ${i} 分。有時候是因為注意力變細，才發現原本沒感覺到的緊繃，這也是覺察。`;
+      }
+    };box.appendChild(b);}
+  }
+  buildScale('scaleBefore','resBefore','before');buildScale('scaleAfter','resAfter','after');
+
+  /* 覺察勾選 */
+  const ac=document.getElementById('awareChecks'),ar=document.getElementById('awareRes');
+  ac.addEventListener('change',()=>{
+    const n=[...ac.querySelectorAll('input')].filter(i=>i.checked).length;
+    [...ac.querySelectorAll('label')].forEach(l=>l.classList.toggle('on',l.querySelector('input').checked));
+    ar.textContent=n===0?'勾選剛剛那一分鐘你做到的項目。':n>=3?`做到 ${n} 項。你已經在覺察了。發現自己分心的那一刻，就是覺察在運作。`:`做到 ${n} 項。很正常，覺察是練出來的，等一下的六十秒掃描再試一次。`;
+  });
+
+  /* 身體掃描 */
+  const cues=['頭與臉：眉頭、眼皮、下巴。牙齒有沒有咬著？','肩膀與脖子：肩膀離耳朵多遠？有沒有一邊比較高？','胸口與呼吸：氣進來的時候，哪裡在動？不用改變它。','肚子：吸氣時肚子有沒有跟著鼓起來？','雙手：手指的溫度、手掌貼著的東西。','雙腳：腳底踩著地板的壓力、腳趾有沒有抓緊。'];
+  let scanT=null,scanLeft=60;const ring=document.getElementById('scanRing'),num=document.getElementById('scanNum'),cue=document.getElementById('scanCue');
+  function scanTick(){scanLeft--;num.textContent=scanLeft;ring.style.setProperty('--p',((60-scanLeft)/60*100)+'%');
+    const idx=Math.min(5,Math.floor((60-scanLeft)/10));cue.innerHTML=cues[idx]+'<small>只要注意，不用放鬆它。</small>';
+    if(scanLeft<=0){clearInterval(scanT);scanT=null;cue.innerHTML='結束。慢慢張開眼睛。<small>有沒有發現，哪一個地方原本以為是鬆的，其實是緊的？</small>';}}
+  document.getElementById('scanStart').onclick=()=>{if(scanT)return;scanLeft=60;num.textContent=60;cue.innerHTML=cues[0]+'<small>只要注意，不用放鬆它。</small>';scanT=setInterval(scanTick,1000);};
+  document.getElementById('scanReset').onclick=()=>{clearInterval(scanT);scanT=null;scanLeft=60;num.textContent=60;ring.style.setProperty('--p','0%');cue.innerHTML='按下開始，跟著提示把注意力移到每個部位。<small>每十秒換一個部位：頭與臉、肩頸、胸與呼吸、肚子、雙手、雙腳。</small>';};
+
+  /* 循環嘆息 */
+  const orb=document.getElementById('orb'),bc=document.getElementById('breathCue');let bT=[],bOn=false;
+  const phases=[['鼻子吸氣……七分滿',2000,1.5],['再補吸一小口',1000,1.9],['嘴巴慢慢吐……吐到底',6000,0.7]];
+  function runBreath(round){
+    if(!bOn)return;
+    if(round>5){bc.innerHTML='完成五輪。<small>感覺一下，呼吸有沒有比剛剛慢一點、肩膀有沒有低一點？</small>';orb.style.transform='scale(1)';bOn=false;return;}
+    let t=0;phases.forEach(([txt,dur,sc],i)=>{bT.push(setTimeout(()=>{bc.innerHTML=`第 ${round} 輪：${txt}<small>${i===2?'吐氣要比吸氣長。':'用鼻子，不用太用力。'}</small>`;orb.style.transition=`transform ${dur}ms ease-in-out`;orb.style.transform=`scale(${sc})`;},t));t+=dur;});
+    bT.push(setTimeout(()=>runBreath(round+1),t));
+  }
+  document.getElementById('breathStart').onclick=()=>{if(bOn)return;bOn=true;runBreath(1);};
+  document.getElementById('breathStop').onclick=()=>{bOn=false;bT.forEach(clearTimeout);bT=[];orb.style.transition='transform 1s';orb.style.transform='scale(1)';bc.innerHTML='已停止。<small>隨時可以再開始。</small>';};
+
+  /* 排行榜 */
+  const rankData=[
+    ['按摩與觸摸','0.59 到 0.78',78,'焦慮、憂鬱、皮質醇（Packheiser 2024，212 篇）',true],
+    ['規律身體活動','0.42 到 0.60',60,'心理困擾、焦慮、憂鬱（Singh 2023，1,039 試驗）',true],
+    ['正念減壓 MBSR','約 0.5',50,'壓力、焦慮（Khoury 2015；Goyal 2014）',true],
+    ['音樂','0.38 到 0.55',55,'心理與生理壓力指標（de Witte 2020，104 RCT）',true],
+    ['放鬆訓練（漸進式肌肉放鬆等）','約 0.5',50,'焦慮，中等效果（Manzoni 2008 系統性回顧）',false],
+    ['瑜伽、太極','中等',45,'皮質醇、血壓、心跳（Pascoe 2017 統合分析）',false],
+    ['呼吸練習','約 0.35',35,'自評壓力（Fincham 2023，12 RCT）；每日五分鐘循環嘆息（Balban 2023）',true],
+    ['伸展（持續數週）','RCT 支持',32,'焦慮、倦怠下降、HRV 上升（Montero-Marín 2013；Mueck-Weymann 2004）',true],
+    ['接觸大自然','20 到 30 分鐘最有效',30,'唾液皮質醇下降幅度最大（Hunter 2019）',false],
+    ['社會連結','一致但難量化',28,'人際支持緩衝壓力；社交連結與存活率相關（Holt-Lunstad 2010）',true]
+  ];
+  const rank=document.getElementById('rank');
+  rankData.forEach((r,i)=>{const d=document.createElement('div');d.className='r'+(r[4]?' today':'');d.innerHTML=`<div class="k">${i+1}</div><div><div class="nm"><span>${r[0]}</span><small>效果量 ${r[1]}</small></div><div class="barw"><div class="bar" data-w="${r[2]}"></div></div><div class="ev">${r[3]}</div></div>`;rank.appendChild(d);});
+  document.getElementById('rankBtn').onclick=()=>{rank.querySelectorAll('.bar').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*120));};
+
+  /* 選擇題 */
+  function quiz(id,ans,title,body){const box=document.getElementById(id);box.querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.i;box.querySelectorAll('button').forEach(x=>x.classList.add(+x.dataset.i===ans?'ok':'no'));
+    setTimeout(()=>showModal(i===ans?'答對了！'+title:'正確答案：'+title,body),700);});}
+  quiz('q1',1,'B 動作慢、配合呼吸、持續做','研究一致看到效果的，是<b>持續數週、每天 10 到 15 分鐘、慢速配呼吸</b>的伸展：焦慮下降、心率變異上升、血壓下降。<br><br>拉得太痠會啟動交感神經，反而是在「備戰」。動態與靜態都有角色，但真正啟動放鬆的是<b>慢、吐氣、停留</b>。');
+  quiz('q2',1,'B 中等力道，舒服的痠','Diego 與 Field 2004 比較輕壓與中壓：<b>中等力道</b>的人心跳下降、腦波出現放鬆型態、自評壓力下降最多；<b>輕撫</b>的人反而心跳上升、更清醒。<br><br>太痛會啟動交感神經與防衛。所以記住：壓下去皮膚會凹、覺得「舒服的痠」，就是對的力道。');
+
+  /* 起始頁 */
+  const h=location.hash.match(/#\/(\d+)/);go(h?+h[1]-1:0);
+})();
+</script>
+</body>
+</html>
