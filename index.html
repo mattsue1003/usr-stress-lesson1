@@ -211,6 +211,19 @@ table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
 .kbd{display:inline-block;border:1px solid rgba(255,255,255,.3);border-radius:6px;padding:0 8px;font-size:16px;margin-left:4px}
 .ref{display:block;font-size:17px;line-height:1.45;columns:2;column-gap:40px;color:var(--text)}
 .ref p{break-inside:avoid;margin-bottom:10px;padding-left:1.2em;text-indent:-1.2em}
+
+/* 照片元件 */
+.secph{position:absolute;right:0;top:0;bottom:0;width:46%;height:100%;object-fit:cover;opacity:.92;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 38%);mask-image:linear-gradient(90deg,transparent 0,#000 38%)}
+.section>*:not(.secph){position:relative;z-index:1}
+.section h1{font-size:76px}
+.section .lead{max-width:760px}
+.coverph{position:absolute;right:96px;top:110px;width:540px;height:640px;object-fit:cover;border-radius:36px;box-shadow:0 30px 60px rgba(43,27,61,.25);transform:rotate(2deg);border:8px solid #fff}
+.cover .kicker,.cover h1,.cover .sub,.cover .meta{position:relative;z-index:1;max-width:860px}
+.pcard{background:#fff;border:2px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;flex:1;min-width:0}
+.pcard img{width:100%;height:300px;object-fit:cover;display:block;flex:none}
+.pcard .cap{padding:12px 16px;font-size:22px;line-height:1.45}
+.pcard .cap b{color:var(--teal)}
+.mpill{display:inline-flex;align-items:center;gap:8px;background:var(--mist);border:2px solid #CFC3E6;border-radius:999px;padding:4px 16px;font-size:21px;font-weight:700;color:var(--teal);margin-left:12px;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -222,31 +235,30 @@ table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
 <section class="slide cover" data-title="封面" data-note="開場先不要講理論。請大家坐好，先問一句：「今天走進來的時候，肩膀是鬆的還是緊的？」讓現場先動起來。
 介紹自己與愛迪樂，說明三堂課的脈絡：第一堂覺察與放鬆、第二堂身心修復、第三堂藝術輔療。
 提醒：今天的動作全部可以坐著做，不舒服就停。">
-  <div class="blob"></div><div class="blob2"></div>
+  <div class="blob"></div><img class="coverph" src="img/seated_class.jpg" alt="">
   <div class="kicker">耕莘健康管理專科學校｜大學社會責任計畫（USR）｜第一堂</div>
   <h1>覺察壓力<br><em>卸下負擔</em></h1>
   <div class="sub">動態伸展與按摩放鬆的實證與實作<br>掌握真正有研究支持的身心減壓技巧</div>
   <div class="meta"><span>🏫 耕莘專校宜蘭校區</span><span>👥 老師・學生・長照夥伴・社區長者</span><span>💜 愛迪樂</span></div>
 </section>
-
 <!-- 2 今天的路線 -->
-<section class="slide" data-title="今天的路線" data-note="講清楚今天的節奏：先用 20 分鐘談實證，再用大部分時間做身體。
-強調：研究是用來「幫我們選對方法」，不是用來背的。帶大家看一眼就好。">
+<section class="slide" data-title="今天的路線" data-note="講清楚今天的節奏：先動手按摩，身體暖了再講研究；伸展配音樂；正念放最後收心。
+強調：研究是用來幫我們選對方法，不是用來背的。
+請學員先把椅子排成兩人一組面對面或前後坐，等一下按摩直接用。">
   <div class="tag">今天的路線</div>
-  <h1>先用<em>證據</em>選方法，再用<em>身體</em>學會它</h1>
+  <h1>先用<em>身體</em>感受，再用<em>證據</em>說明為什麼</h1>
   <div class="body">
     <ol class="steps" style="grid-template-columns:1fr 1fr">
-      <li><b>有效嗎？</b>正念、按摩、運動的研究怎麼說</li>
-      <li><b>覺察是什麼？</b>怎麼知道自己有在覺察、覺察的步驟</li>
-      <li><b>前十名減壓技巧</b>依統合分析效果量排序</li>
-      <li><b>伸展</b>靜態、動態、配音樂，哪一種比較放鬆</li>
-      <li><b>按摩</b>筋膜、運動按摩、按摩球，按哪裡最有用</li>
-      <li><b>帶回家</b>每天十分鐘的放鬆菜單</li>
+      <li><b>先動手：按摩</b>兩人一組互相按，再看研究為什麼這樣說</li>
+      <li><b>還有哪裡可以按？</b>手指頭就夠；按摩球靠牆、靠椅子</li>
+      <li><b>伸展，配音樂</b>動態叫醒身體，靜態配吐氣放鬆</li>
+      <li><b>正念，把注意力帶回來</b>什麼是正念、覺察四步、六十秒掃描</li>
+      <li><b>一首歌收尾</b>用音樂把伸展串起來</li>
+      <li><b>帶回家</b>每天十分鐘的放鬆菜單，附音樂時間表</li>
     </ol>
     <div class="note-box"><b>今天的約定：</b>所有動作都可以坐著做。覺得痛、頭暈、喘不過氣，就停下來，舉手讓我知道。</div>
   </div>
 </section>
-
 <!-- 3 先量一下 -->
 <section class="slide" data-title="先量一下：現在幾分" data-note="請每個人在心裡選一個數字，也可以請幾位說出來。講師在投影機上點一個「全場代表值」即可。
 說明：這就是覺察的第一步，先注意到，不急著改變。課程最後會再量一次。">
@@ -260,7 +272,6 @@ table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
     <div class="note-box"><b>這就是覺察的第一步：</b>不用改變它，只要先注意到它。很多人是這一刻才發現，自己的肩膀一直聳著。</div>
   </div>
 </section>
-
 <!-- 4 壓力在身體裡 -->
 <section class="slide" data-title="壓力在身體裡長什麼樣" data-note="用白話講：壓力反應是身體在「備戰」。短期是好事，長期不關機才是問題。
 請大家對照右邊的訊號，問：「哪一個你最近常有？」舉手統計。
@@ -287,83 +298,21 @@ table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
   </div>
   <div class="src">McEwen BS. (2007) Physiology of stress and allostatic load. Physiol Rev. 綜合整理。</div>
 </section>
-
-<!-- 4a 什麼是正念 -->
-<section class="slide" data-title="什麼是正念？什麼是正念減壓？" data-note="先問全場：「有人上過正念課或用過正念 App 嗎？」
-用三個要素講定義，再用「不是什麼」破除誤解：不是放空、不是正向思考、不是宗教。
-MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程，所以研究做得最多；但它的核心練習（身體掃描、覺察呼吸）今天就會做。">
-  <div class="tag">先弄清楚名詞</div>
-  <h1>什麼是<em>正念</em>？什麼是<em>正念減壓</em>？</h1>
-  <div class="body grid g2">
-    <div class="card hi">
-      <h3><span class="ic">🧠</span>正念（Mindfulness）</h3>
-      <p>把注意力<b>有意地</b>放在<b>當下</b>正在發生的事，而且<b>不急著評價</b>。三個要素缺一不可。</p>
-      <p><span class="pill t">有意地</span>是我決定要注意，不是恍神。</p>
-      <p><span class="pill t">當下</span>注意現在的呼吸、身體、聲音，不是過去與未來。</p>
-      <p><span class="pill t">不評價</span>肩膀緊就是緊，不加一句「我真糟」。</p>
-      <p style="margin-top:8px"><b>它不是：</b>放空、正向思考、宗教儀式，也不是「把念頭趕走」。念頭來了，看見它，再回到呼吸，這一來一回就是練習。</p>
-    </div>
-    <div class="card teal">
-      <h3><span class="ic">🏥</span>正念減壓（MBSR）</h3>
-      <p>1979 年卡巴金（Jon Kabat-Zinn）在美國麻州大學醫學中心為慢性病與慢性疼痛患者設計的<b>標準化課程</b>，把正念從宗教脈絡拿出來，放進醫院。</p>
-      <p><b>標準格式：</b>8 週、每週一次約 2.5 小時團體課、一天靜修日、每天在家練習約 45 分鐘。</p>
-      <p><b>練什麼：</b>身體掃描、覺察呼吸的靜坐、正念瑜伽（緩慢伸展）、正念行走，以及把覺察帶進吃飯、洗碗等日常。</p>
-      <p>因為格式固定，全世界的研究做得最多，所以「正念有沒有效」的證據多半來自它。衍生版本 MBCT 用於預防憂鬱復發。</p>
-    </div>
-  </div>
-  <div class="src">Kabat-Zinn J. (1990) Full Catastrophe Living；Kabat-Zinn J. (2003) Clin Psychol Sci Pract 10(2):144-156。</div>
-</section>
-
-<!-- 4b 一定要很專業嗎 -->
-<section class="slide" data-title="正念一定要很專業嗎？日常怎麼做？" data-note="這是學員最關心的：我沒時間上八週課，怎麼辦？
-三個研究的訊息一致：時數不是關鍵，持續與日常化才是。
-右邊六個日常做法請現場挑一個，讓每個人說出「我要把它接在哪個既有習慣後面」，這叫習慣綁定，比立志更有效。">
-  <div class="tag">不用很專業</div>
-  <h1>一定要上八週課嗎？<em>不用</em>，但要<em>每天一點點</em></h1>
-  <div class="body grid g2">
-    <div style="display:grid;gap:10px">
-      <div class="card small" style="font-size:21px;padding:10px 16px;line-height:1.4"><h3>上課時數長短，效果差不多</h3><p>整理多個 MBSR 研究後發現，<b>課堂時數與效果量沒有顯著相關</b>，縮短版的課程仍有效。</p><p style="font-size:20px;color:var(--muted)">Carmody &amp; Baer 2009, J Clin Psychol</p></div>
-      <div class="card small" style="font-size:21px;padding:10px 16px;line-height:1.4"><h3>每天 13 分鐘，八週就有差</h3><p>沒有冥想經驗的成人每天跟著引導練 13 分鐘，<b>8 週</b>後注意力、記憶、情緒調節與焦慮都改善；4 週時還看不出來，所以要<b>持續</b>。</p><p style="font-size:20px;color:var(--muted)">Basso 等 2019, Behav Brain Res</p></div>
-      <div class="card small" style="font-size:21px;padding:10px 16px;line-height:1.4"><h3>連洗碗都可以</h3><p>只是「專心感受水溫、泡沫、碗的觸感」地洗碗，緊張感下降約 27%、靈感上升約 25%。</p><p style="font-size:20px;color:var(--muted)">Hanley 等 2015, Mindfulness</p></div>
-    </div>
-    <div class="card hi" style="padding:16px 22px">
-      <h3><span class="ic">🏠</span>日常生活怎麼結合：挑一個就好</h3>
-      <ul class="list" style="font-size:24px">
-        <li><b>刷牙、洗碗、洗澡</b>：一次只做這一件事，注意觸感、溫度、聲音。</li>
-        <li><b>紅燈、等車、排隊</b>：做三次慢呼吸，吐氣比吸氣長。</li>
-        <li><b>吃飯前三口</b>：放慢，注意味道與咀嚼。</li>
-        <li><b>走路</b>：感覺腳底踩地的感覺，走到門口為止。</li>
-        <li><b>心煩的時候</b>：STOP 四步，說出情緒的名字。</li>
-        <li><b>睡前</b>：躺著做三分鐘身體掃描。</li>
-      </ul>
-      <p style="margin-top:6px;font-size:24px"><b>習慣綁定：</b>把它接在一個你本來就會做的事後面，例如「倒完咖啡 → 三次呼吸」。分心不是失敗，發現分心就是練到了。</p>
-    </div>
-  </div>
-  <div class="src">Carmody J, Baer RA. J Clin Psychol 2009;65(6):627-638. Basso JC, et al. Behav Brain Res 2019;356:208-220. Hanley AW, et al. Mindfulness 2015;6:1095-1103.</div>
-</section>
-
-<!-- 5 正念有效嗎 -->
-<section class="slide" data-title="正念真的有效嗎？" data-note="先問全場：「你覺得正念有效嗎？」舉手。
-再公布：有效，但是「中等效果」，不是神藥。效果量 0.3 到 0.5 的意思是：平均來說，有做的人比沒做的人好一截，但不是每個人都一樣。
-講 Goyal 2014 是 JAMA 內科的大型回顧，Khoury 2015 專看健康人。">
-  <div class="tag">大哉問 ①</div>
-  <h1>正念真的有效嗎？</h1>
-  <div class="body verdict">
-    <div class="big"><div class="ans">有效<br><span style="font-size:40px">但是中等效果</span></div><div class="sub">對焦慮、憂鬱、壓力有一致的改善，效果大小屬「中等」，不是萬靈丹。</div></div>
-    <div class="rest">
-      <div class="card"><h3>Goyal 等 2014・JAMA Internal Medicine</h3><p>整理 <b>47 個隨機試驗、3,515 人</b>。正念冥想對焦慮（效果量約 0.38）、憂鬱（約 0.30）、疼痛有中等程度的證據。</p></div>
-      <div class="card"><h3>Khoury 等 2015・J Psychosom Res</h3><p>專看<b>健康人</b>的正念減壓（MBSR）：對壓力、焦慮、憂鬱有<b>中等程度</b>的改善，各研究差異大。</p></div>
-      <div class="card small teal"><p><b>為什麼是中等？</b>因為受試者多是健康人，起點本來就不高。用在<b>焦慮症與情緒疾患患者</b>身上，效果量達 0.97 與 0.95，屬於大效果（Hofmann 等 2010，39 研究）。效果量 0.2 小、0.5 中、0.8 大。</p></div>
-    </div>
-  </div>
-  <div class="src">Goyal M, et al. JAMA Intern Med 2014;174(3):357-368. Khoury B, et al. J Psychosom Res 2015;78(6):519-528. Hofmann SG, et al. J Consult Clin Psychol 2010;78(2):169-183.</div>
+<!-- 第一部分 -->
+<section class="slide section" data-title="第一部分：按摩" data-note="轉場。請大家兩人一組，面對面或前後坐。先問：「你多久沒有被人好好按一下肩膀了？」
+今天不先講理論，先按，身體暖了再看研究。">
+  <img class="secph" src="img/neck_massage.jpg" alt="">
+  <div class="tag">第一部分</div>
+  <div class="num">01</div>
+  <h1>按摩：先用手，把身體叫回來</h1>
+  <p class="lead">不先講理論。先感受，再看研究為什麼這樣說。</p>
 </section>
 
 <!-- 6 按摩有效嗎 -->
 <section class="slide" data-title="按摩真的有效嗎？" data-note="這一頁是今天最有力的證據之一。
 Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究、將近 13,000 人。
 請特別強調三點：一、頭臉部的觸摸效果比較好；二、次數比時間長短重要；三、連單純休息都有效，所以「停下來」本身就是一種治療。">
-  <div class="tag">大哉問 ②</div>
+  <div class="tag">大哉問 ①</div>
   <h1>按摩真的有效嗎？</h1>
   <div class="body verdict">
     <div class="big"><div class="ans">有效<br><span style="font-size:40px">效果中到大</span></div><div class="sub">觸摸與按摩對焦慮、憂鬱、疼痛、皮質醇都有中等到偏大的改善。</div></div>
@@ -375,325 +324,6 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
   </div>
   <div class="src">Packheiser J, et al. Nat Hum Behav 2024;8:1088-1107. Moyer CA, et al. Psychol Bull 2004;130(1):3-18. Meier M, et al. Sci Rep 2020;10:14774.</div>
 </section>
-
-<!-- 7 運動有效嗎 -->
-<section class="slide" data-title="運動真的有效嗎？" data-note="Singh 2023 是目前最大的傘狀回顧，發表在英國運動醫學期刊。
-重點：所有類型的運動都有效、強度高一點效果更好、12 週內的短期計畫效果反而最明顯。
-對長輩的翻譯：不用跑馬拉松，今天這種伸展加上走路就算。">
-  <div class="tag">大哉問 ③</div>
-  <h1>運動真的有效嗎？</h1>
-  <div class="body verdict">
-    <div class="big"><div class="ans">有效<br><span style="font-size:40px">而且很一致</span></div><div class="sub">對憂鬱、焦慮、心理困擾都是中等效果，各種運動型態都算數。</div></div>
-    <div class="rest">
-      <div class="card"><h3>Singh 等 2023・Br J Sports Med 傘狀回顧</h3><p>整理 <b>97 篇回顧、1,039 個試驗、約 128,000 人</b>。身體活動改善憂鬱（效果量 −0.43）、焦慮（−0.42）、<b>心理困擾（−0.60）</b>。強度較高效果較大；12 週以內的短期計畫效果最明顯。</p></div>
-      <div class="card"><h3>Noetel 等 2024・BMJ 網絡統合分析</h3><p>218 個試驗。走路或慢跑、瑜伽、肌力訓練對憂鬱都有效，<b>強度愈高效果愈好</b>，但任何強度都比不動好。</p></div>
-      <div class="card small teal"><p><b>翻成白話：</b>不必跑步。今天這種動態伸展、快走、太極，都屬於「有效的身體活動」。關鍵是持續做。</p></div>
-    </div>
-  </div>
-  <div class="src">Singh B, et al. Br J Sports Med 2023;57:1203-1209. Noetel M, et al. BMJ 2024;384:e075847.</div>
-</section>
-
-<!-- 7a 什麼才是效果大 -->
-<section class="slide" data-title="那什麼才是「效果大」？" data-note="學員會問：你都說中等，那什麼才是大的？這一頁直接回答。
-帶的時候先讓大家看「共同特徵」那一列：效果大的方法，不是更神奇，而是起點高、有人帶、身體直接參與。
-然後指出今天的課就是用這三個特徵設計的：慢呼吸是生理回饋的核心做法、動態伸展配音樂是跳舞的低門檻版、按摩是觸摸。
-跳舞那一項要誠實說：研究少、證據確定性低。">
-  <div class="tag">回答一個好問題</div>
-  <h1>那什麼才是「<em>效果大</em>」？效果量 0.8 以上的研究</h1>
-  <div class="body">
-    <table class="tb compact">
-      <tr><th style="width:250px">方法</th><th style="width:140px">效果量</th><th>研究</th><th style="width:300px">和今天的關係</th></tr>
-      <tr class="hi"><td>正念用在焦慮症、情緒疾患患者</td><td><b>0.97 / 0.95</b></td><td>39 研究、1,140 人。健康人約 0.5，患者約 1.0：症狀越明顯，改善空間越大（Hofmann 2010）。</td><td>同一套方法，起點不同結果不同；照顧者常是高起點。</td></tr>
-      <tr class="hi"><td>心率變異生理回饋<br>（每分鐘約 6 次的慢呼吸）</td><td><b>0.81 到 0.83</b></td><td>24 研究、484 人。自評壓力與焦慮大幅下降，與次數、有無焦慮症無關（Goessl 2017）。</td><td><span class="pill o">今天會做</span>吸 4 秒、吐 6 秒的慢呼吸，不用儀器。</td></tr>
-      <tr><td>認知行為型壓力管理課程</td><td><b>約 1.16</b></td><td>36 研究、55 種介入。整體 0.53，認知行為型遠高於放鬆型與組織型（Richardson &amp; Rothstein 2008）。</td><td>有人帶、有結構、有作業。STOP 是它的入門版。</td></tr>
-      <tr><td>跳舞（對憂鬱）</td><td><b>0.96</b> <span style="font-size:16px;color:var(--muted)">研究少</span></td><td>218 試驗。走路慢跑 0.62、瑜伽 0.55、肌力 0.49；跳舞最大但只有少數小型研究，確定性低（Noetel 2024）。</td><td><span class="pill o">今天會做</span>動態伸展配音樂，是跳舞的低門檻版。</td></tr>
-      <tr><td>觸摸與按摩（對皮質醇）</td><td><b>0.78</b></td><td>212 研究。皮質醇 0.78、疼痛 0.69、焦慮 0.64，頭臉部更好（Packheiser 2024）。</td><td><span class="pill o">今天會做</span>自我按摩五站，頭與後頸優先。</td></tr>
-      <tr><td>音樂治療（治療師帶）</td><td><b>0.72</b></td><td>比自己聽音樂的 0.38 到 0.55 大（de Witte 2022）。</td><td>第三堂藝術輔療會做。</td></tr>
-    </table>
-    <div class="note-box" style="margin-top:10px;font-size:22px;padding:12px 18px"><b>效果大的三個共同特徵：</b>起點高（症狀明顯的人進步多）、有人帶且有結構、身體直接參與（呼吸、跳舞、觸摸）。今天的課就是照這三點設計的。</div>
-  </div>
-  <div class="src">Hofmann SG, et al. 2010. Goessl VC, et al. Psychol Med 2017;47(15):2578-2586. Richardson KM, Rothstein HR. J Occup Health Psychol 2008;13(1):69-93. Noetel M, et al. BMJ 2024;384:e075847. Packheiser J, et al. 2024. de Witte M, et al. Health Psychol Rev 2022;16(1):134-159.</div>
-</section>
-
-<!-- 8 共同機制 -->
-<section class="slide" data-title="三種方法的共同機制" data-note="這一頁把三個答案串起來：正念、按摩、運動看起來不同，其實都在按同一顆「關機鍵」，也就是迷走神經和副交感系統。
-講 HRV 可以用「心跳的彈性」比喻：彈性好的心跳，代表身體有能力在緊張後快速回到平靜。
-這頁講完，大家會理解為什麼今天的伸展和按摩都要「慢」、要「配呼吸」。">
-  <div class="tag">把三個答案串起來</div>
-  <h1>方法不同，<em>按的是同一顆關機鍵</em></h1>
-  <div class="body grid g3">
-    <div class="card"><h3><span class="ic">🫀</span>啟動副交感</h3><p>慢呼吸、中等力道的觸摸、緩慢伸展，都會提高迷走神經活性，表現為<b>心率變異（HRV）上升</b>、心跳下降。</p><p>HRV 可以想成「心跳的彈性」，彈性好，緊張後才回得來。</p></div>
-    <div class="card"><h3><span class="ic">🧠</span>把注意力拉回身體</h3><p>壓力多半來自「想過去、想未來」。注意呼吸、注意肌肉被拉開的感覺，大腦的預設模式網絡就會安靜下來。</p><p>這就是覺察在做的事。</p></div>
-    <div class="card"><h3><span class="ic">📉</span>把身體訊號調低</h3><p>肌肉放鬆、呼吸變慢，身體回傳給大腦的訊號是「沒事了」，大腦才願意解除備戰。</p><p>所以<b>身體先放鬆，情緒才跟得上</b>。</p></div>
-  </div>
-  <div class="note-box"><b>今天的設計原則：</b>慢、配合呼吸、中等力道、把注意力放在身體上。每一個動作都是在練這四件事。</div>
-  <div class="src">Thayer JF, Lane RD. (2009) Neurosci Biobehav Rev. Porges SW. (2007) Biol Psychol. 綜合整理。</div>
-</section>
-
-<!-- 9 前十名 -->
-<section class="slide" data-title="研究中前十名的減壓技巧" data-note="這張榜單是依各統合分析的效果量由大到小整理，不是單一研究的排名，請誠實告訴學員：不同研究的族群不同，排名只是參考。
-請先讓大家猜第一名是什麼，再按下「揭曉」讓長條動起來。
-標了「今天會做」的，就是這堂課的內容。">
-  <div class="tag">研究怎麼排名</div>
-  <h1>依統合分析效果量排序的<em>前十名減壓技巧</em></h1>
-  <div class="body">
-    <div class="rank" id="rank"></div>
-    <div style="display:flex;gap:16px;align-items:center;margin-top:14px"><button class="btn o" id="rankBtn">揭曉排名</button><span style="font-size:22px;color:var(--muted)">長條長度代表效果量（0.2 小、0.5 中、0.8 大），不同研究的族群不同，排名僅供參考。</span></div>
-  </div>
-  <div class="src">Packheiser 2024；Singh 2023；Khoury 2015；de Witte 2020（Health Psychol Rev，104 個 RCT）；Manzoni 2008（BMC Psychiatry）；Pascoe 2017（Psychoneuroendocrinology）；Fincham 2023（Sci Rep）；Montero-Marín 2013；Hunter 2019（Front Psychol）；Holt-Lunstad 2010（PLoS Med）。</div>
-</section>
-
-<!-- 10 怎麼讀榜單 -->
-<section class="slide" data-title="怎麼讀這張榜單" data-note="避免大家回去只做第一名。
-三個提醒：效果量是平均值；次數比時間長重要（Packheiser 2024）；最有效的方法永遠是你會持續做的那一個。
-可以問：「哪一個你覺得自己做得到、而且會做？」">
-  <div class="tag">榜單的三個提醒</div>
-  <h1>最好的技巧，是<em>你會持續做</em>的那一個</h1>
-  <div class="body grid g3">
-    <div class="card hi"><h3><span class="ic">📏</span>效果量是「平均」</h3><p>0.5 的意思是：有做的人平均比沒做的人好半個標準差。有人幫助很大，有人沒感覺。</p><p>所以要<b>自己試、自己量</b>，今天最後會再量一次。</p></div>
-    <div class="card hi"><h3><span class="ic">🔁</span>次數比時間長重要</h3><p>觸摸研究發現：<b>做幾次</b>比<b>每次做多久</b>更能預測效果。</p><p>每天十分鐘，勝過每月一次兩小時。</p></div>
-    <div class="card hi"><h3><span class="ic">🧩</span>組合比單一強</h3><p>今天的課刻意把<b>覺察 ＋ 呼吸 ＋ 伸展 ＋ 按摩 ＋ 音樂</b>疊在一起。</p><p>它們按的是同一顆關機鍵，疊起來更容易按到。</p></div>
-  </div>
-  <div class="note-box"><b>問自己一句：</b>榜單上哪一個，是我明天早上起來真的會做的？那個就是你的第一名。</div>
-</section>
-
-<!-- 11 章節：覺察 -->
-<section class="slide section" data-title="第二部分：覺察" data-note="轉場。可以請大家先把雙腳踩穩、背離開椅背坐直，準備進入身體練習。">
-  <div class="tag">第二部分</div>
-  <div class="num">02</div>
-  <h1>什麼是覺察？</h1>
-  <p class="lead">覺察不是放空，也不是想很多。它是一種可以練習、也可以測量的能力。</p>
-</section>
-
-<!-- 12 覺察定義 -->
-<section class="slide" data-title="覺察是什麼" data-note="用 Kabat-Zinn 的定義，但翻成白話：「有意地注意現在，不急著評價」。
-對比三種狀態：想事情、評價、覺察。可用例子：肩膀痠。想事情＝「等一下要去買菜」；評價＝「我怎麼又痠了，真糟」；覺察＝「右邊肩膀有一股緊緊的、熱熱的感覺」。
-心思遊蕩 47% 的數字很好記，哈佛用手機 App 追蹤兩千多人得到的。">
-  <div class="tag">覺察的定義</div>
-  <h1>覺察＝<em>有意地注意現在</em>，不急著評價</h1>
-  <div class="body grid g2">
-    <div class="card teal">
-      <h3><span class="ic">💬</span>三種狀態，差在哪裡？</h3>
-      <p><span class="pill gray">想事情</span>肩膀痠的時候：「等一下還要去買菜、接孫子……」</p>
-      <p><span class="pill r">評價</span>「我怎麼又痠了，年紀大了真沒用。」</p>
-      <p><span class="pill g">覺察</span>「右邊肩膀有一股緊緊的、熱熱的感覺，呼吸的時候它會動。」</p>
-      <p style="margin-top:10px"><b>覺察只有第三種。</b>它描述，不解釋，也不罵自己。</p>
-    </div>
-    <div style="display:grid;gap:18px">
-      <div class="stat"><div class="n">47%</div><div class="u">清醒時間，心思不在當下</div><div class="d">哈佛用手機追蹤 2,250 人，發現心思遊蕩時，人比較不快樂，不管在想什麼。</div></div>
-      <div class="card small"><p><b>Kabat-Zinn 的原話：</b>「以特定的方式去注意：有意地、在當下、不帶評價。」覺察是一種<b>可以練的肌肉</b>，不是一種天分。</p></div>
-    </div>
-  </div>
-  <div class="src">Killingsworth MA, Gilbert DT. Science 2010;330:932. Kabat-Zinn J. (1994) Wherever You Go, There You Are.</div>
-</section>
-
-<!-- 13 我怎麼知道自己有在覺察 -->
-<section class="slide" data-title="我怎麼判斷自己有在覺察？" data-note="這是學員很常問的問題。用五個可以自我檢核的訊號，改寫自正念量表（FFMQ）的五個面向：觀察、描述、有意識地行動、不評價、不反應。
-請大家現場勾：剛剛那一分鐘，你做到了幾個？三個以上就已經在覺察了。
-強調「發現自己跑掉了，就是覺察」，很多人以為分心代表失敗，其實發現分心的那一刻就是成功。">
-  <div class="tag">自我檢核</div>
-  <h1>我怎麼知道自己<em>有在覺察</em>？五個訊號</h1>
-  <div class="body">
-    <div class="checks" id="awareChecks">
-      <label><input type="checkbox"><span><b>說得出身體感覺</b>：現在能講出三個身體感覺（例如腳底壓著地、呼吸在哪裡、哪裡緊）。</span></label>
-      <label><input type="checkbox"><span><b>抓得到跑掉的那一刻</b>：發現自己剛剛在想別的事，並且回來了。</span></label>
-      <label><input type="checkbox"><span><b>用描述代替批評</b>：心裡出現的是「肩膀緊緊的」，不是「我怎麼這麼糟」。</span></label>
-      <label><input type="checkbox"><span><b>感覺來了不急著反應</b>：有不舒服，但可以多看它幾秒再決定要不要動。</span></label>
-      <label><input type="checkbox"><span><b>知道自己正在做什麼</b>：吃飯知道在吃飯，走路知道在走路，不是自動駕駛。</span></label>
-      <label><input type="checkbox"><span><b>能分辨想法和事實</b>：「我一定做不好」是一個念頭，不是事情的結果。</span></label>
-    </div>
-    <div class="result" id="awareRes">勾選剛剛那一分鐘你做到的項目。</div>
-  </div>
-  <div class="src">改寫自 Baer RA, et al. (2006) Five Facet Mindfulness Questionnaire, Assessment 13(1):27-45 的五個面向。</div>
-</section>
-
-<!-- 14 覺察的步驟 -->
-<section class="slide" data-title="覺察的四個步驟 STOP" data-note="STOP 是正念減壓課程常用的口訣，好記、隨時可做。
-第三步「說出名字」有腦科學根據：Lieberman 2007 用 fMRI 發現，把情緒說出名字（「我現在很煩」），杏仁核的活動會下降。
-請全場一起做一次 STOP，大約 30 秒。">
-  <div class="tag">覺察的步驟</div>
-  <h1>四步口訣：<em>S・T・O・P</em></h1>
-  <div class="body grid g4">
-    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">S</span>Stop 停</h3><p>不管在做什麼，先停一秒。手放下、腳踩穩。</p><p><b>口訣：</b>「先停。」</p></div>
-    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">T</span>Take a breath 吸一口</h3><p>慢慢吸氣、更慢吐氣。吐氣比吸氣長，副交感就會啟動。</p><p><b>口訣：</b>「吐長一點。」</p></div>
-    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">O</span>Observe 看一看</h3><p>身體哪裡緊？心裡是什麼情緒？<b>說出名字</b>：「我現在很煩」「肩膀很緊」。</p><p><b>口訣：</b>「它叫什麼？」</p></div>
-    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">P</span>Proceed 再繼續</h3><p>帶著剛剛看到的，決定下一步：伸展一下、喝口水、或就繼續做。</p><p><b>口訣：</b>「我選擇。」</p></div>
-  </div>
-  <div class="note-box"><b>為什麼要說出名字？</b>腦造影研究發現，把情緒用語言標記出來，杏仁核（警報中心）的活動會下降，前額葉會接手。這叫「情緒標記」（affect labeling）。</div>
-  <div class="src">Lieberman MD, et al. Psychol Sci 2007;18(5):421-428. STOP 口訣出自正念減壓（MBSR）課程常用教材。</div>
-</section>
-
-<!-- 15 實作：60 秒 -->
-<section class="slide" data-title="實作：六十秒身體掃描" data-note="按下開始後，每十秒換一個部位。講師只要照螢幕的提示念，語速放慢。
-結束後問：「有人發現自己原本沒注意到的緊繃嗎？」通常會有人說下巴或肩膀。
-這就是覺察的直接體驗，不用解釋太多。">
-  <div class="tag">實作 ①</div>
-  <h1>六十秒<em>身體掃描</em></h1>
-  <p class="lead">閉眼或看著地板都可以。不用放鬆它，只要注意它。</p>
-  <div class="body">
-    <div class="timer">
-      <div class="ring" id="scanRing"><span id="scanNum">60</span></div>
-      <div class="cue" id="scanCue">按下開始，跟著提示把注意力移到每個部位。<small>每十秒換一個部位：頭與臉、肩頸、胸與呼吸、肚子、雙手、雙腳。</small></div>
-    </div>
-    <div style="display:flex;gap:16px;margin-top:22px"><button class="btn o" id="scanStart">開始六十秒</button><button class="btn ghost" id="scanReset">重來</button></div>
-  </div>
-</section>
-
-<!-- 16 覺察的實證 -->
-<section class="slide" data-title="覺察的實證" data-note="這一頁回答「覺察真的有用嗎」。四個證據：情緒標記、身體掃描、短期訓練也有效、長期大腦變化。
-講到 Balban 2023 時可預告：等一下伸展前會教「循環嘆息」，每天五分鐘就有效。">
-  <div class="tag">覺察的實證</div>
-  <h1>覺察不是玄學，<em>腦和身體都量得到</em></h1>
-  <div class="body grid g2">
-    <div class="card"><h3><span class="ic">🧠</span>說出情緒，警報就降</h3><p>用語言標記情緒時，杏仁核活動下降、右腹外側前額葉活動上升。這是「說出來就好一點」的腦科學版本。</p><p class="src-inline" style="font-size:20px;color:var(--muted)">Lieberman 2007, Psychol Sci</p></div>
-    <div class="card"><h3><span class="ic">🧘</span>八週課程，壓力中等改善</h3><p>正念減壓（MBSR）在健康人身上對壓力有中等效果；對焦慮、憂鬱也一致有效。</p><p style="font-size:20px;color:var(--muted)">Khoury 2015, J Psychosom Res；Goyal 2014, JAMA Intern Med</p></div>
-    <div class="card"><h3><span class="ic">🌬️</span>每天五分鐘呼吸，一個月見效</h3><p>隨機試驗比較三種呼吸法與正念冥想：每天五分鐘的<b>循環嘆息</b>（兩次吸、一次長吐）改善心情、降低呼吸速率的效果最好。</p><p style="font-size:20px;color:var(--muted)">Balban 2023, Cell Rep Med</p></div>
-    <div class="card"><h3><span class="ic">🫁</span>呼吸訓練降壓力</h3><p>12 個隨機試驗、785 人的統合分析：呼吸練習降低自評壓力，效果量約 0.35（小到中）。</p><p style="font-size:20px;color:var(--muted)">Fincham 2023, Sci Rep</p></div>
-  </div>
-  <div class="src">Lieberman MD, et al. 2007. Khoury B, et al. 2015. Balban MY, et al. Cell Rep Med 2023;4(1):100895. Fincham GW, et al. Sci Rep 2023;13:432.</div>
-</section>
-
-<!-- 17 實作：循環嘆息 -->
-<section class="slide" data-title="實作：循環嘆息" data-note="這是伸展前的暖身呼吸，也是今天最容易帶回家的技巧。
-動作：鼻子吸一口到七分滿，再快速補吸一小口到全滿，然後用嘴巴慢慢吐到底。吐氣要比吸氣長。
-按開始，跟著圓球做五輪，大約一分鐘。長輩若頭暈就改成一般慢呼吸。">
-  <div class="tag">實作 ②</div>
-  <h1><em>循環嘆息</em>：兩次吸，一次長吐</h1>
-  <div class="body">
-    <div class="breath">
-      <div class="orb"><div id="orb"></div></div>
-      <div class="cue" id="breathCue">按下開始，跟著圓球呼吸。<small>鼻子吸一口（七分滿）→ 再補吸一小口（全滿）→ 嘴巴慢慢吐到底。吐氣要比吸氣長。做五輪，約一分鐘。頭暈就停，改成一般慢呼吸。</small></div>
-    </div>
-    <div style="display:flex;gap:16px;margin-top:26px;align-items:center"><button class="btn o" id="breathStart">開始五輪</button><button class="btn ghost" id="breathStop">停止</button><span style="font-size:24px;color:var(--muted)">研究做法：每天五分鐘，連續一個月，心情改善幅度優於同時間的正念冥想。</span></div>
-  </div>
-  <div class="src">Balban MY, Neri E, Kogon MM, et al. Brief structured respiration practices enhance mood and reduce physiological arousal. Cell Rep Med 2023.</div>
-</section>
-
-<!-- 18 章節：伸展 -->
-<section class="slide section" data-title="第三部分：伸展" data-note="轉場。請大家站起來或坐直，脫掉外套，準備動。">
-  <div class="tag">第三部分</div>
-  <div class="num">03</div>
-  <h1>哪種伸展，比較能減壓？</h1>
-  <p class="lead">靜態、動態、還是配音樂？研究其實有答案，而且關鍵不在「哪一種」。</p>
-</section>
-
-<!-- 19 伸展選擇題 -->
-<section class="slide" data-title="選擇題：伸展減壓的關鍵" data-note="先讓大家猜，再公布。正確答案是「慢、配呼吸、持續做」。
-不要急著解釋，請先問：「選 A 的舉手？選 B 的？」再點答案。">
-  <div class="tag">先猜猜看</div>
-  <h1>伸展要<em>放鬆身心</em>，研究發現關鍵是？</h1>
-  <div class="body">
-    <div class="opts" id="q1">
-      <button data-i="0"><span class="k">A</span>拉得愈開、愈痠愈有效</button>
-      <button data-i="1"><span class="k">B</span>動作慢、配合呼吸、持續做</button>
-      <button data-i="2"><span class="k">C</span>一定要動態伸展才有效</button>
-      <button data-i="3"><span class="k">D</span>每次至少要三十分鐘</button>
-    </div>
-    <div class="note-box" style="margin-top:26px"><b>提示：</b>想想剛剛講的「關機鍵」。什麼樣的動作，會讓身體回傳「沒事了」的訊號？</div>
-  </div>
-</section>
-
-<!-- 20 三種伸展比較 -->
-<section class="slide" data-title="靜態、動態、配音樂：怎麼選" data-note="結論：三種都有用，但角色不同。
-動態伸展適合開頭「把僵掉的身體叫醒」，靜態伸展配慢呼吸是真正啟動副交感的主角，音樂是加分。
-特別提醒：單次靜態伸展對心率變異的研究結果不一致，但「持續做幾週」的研究一致看到焦慮下降、血壓下降、HRV 上升。所以要講「持續」。">
-  <div class="tag">三種伸展，角色不同</div>
-  <h1>先<em>動態</em>叫醒身體，再<em>靜態</em>配呼吸放鬆，音樂是<em>加分</em></h1>
-  <div class="body">
-    <table class="tb">
-      <tr><th style="width:170px">類型</th><th>做法</th><th>對減壓的證據</th><th style="width:300px">今天的角色</th></tr>
-      <tr><td>動態伸展</td><td>有節奏地把關節帶到活動範圍末端再回來，不停留。肩繞環、手臂擺盪、轉體、原地踏步。</td><td>屬於輕度身體活動，可提升體溫、血流與警醒度；身體活動本身對心理困擾有中等效果（Singh 2023）。</td><td><span class="pill o">開頭五分鐘</span>把僵掉的身體叫醒，釋放「僵住」的能量。</td></tr>
-      <tr class="hi"><td>靜態伸展<br>＋慢呼吸</td><td>拉到「痠但不痛」停住 30 到 60 秒，吐氣時再放鬆一點。</td><td>工作者每天 10 分鐘、持續 3 個月：焦慮與倦怠下降（Montero-Marín 2013 RCT）。28 天每天 15 分鐘：心率變異上升、靜止心跳下降（Mueck-Weymann 2004）。長者 8 週：降血壓效果優於快走（Ko 2021 RCT）。</td><td><span class="pill t">主角</span>真正啟動副交感的是「慢 ＋ 吐氣 ＋ 停留」。</td></tr>
-      <tr><td>配音樂</td><td>用慢節奏（約 60 到 80 拍）、自己喜歡、沒有歌詞或很熟悉的音樂。</td><td>音樂介入本身對壓力有效：心理指標效果量 0.55、生理指標 0.38，對心跳的效果最明顯（de Witte 2020，104 個 RCT）。</td><td><span class="pill">加分</span>幫助呼吸放慢、注意力留在身體上。</td></tr>
-    </table>
-    <div class="warn" style="margin-top:12px;font-size:23px;padding:12px 20px"><b>誠實提醒：</b>單次靜態伸展對心率變異的研究結果不一致，有些甚至短暫上升交感。證據一致的是「持續做幾週」。所以答案不是哪一種，而是<b>慢、配呼吸、持續</b>。</div>
-  </div>
-  <div class="src">Montero-Marín J, et al. Aten Primaria 2013;45(7):376-383. Mueck-Weymann M, et al. Clin Auton Res 2004;14(1):15-18. Ko J, et al. J Phys Act Health 2021;18(1):21-28. de Witte M, et al. Health Psychol Rev 2020;14(2):294-324.</div>
-</section>
-
-<!-- 21 伸展細則 -->
-<section class="slide" data-title="減壓伸展的細則" data-note="這一頁是操作規格，可以請學員拍下來。
-最重要的三條：不憋氣、不彈震、痠不痛。
-對長者：停留可以拉長到 30 到 60 秒，因為組織彈性較低、需要較長時間；所有動作都有坐姿版本。">
-  <div class="tag">操作規格</div>
-  <h1>減壓伸展的<em>七條細則</em></h1>
-  <div class="body grid g2" style="gap:16px">
-    <ol class="steps" style="gap:12px">
-      <li><b>強度：</b>拉到「痠痠的、可以忍」就停，大約 10 分痛裡的 3 到 4 分。不追求更開。</li>
-      <li><b>時間：</b>每個姿勢停 15 到 30 秒；長者或較僵硬的人停 30 到 60 秒。</li>
-      <li><b>次數：</b>每個部位做 2 到 4 回，每週至少 2 到 3 天，每天更好。</li>
-      <li><b>呼吸：</b>吐氣時再鬆一點點。全程不憋氣。</li>
-    </ol>
-    <ol class="steps" style="gap:12px;counter-reset:s 4">
-      <li><b>速度：</b>慢慢進去、慢慢出來。不彈震、不甩。</li>
-      <li><b>注意力：</b>眼睛可以閉上，注意被拉開的那條肌肉的感覺。這就是把覺察放進伸展。</li>
-      <li><b>安全：</b>有關節置換、骨質疏鬆、急性發炎、剛手術的部位，先問醫師或治療師；頭暈立刻停。</li>
-    </ol>
-  </div>
-  <div class="src">依 ACSM Guidelines for Exercise Testing and Prescription（第 11 版）柔軟度運動建議整理；長者停留時間依 ACSM 老年人建議。</div>
-</section>
-
-<!-- 22 動態伸展 -->
-<section class="slide" data-title="實作：動態伸展六式" data-note="站著或坐著都可以。每式做 8 到 10 下，節奏像走路一樣，不用快。
-講師示範時嘴巴要一直講提示語，讓長輩跟得上。
-可以放一首大家熟悉的、節奏約 90 到 100 拍的歌當背景，讓氣氛動起來。">
-  <div class="tag">實作 ③ 動態伸展</div>
-  <h1>六式<em>把身體叫醒</em>，每式 8 到 10 下</h1>
-  <div class="body">
-    <div class="moves">
-      <div class="m"><div class="t"><span class="n">1</span>肩膀畫大圓</div><div>雙肩向後、向上、向前慢慢繞圈，再反方向。</div><div class="cue">提示：「像在把背包甩掉。」</div><div class="why">打開上斜方肌與胸口，最常緊繃的地方。</div></div>
-      <div class="m"><div class="t"><span class="n">2</span>手臂前後擺盪</div><div>雙臂放鬆，像走路一樣前後擺，幅度慢慢加大。</div><div class="cue">提示：「手臂是兩條繩子。」</div><div class="why">讓肩關節在無負重下活動。</div></div>
-      <div class="m"><div class="t"><span class="n">3</span>轉體看後面</div><div>雙手交疊胸前，上半身慢慢左轉、右轉，眼睛跟著看。</div><div class="cue">提示：「看看後面有誰。」</div><div class="why">活動胸椎與腰部，呼吸會變深。</div></div>
-      <div class="m"><div class="t"><span class="n">4</span>原地踏步抬膝</div><div>坐著或站著，交替抬膝，手臂自然擺動。</div><div class="cue">提示：「像在走去市場。」</div><div class="why">提升心跳與體溫，這就是「身體活動」。</div></div>
-      <div class="m"><div class="t"><span class="n">5</span>側彎摘果子</div><div>一手高舉向對側慢慢伸，像摘高處的東西，再換邊。</div><div class="cue">提示：「摘最上面那顆。」</div><div class="why">拉開側腰與肋間，讓肺有空間。</div></div>
-      <div class="m"><div class="t"><span class="n">6</span>腳踝畫圈、甩手</div><div>腳踝順逆各轉，再把雙手輕甩 10 秒。</div><div class="cue">提示：「把緊張從指尖甩出去。」</div><div class="why">末梢循環，也是一個「卸下」的儀式。</div></div>
-    </div>
-    <div class="note-box" style="margin-top:14px"><b>重點：</b>節奏像走路，不喘、不甩、不憋氣。做完問一句：「現在身體比剛剛醒了幾分？」</div>
-  </div>
-</section>
-
-<!-- 23 靜態伸展 -->
-<section class="slide" data-title="實作：靜態伸展六式" data-note="這是今天的主菜。換成慢音樂，燈可以稍微調暗。
-每式停 30 到 60 秒，講師帶呼吸：「吸……吐……吐的時候再鬆一點點。」
-每式之間停三秒，請大家感覺一下剛剛被拉開的地方。這就是伸展加覺察。">
-  <div class="tag">實作 ④ 靜態伸展＋慢呼吸</div>
-  <h1>六式<em>配吐氣放鬆</em>，每式停 30 到 60 秒</h1>
-  <div class="body">
-    <div class="moves">
-      <div class="m"><div class="t"><span class="n">1</span>頸側伸展</div><div>右手輕放頭左側，頭慢慢向右倒，左肩往下沉。換邊。</div><div class="cue">吐氣：「肩膀往地板沉。」</div><div class="why">上斜方肌，壓力最愛住的地方。</div></div>
-      <div class="m"><div class="t"><span class="n">2</span>低頭看口袋</div><div>雙手交扣輕放後腦，頭慢慢低下，手不用壓，只是重量。</div><div class="cue">吐氣：「後頸慢慢變長。」</div><div class="why">後頸肌群，常與緊張性頭痛有關。</div></div>
-      <div class="m"><div class="t"><span class="n">3</span>開胸擴背</div><div>雙手在背後交扣（或各抓椅背），胸口向前、向上打開。</div><div class="cue">吸氣：「胸口打開。」</div><div class="why">反轉整天低頭含胸的姿勢，讓呼吸變深。</div></div>
-      <div class="m"><div class="t"><span class="n">4</span>坐姿抱膝扭轉</div><div>坐著，右腳跨左腿上（或踩地），身體向右轉，左手抱膝。換邊。</div><div class="cue">吐氣：「再轉一點點。」</div><div class="why">臀部與下背，久坐族必做。</div></div>
-      <div class="m"><div class="t"><span class="n">5</span>坐姿大腿後側</div><div>坐椅子前緣，一腳伸直腳跟著地，背打直從髖部前傾。換邊。</div><div class="cue">吐氣：「背是直的，往前倒。」</div><div class="why">大腿後側緊，骨盆與腰都會跟著緊。</div></div>
-      <div class="m"><div class="t"><span class="n">6</span>雙手上舉、整身嘆氣</div><div>吸氣雙手上舉，吐氣時「哈」一聲放下，全身垮下來。做三次。</div><div class="cue">「把今天的重量放下。」</div><div class="why">收尾的儀式，結合循環嘆息。</div></div>
-    </div>
-    <div class="note-box" style="margin-top:14px"><b>講師口令：</b>「吸……吐……吐的時候再鬆一點點。」每式之間停三秒，請大家感覺剛剛被拉開的那個地方。</div>
-  </div>
-</section>
-
-<!-- 24 音樂怎麼選 -->
-<section class="slide" data-title="音樂怎麼選" data-note="具體規格：動態伸展用 90 到 100 拍的熟悉歌曲；靜態伸展與按摩用 60 到 80 拍、沒有歌詞或大家很熟的慢歌。
-研究提示：由參與者自己選喜歡的音樂，效果不會比較差，長輩熟悉的台語老歌、鄧麗君都很適合。
-音量以「可以正常講話」為準。">
-  <div class="tag">音樂的規格</div>
-  <h1>音樂怎麼選，才能<em>幫忙放鬆</em>？</h1>
-  <div class="body grid g3">
-    <div class="card"><h3><span class="ic">🥁</span>節奏跟著目標走</h3><p><b>動態伸展：</b>約 90 到 100 拍，熟悉、想跟著動的歌。</p><p><b>靜態伸展、按摩：</b>約 60 到 80 拍，接近放鬆時的心跳。</p></div>
-    <div class="card"><h3><span class="ic">🎵</span>熟悉、喜歡最重要</h3><p>統合分析顯示音樂介入對壓力有效，而且<b>自己喜歡的音樂</b>效果不輸研究者挑的。</p><p>長輩熟的台語老歌、輕音樂、自然聲都可以。</p></div>
-    <div class="card"><h3><span class="ic">🔈</span>音量與歌詞</h3><p>音量以「可以正常講話」為準。靜態階段選<b>沒有歌詞或很熟的</b>，才不會搶走注意力。</p><p>音樂是背景，呼吸才是主角。</p></div>
-  </div>
-  <div class="note-box"><b>一句話：</b>動的時候用會想跟著動的歌，鬆的時候用會想閉眼睛的歌。</div>
-  <div class="src">de Witte M, et al. Effects of music interventions on stress-related outcomes. Health Psychol Rev 2020;14(2):294-324. 節拍範圍依該回顧與放鬆音樂研究常用區間整理。</div>
-</section>
-
-<!-- 25 章節：按摩 -->
-<section class="slide section" data-title="第四部分：按摩" data-note="轉場。請大家把手搓熱，準備自我按摩。">
-  <div class="tag">第四部分</div>
-  <div class="num">04</div>
-  <h1>按摩：怎麼按、按哪裡？</h1>
-  <p class="lead">筋膜滾筒、運動按摩、按摩球、穴位，哪一種真的有減壓的證據？</p>
-</section>
-
 <!-- 26 按摩選擇題 -->
 <section class="slide" data-title="選擇題：哪種力道比較放鬆" data-note="先投票再公布。很多人會選 C，因為台灣的按摩文化是「愈痛愈有效」。
 研究結果：中等力道才放鬆，太輕反而讓人警醒，太痛會啟動交感神經。">
@@ -709,7 +339,6 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
     <div class="note-box" style="margin-top:26px"><b>提示：</b>有一個研究把人分成輕壓、中壓兩組，測腦波和心跳。結果其中一組反而變得更清醒。</div>
   </div>
 </section>
-
 <!-- 27 哪種按摩有證據 -->
 <section class="slide" data-title="哪種按摩有減壓的證據" data-note="結論：減壓最有證據的是「中等力道、慢速、頭頸肩的放鬆式按摩」，而且自己按也算。
 筋膜滾筒和按摩球的證據主要在「痠痛和柔軟度」，對自律神經的研究結果不一致，所以今天把它們當「配角」，用在腳底和臀部。
@@ -727,7 +356,6 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
   </div>
   <div class="src">Moyer 2004；Meier 2020；Packheiser 2024；Wiewelhove T, et al. Front Physiol 2019;10:376；Grieve R, et al. J Bodyw Mov Ther 2015；Davis HL, et al. BMJ Open Sport Exerc Med 2020;6:e000614；Wilkerson 2021、Kopec 2020 滾筒 HRV 研究。</div>
 </section>
-
 <!-- 28 按哪裡 -->
 <section class="slide" data-title="按哪裡最有幫助" data-note="點身體圖上的部位或看右邊卡片。排名第一是頭與臉，第二是後頸，第三是肩膀，然後是手和腳。
 講 Packheiser 2024 的發現：頭臉部的觸摸效果大於軀幹。Meier 2020 的「迷走神經按摩」就是按頭頸。
@@ -768,23 +396,6 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
   </div>
   <div class="src">Packheiser 2024；Meier 2020；Snyder M, et al. (1995) Hand massage and agitation in dementia；Remington R. Nurs Res 2002；足部反射區焦慮相關系統性回顧綜合整理。</div>
 </section>
-
-<!-- 29 怎麼按 -->
-<section class="slide" data-title="怎麼按：力道、時間、速度、頻率" data-note="四個規格。力道講 Diego 2004：中等力道心跳下降、腦波出現放鬆模式；輕壓反而更清醒。
-時間講 Meier 2020：十分鐘就夠。頻率講 Packheiser 2024：次數比時長重要。
-速度：慢。一個部位至少五秒一下。">
-  <div class="tag">操作規格</div>
-  <h1>怎麼按：<em>中等力道、慢速、十分鐘、常常做</em></h1>
-  <div class="body grid g4">
-    <div class="card hi"><h3><span class="ic">✋</span>力道：中等</h3><p>壓下去皮膚會凹、覺得「舒服的痠」，約 10 分痛裡的 4 到 6 分。</p><p>研究：中等力道心跳下降、腦波出現放鬆型態；<b>輕壓反而讓人更清醒</b>。</p></div>
-    <div class="card hi"><h3><span class="ic">🐢</span>速度：慢</h3><p>每一下至少 3 到 5 秒。慢，身體才會判定「安全」。</p><p>快速、用力的搓揉比較像在喚醒，不是放鬆。</p></div>
-    <div class="card hi"><h3><span class="ic">⏱️</span>時間：10 到 20 分鐘</h3><p>頭頸部十分鐘，副交感指標就明顯上升。研究中位數是每次 20 分鐘。</p><p><b>再拉長沒有更好</b>，皮質醇與心跳的改善甚至略差。</p></div>
-    <div class="card hi"><h3><span class="ic">📅</span>頻率：每 2 到 3 天</h3><p>研究中位數：<b>4 次、間隔 2.3 天</b>。次數越多，特質焦慮、憂鬱、疼痛改善越多。</p><p>自我按摩可以每天 5 到 10 分鐘。</p></div>
-  </div>
-  <div class="note-box"><b>自己按也算：</b>觸摸研究發現，由專業人員或熟人、隔著衣服或直接接觸，效果沒有顯著差異。所以今天教的自我按摩，是真的有用的。</div>
-  <div class="src">Diego MA, Field T, et al. Int J Neurosci 2004;114(1):31-44. Meier M, et al. Sci Rep 2020. Packheiser J, et al. Nat Hum Behav 2024.</div>
-</section>
-
 <!-- 29a 頭臉部觸摸研究細節 -->
 <section class="slide" data-title="頭臉部觸摸：研究具體說了什麼" data-note="這一頁回答三個常見追問：按哪裡、怎麼碰、按多久幾次。
 重點一：研究沒有指定手法，按摩、輕撫、擁抱效果差不多，所以不必拘泥技巧。
@@ -801,7 +412,6 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
   <div class="note-box" style="margin-top:12px"><b>建議劑量：</b>每次 10 到 20 分鐘、每 2 到 3 天一次、至少連續 4 次；自我按摩每天 5 到 10 分鐘。兩人一組時<b>輪流被按</b>，不要同時互按。</div>
   <div class="src">Packheiser J, et al. Nat Hum Behav 2024;8:1088-1107（成人 Hedges' g；身體部位、觸摸類型、方向、熟悉度、次數與時長的調節分析）。</div>
 </section>
-
 <!-- 29b 頭頸按摩地圖 -->
 <section class="slide" data-title="頭頸按摩地圖：十分鐘怎麼按" data-note="左圖是 Meier 2020「迷走神經按摩」的四個區域，右圖是統合分析點名的頭臉部入口。
 帶的時候請學員兩人一組，被按的人坐著、閉眼、頭微微前傾；按的人照 1 到 4 的順序做，各約兩到三分鐘。
@@ -883,13 +493,27 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
   </div>
   <div class="src">Meier M, et al. Sci Rep 2020;10:14774（迷走神經按摩：斜方肌推撫與扭捏、斜方肌與胸鎖乳突肌之間抓握、枕骨下由脊椎往耳後推撫；10 分鐘、坐姿）。頭臉部入口依 Packheiser 2024 的結論整理。</div>
 </section>
-
+<!-- 29 怎麼按 -->
+<section class="slide" data-title="怎麼按：力道、時間、速度、頻率" data-note="四個規格。力道講 Diego 2004：中等力道心跳下降、腦波出現放鬆模式；輕壓反而更清醒。
+時間講 Meier 2020：十分鐘就夠。頻率講 Packheiser 2024：次數比時長重要。
+速度：慢。一個部位至少五秒一下。">
+  <div class="tag">操作規格</div>
+  <h1>怎麼按：<em>中等力道、慢速、十分鐘、常常做</em></h1>
+  <div class="body grid g4">
+    <div class="card hi"><h3><span class="ic">✋</span>力道：中等</h3><p>壓下去皮膚會凹、覺得「舒服的痠」，約 10 分痛裡的 4 到 6 分。</p><p>研究：中等力道心跳下降、腦波出現放鬆型態；<b>輕壓反而讓人更清醒</b>。</p></div>
+    <div class="card hi"><h3><span class="ic">🐢</span>速度：慢</h3><p>每一下至少 3 到 5 秒。慢，身體才會判定「安全」。</p><p>快速、用力的搓揉比較像在喚醒，不是放鬆。</p></div>
+    <div class="card hi"><h3><span class="ic">⏱️</span>時間：10 到 20 分鐘</h3><p>頭頸部十分鐘，副交感指標就明顯上升。研究中位數是每次 20 分鐘。</p><p><b>再拉長沒有更好</b>，皮質醇與心跳的改善甚至略差。</p></div>
+    <div class="card hi"><h3><span class="ic">📅</span>頻率：每 2 到 3 天</h3><p>研究中位數：<b>4 次、間隔 2.3 天</b>。次數越多，特質焦慮、憂鬱、疼痛改善越多。</p><p>自我按摩可以每天 5 到 10 分鐘。</p></div>
+  </div>
+  <div class="note-box"><b>自己按也算：</b>觸摸研究發現，由專業人員或熟人、隔著衣服或直接接觸，效果沒有顯著差異。所以今天教的自我按摩，是真的有用的。</div>
+  <div class="src">Diego MA, Field T, et al. Int J Neurosci 2004;114(1):31-44. Meier M, et al. Sci Rep 2020. Packheiser J, et al. Nat Hum Behav 2024.</div>
+</section>
 <!-- 30 實作：自我按摩五站 -->
 <section class="slide" data-title="實作：自我按摩五站" data-note="全部坐著做。先把手搓熱。每站約兩分鐘，講師一邊示範一邊念提示語。
 力道以學員自己的「舒服的痠」為準，不比較。
 第五站可以兩人一組互相按手，長照夥伴回去可以直接用在服務對象身上。">
-  <div class="tag">實作 ⑤ 自我按摩</div>
-  <h1>自我按摩<em>五站</em>，每站約兩分鐘</h1>
+  <div class="tag">實作 ① 自我按摩</div>
+  <h1>自我按摩<em>五站</em>，每站約兩分鐘 <span class="mpill">🎵 慢歌 60 到 70 拍・約 12 分鐘</span></h1>
   <div class="body">
     <div class="moves" style="grid-template-columns:repeat(5,1fr);gap:12px">
       <div class="m"><div class="t"><span class="n">1</span>頭皮</div><div>十指指腹像洗頭，從前額往後、往兩側，慢慢畫圓。</div><div class="cue">「像在幫自己洗頭。」</div><div class="why">頭部觸摸效益最高。</div></div>
@@ -904,6 +528,45 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
     </div>
   </div>
   <div class="src">Au DWH, et al. Effects of acupressure on anxiety: a systematic review and meta-analysis. Acupunct Med 2015;33(5):353-359。</div>
+</section>
+<!-- 還有哪裡可以按 -->
+<section class="slide" data-title="還有哪裡可以按？用手指頭就夠" data-note="五站做完後問全場：「還有哪裡緊？」把大家說的部位接到這四張圖。
+每個部位示範 20 秒，然後讓大家自己按 1 分鐘，講師走動看力道。
+提醒：都是「舒服的痠」，不是愈痛愈好；前頸、膝蓋後側、瘀青處不按。">
+  <div class="tag">實作 ② 延伸 <span class="mpill">🎵 慢歌 60 到 75 拍・約 6 分鐘</span></div>
+  <h1>還有哪裡可以按？<em>用手指頭就夠</em></h1>
+  <div class="body" style="flex-direction:row;gap:18px">
+    <div class="pcard"><img src="img/self_neck.jpg" alt=""><div class="cap"><b>後頸與肩</b><br>對側手四指抓後頸肌肉，由上往下捏到肩膀，一邊 1 分鐘。</div></div>
+    <div class="pcard"><img src="img/head_massage.jpg" alt=""><div class="cap"><b>頭皮、太陽穴、耳朵</b><br>十指像洗頭畫圓；拇指食指捏耳廓，由上捏到耳垂。</div></div>
+    <div class="pcard"><img src="img/hand_massage.jpg" alt=""><div class="cap"><b>手掌、虎口、前臂</b><br>拇指壓掌心畫圓；捏虎口；前臂從手腕推到手肘。</div></div>
+    <div class="pcard"><img src="img/foot_self.jpg" alt=""><div class="cap"><b>腳底、小腿</b><br>拇指從腳跟推到腳趾；雙手抓小腿肚，由下往上捏。</div></div>
+  </div>
+  <div class="note-box" style="margin-top:12px"><b>帶法：</b>問全場「還有哪裡緊？」把答案接到這四張圖。全部用「舒服的痠」，每處約 1 分鐘；前頸、膝蓋後側、瘀青處不按。</div>
+</section>
+
+<!-- 按摩球 -->
+<section class="slide" data-title="按摩球：靠牆、靠椅子，自己來" data-note="發球。先示範靠牆：球放在肩胛骨與脊椎之間，絕對不壓脊椎，膝蓋微彎，身體上下小幅移動。
+再示範坐姿：臀部坐球、腳底踩球。長輩全部用坐姿版本，不用靠牆。
+每處 30 到 60 秒，最多 2 分鐘；痛就停。沒有球的人用網球或手指繼續。">
+  <div class="tag">實作 ③ 按摩球 <span class="mpill">🎵 慢歌 60 到 75 拍・約 6 分鐘</span></div>
+  <h1>按摩球：<em>靠牆、靠椅子</em>，自己來</h1>
+  <div class="body" style="flex-direction:row;gap:20px">
+    <div style="flex:0 0 480px;display:flex;flex-direction:column;gap:12px">
+      <div class="pcard" style="flex:none"><img src="img/ball_wall.jpg" alt="" style="height:360px"><div class="cap"><b>靠牆版</b>：球夾在肩膀後側或肩胛骨與脊椎之間，膝蓋微彎，身體小幅上下移動。</div></div>
+      <div class="pcard" style="flex:none;flex-direction:row;align-items:center"><img src="img/ball_hand.jpg" alt="" style="width:150px;height:110px"><div class="cap"><b>沒有球？</b>網球、刺球都可以；手掌壓球在桌上畫圓。</div></div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:10px;min-width:0">
+      <ol class="steps" style="gap:8px">
+        <li style="font-size:22px;padding:10px 20px 10px 90px"><b>上背靠牆</b>：球放肩胛骨與脊椎之間（不壓脊椎），身體上下移動 30 秒，換邊。</li>
+        <li style="font-size:22px;padding:10px 20px 10px 90px"><b>肩膀後側靠牆</b>：球在肩膀後方，手臂慢慢畫圈，找「舒服的痠」停 20 秒。</li>
+        <li style="font-size:22px;padding:10px 20px 10px 90px"><b>臀部坐球（椅子）</b>：球放一側臀部肌肉下，身體微傾，左右搖 30 秒，換邊。</li>
+        <li style="font-size:22px;padding:10px 20px 10px 90px"><b>腳底踩球（椅子）</b>：坐著，腳踩球從腳跟滾到腳趾，一腳 1 分鐘。長者最安全的一站。</li>
+        <li style="font-size:22px;padding:10px 20px 10px 90px"><b>大腿後側坐球</b>：坐椅子前緣，球放大腿下方，腿前後滑動 30 秒。</li>
+      </ol>
+      <div class="warn" style="font-size:20px;padding:10px 16px"><b>安全：</b>避開脊椎正中、骨頭、關節；瘀青、血栓風險、吃抗凝血藥者不做；每處 30 到 60 秒，最多 2 分鐘；痛就停。長者一律坐姿版。</div>
+    </div>
+  </div>
+  <div class="src">證據提醒：滾筒與按摩球的研究主要支持減少痠痛與增加柔軟度（Wiewelhove 2019；Grieve 2015），對自律神經的效果不一致，所以放在「配角」位置。</div>
 </section>
 
 <!-- 31 安全 -->
@@ -932,7 +595,414 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
   </div>
   <div class="warn"><b>原則：</b>減壓的動作一定是「舒服的」。痛、麻、暈都不是放鬆，是身體在喊停。</div>
 </section>
+<!-- 第二部分 -->
+<section class="slide section" data-title="第二部分：伸展" data-note="轉場。音樂準備好：動態用熟悉快歌，靜態用慢歌。請大家站起來或坐直，脫掉外套。">
+  <img class="secph" src="img/stretch_couple.jpg" alt="">
+  <div class="tag">第二部分</div>
+  <div class="num">02</div>
+  <h1>伸展：配著音樂動起來</h1>
+  <p class="lead">哪種伸展比較能減壓？研究有答案，而且關鍵不在「哪一種」。</p>
+</section>
 
+<!-- 7 運動有效嗎 -->
+<section class="slide" data-title="運動真的有效嗎？" data-note="Singh 2023 是目前最大的傘狀回顧，發表在英國運動醫學期刊。
+重點：所有類型的運動都有效、強度高一點效果更好、12 週內的短期計畫效果反而最明顯。
+對長輩的翻譯：不用跑馬拉松，今天這種伸展加上走路就算。">
+  <div class="tag">大哉問 ②</div>
+  <h1>運動真的有效嗎？</h1>
+  <div class="body verdict">
+    <div class="big"><div class="ans">有效<br><span style="font-size:40px">而且很一致</span></div><div class="sub">對憂鬱、焦慮、心理困擾都是中等效果，各種運動型態都算數。</div></div>
+    <div class="rest">
+      <div class="card"><h3>Singh 等 2023・Br J Sports Med 傘狀回顧</h3><p>整理 <b>97 篇回顧、1,039 個試驗、約 128,000 人</b>。身體活動改善憂鬱（效果量 −0.43）、焦慮（−0.42）、<b>心理困擾（−0.60）</b>。強度較高效果較大；12 週以內的短期計畫效果最明顯。</p></div>
+      <div class="card"><h3>Noetel 等 2024・BMJ 網絡統合分析</h3><p>218 個試驗。走路或慢跑、瑜伽、肌力訓練對憂鬱都有效，<b>強度愈高效果愈好</b>，但任何強度都比不動好。</p></div>
+      <div class="card small teal"><p><b>翻成白話：</b>不必跑步。今天這種動態伸展、快走、太極，都屬於「有效的身體活動」。關鍵是持續做。</p></div>
+    </div>
+  </div>
+  <div class="src">Singh B, et al. Br J Sports Med 2023;57:1203-1209. Noetel M, et al. BMJ 2024;384:e075847.</div>
+</section>
+<!-- 19 伸展選擇題 -->
+<section class="slide" data-title="選擇題：伸展減壓的關鍵" data-note="先讓大家猜，再公布。正確答案是「慢、配呼吸、持續做」。
+不要急著解釋，請先問：「選 A 的舉手？選 B 的？」再點答案。">
+  <div class="tag">先猜猜看</div>
+  <h1>伸展要<em>放鬆身心</em>，研究發現關鍵是？</h1>
+  <div class="body">
+    <div class="opts" id="q1">
+      <button data-i="0"><span class="k">A</span>拉得愈開、愈痠愈有效</button>
+      <button data-i="1"><span class="k">B</span>動作慢、配合呼吸、持續做</button>
+      <button data-i="2"><span class="k">C</span>一定要動態伸展才有效</button>
+      <button data-i="3"><span class="k">D</span>每次至少要三十分鐘</button>
+    </div>
+    <div class="note-box" style="margin-top:26px"><b>提示：</b>想想剛剛講的「關機鍵」。什麼樣的動作，會讓身體回傳「沒事了」的訊號？</div>
+  </div>
+</section>
+<!-- 20 三種伸展比較 -->
+<section class="slide" data-title="靜態、動態、配音樂：怎麼選" data-note="結論：三種都有用，但角色不同。
+動態伸展適合開頭「把僵掉的身體叫醒」，靜態伸展配慢呼吸是真正啟動副交感的主角，音樂是加分。
+特別提醒：單次靜態伸展對心率變異的研究結果不一致，但「持續做幾週」的研究一致看到焦慮下降、血壓下降、HRV 上升。所以要講「持續」。">
+  <div class="tag">三種伸展，角色不同</div>
+  <h1>先<em>動態</em>叫醒身體，再<em>靜態</em>配呼吸放鬆，音樂是<em>加分</em></h1>
+  <div class="body">
+    <table class="tb">
+      <tr><th style="width:170px">類型</th><th>做法</th><th>對減壓的證據</th><th style="width:300px">今天的角色</th></tr>
+      <tr><td>動態伸展</td><td>有節奏地把關節帶到活動範圍末端再回來，不停留。肩繞環、手臂擺盪、轉體、原地踏步。</td><td>屬於輕度身體活動，可提升體溫、血流與警醒度；身體活動本身對心理困擾有中等效果（Singh 2023）。</td><td><span class="pill o">開頭五分鐘</span>把僵掉的身體叫醒，釋放「僵住」的能量。</td></tr>
+      <tr class="hi"><td>靜態伸展<br>＋慢呼吸</td><td>拉到「痠但不痛」停住 30 到 60 秒，吐氣時再放鬆一點。</td><td>工作者每天 10 分鐘、持續 3 個月：焦慮與倦怠下降（Montero-Marín 2013 RCT）。28 天每天 15 分鐘：心率變異上升、靜止心跳下降（Mueck-Weymann 2004）。長者 8 週：降血壓效果優於快走（Ko 2021 RCT）。</td><td><span class="pill t">主角</span>真正啟動副交感的是「慢 ＋ 吐氣 ＋ 停留」。</td></tr>
+      <tr><td>配音樂</td><td>用慢節奏（約 60 到 80 拍）、自己喜歡、沒有歌詞或很熟悉的音樂。</td><td>音樂介入本身對壓力有效：心理指標效果量 0.55、生理指標 0.38，對心跳的效果最明顯（de Witte 2020，104 個 RCT）。</td><td><span class="pill">加分</span>幫助呼吸放慢、注意力留在身體上。</td></tr>
+    </table>
+    <div class="warn" style="margin-top:12px;font-size:23px;padding:12px 20px"><b>誠實提醒：</b>單次靜態伸展對心率變異的研究結果不一致，有些甚至短暫上升交感。證據一致的是「持續做幾週」。所以答案不是哪一種，而是<b>慢、配呼吸、持續</b>。</div>
+  </div>
+  <div class="src">Montero-Marín J, et al. Aten Primaria 2013;45(7):376-383. Mueck-Weymann M, et al. Clin Auton Res 2004;14(1):15-18. Ko J, et al. J Phys Act Health 2021;18(1):21-28. de Witte M, et al. Health Psychol Rev 2020;14(2):294-324.</div>
+</section>
+<!-- 21 伸展細則 -->
+<section class="slide" data-title="減壓伸展的細則" data-note="這一頁是操作規格，可以請學員拍下來。
+最重要的三條：不憋氣、不彈震、痠不痛。
+對長者：停留可以拉長到 30 到 60 秒，因為組織彈性較低、需要較長時間；所有動作都有坐姿版本。">
+  <div class="tag">操作規格</div>
+  <h1>減壓伸展的<em>七條細則</em></h1>
+  <div class="body grid g2" style="gap:16px">
+    <ol class="steps" style="gap:12px">
+      <li><b>強度：</b>拉到「痠痠的、可以忍」就停，大約 10 分痛裡的 3 到 4 分。不追求更開。</li>
+      <li><b>時間：</b>每個姿勢停 15 到 30 秒；長者或較僵硬的人停 30 到 60 秒。</li>
+      <li><b>次數：</b>每個部位做 2 到 4 回，每週至少 2 到 3 天，每天更好。</li>
+      <li><b>呼吸：</b>吐氣時再鬆一點點。全程不憋氣。</li>
+    </ol>
+    <ol class="steps" style="gap:12px;counter-reset:s 4">
+      <li><b>速度：</b>慢慢進去、慢慢出來。不彈震、不甩。</li>
+      <li><b>注意力：</b>眼睛可以閉上，注意被拉開的那條肌肉的感覺。這就是把覺察放進伸展。</li>
+      <li><b>安全：</b>有關節置換、骨質疏鬆、急性發炎、剛手術的部位，先問醫師或治療師；頭暈立刻停。</li>
+    </ol>
+  </div>
+  <div class="src">依 ACSM Guidelines for Exercise Testing and Prescription（第 11 版）柔軟度運動建議整理；長者停留時間依 ACSM 老年人建議。</div>
+</section>
+<!-- 22 動態伸展 -->
+<section class="slide" data-title="實作：動態伸展六式" data-note="站著或坐著都可以。每式做 8 到 10 下，節奏像走路一樣，不用快。
+講師示範時嘴巴要一直講提示語，讓長輩跟得上。
+可以放一首大家熟悉的、節奏約 90 到 100 拍的歌當背景，讓氣氛動起來。">
+  <div class="tag">實作 ④ 動態伸展</div>
+  <h1>六式<em>把身體叫醒</em>，每式 8 到 10 下 <span class="mpill">🎵 熟悉快歌 90 到 100 拍・約 6 分鐘</span></h1>
+  <div class="body">
+    <div class="moves">
+      <div class="m"><div class="t"><span class="n">1</span>肩膀畫大圓</div><div>雙肩向後、向上、向前慢慢繞圈，再反方向。</div><div class="cue">提示：「像在把背包甩掉。」</div><div class="why">打開上斜方肌與胸口，最常緊繃的地方。</div></div>
+      <div class="m"><div class="t"><span class="n">2</span>手臂前後擺盪</div><div>雙臂放鬆，像走路一樣前後擺，幅度慢慢加大。</div><div class="cue">提示：「手臂是兩條繩子。」</div><div class="why">讓肩關節在無負重下活動。</div></div>
+      <div class="m"><div class="t"><span class="n">3</span>轉體看後面</div><div>雙手交疊胸前，上半身慢慢左轉、右轉，眼睛跟著看。</div><div class="cue">提示：「看看後面有誰。」</div><div class="why">活動胸椎與腰部，呼吸會變深。</div></div>
+      <div class="m"><div class="t"><span class="n">4</span>原地踏步抬膝</div><div>坐著或站著，交替抬膝，手臂自然擺動。</div><div class="cue">提示：「像在走去市場。」</div><div class="why">提升心跳與體溫，這就是「身體活動」。</div></div>
+      <div class="m"><div class="t"><span class="n">5</span>側彎摘果子</div><div>一手高舉向對側慢慢伸，像摘高處的東西，再換邊。</div><div class="cue">提示：「摘最上面那顆。」</div><div class="why">拉開側腰與肋間，讓肺有空間。</div></div>
+      <div class="m"><div class="t"><span class="n">6</span>腳踝畫圈、甩手</div><div>腳踝順逆各轉，再把雙手輕甩 10 秒。</div><div class="cue">提示：「把緊張從指尖甩出去。」</div><div class="why">末梢循環，也是一個「卸下」的儀式。</div></div>
+    </div>
+    <div class="note-box" style="margin-top:14px"><b>重點：</b>節奏像走路，不喘、不甩、不憋氣。做完問一句：「現在身體比剛剛醒了幾分？」</div>
+  </div>
+</section>
+<!-- 23 靜態伸展 -->
+<section class="slide" data-title="實作：靜態伸展六式" data-note="這是今天的主菜。換成慢音樂，燈可以稍微調暗。
+每式停 30 到 60 秒，講師帶呼吸：「吸……吐……吐的時候再鬆一點點。」
+每式之間停三秒，請大家感覺一下剛剛被拉開的地方。這就是伸展加覺察。">
+  <div class="tag">實作 ⑤ 靜態伸展＋慢呼吸</div>
+  <h1>六式<em>配吐氣放鬆</em>，每式停 30 到 60 秒 <span class="mpill">🎵 慢歌 60 到 80 拍・約 10 分鐘</span></h1>
+  <div class="body">
+    <div class="moves">
+      <div class="m"><div class="t"><span class="n">1</span>頸側伸展</div><div>右手輕放頭左側，頭慢慢向右倒，左肩往下沉。換邊。</div><div class="cue">吐氣：「肩膀往地板沉。」</div><div class="why">上斜方肌，壓力最愛住的地方。</div></div>
+      <div class="m"><div class="t"><span class="n">2</span>低頭看口袋</div><div>雙手交扣輕放後腦，頭慢慢低下，手不用壓，只是重量。</div><div class="cue">吐氣：「後頸慢慢變長。」</div><div class="why">後頸肌群，常與緊張性頭痛有關。</div></div>
+      <div class="m"><div class="t"><span class="n">3</span>開胸擴背</div><div>雙手在背後交扣（或各抓椅背），胸口向前、向上打開。</div><div class="cue">吸氣：「胸口打開。」</div><div class="why">反轉整天低頭含胸的姿勢，讓呼吸變深。</div></div>
+      <div class="m"><div class="t"><span class="n">4</span>坐姿抱膝扭轉</div><div>坐著，右腳跨左腿上（或踩地），身體向右轉，左手抱膝。換邊。</div><div class="cue">吐氣：「再轉一點點。」</div><div class="why">臀部與下背，久坐族必做。</div></div>
+      <div class="m"><div class="t"><span class="n">5</span>坐姿大腿後側</div><div>坐椅子前緣，一腳伸直腳跟著地，背打直從髖部前傾。換邊。</div><div class="cue">吐氣：「背是直的，往前倒。」</div><div class="why">大腿後側緊，骨盆與腰都會跟著緊。</div></div>
+      <div class="m"><div class="t"><span class="n">6</span>雙手上舉、整身嘆氣</div><div>吸氣雙手上舉，吐氣時「哈」一聲放下，全身垮下來。做三次。</div><div class="cue">「把今天的重量放下。」</div><div class="why">收尾的儀式，結合循環嘆息。</div></div>
+    </div>
+    <div class="note-box" style="margin-top:14px"><b>講師口令：</b>「吸……吐……吐的時候再鬆一點點。」每式之間停三秒，請大家感覺剛剛被拉開的那個地方。</div>
+  </div>
+</section>
+<!-- 24 音樂怎麼選 -->
+<section class="slide" data-title="音樂怎麼選" data-note="具體規格：動態伸展用 90 到 100 拍的熟悉歌曲；靜態伸展與按摩用 60 到 80 拍、沒有歌詞或大家很熟的慢歌。
+研究提示：由參與者自己選喜歡的音樂，效果不會比較差，長輩熟悉的台語老歌、鄧麗君都很適合。
+音量以「可以正常講話」為準。">
+  <div class="tag">音樂的規格</div>
+  <h1>音樂怎麼選，才能<em>幫忙放鬆</em>？</h1>
+  <div class="body grid g3">
+    <div class="card"><h3><span class="ic">🥁</span>節奏跟著目標走</h3><p><b>動態伸展：</b>約 90 到 100 拍，熟悉、想跟著動的歌。</p><p><b>靜態伸展、按摩：</b>約 60 到 80 拍，接近放鬆時的心跳。</p></div>
+    <div class="card"><h3><span class="ic">🎵</span>熟悉、喜歡最重要</h3><p>統合分析顯示音樂介入對壓力有效，而且<b>自己喜歡的音樂</b>效果不輸研究者挑的。</p><p>長輩熟的台語老歌、輕音樂、自然聲都可以。</p></div>
+    <div class="card"><h3><span class="ic">🔈</span>音量與歌詞</h3><p>音量以「可以正常講話」為準。靜態階段選<b>沒有歌詞或很熟的</b>，才不會搶走注意力。</p><p>音樂是背景，呼吸才是主角。</p></div>
+  </div>
+  <div class="note-box"><b>一句話：</b>動的時候用會想跟著動的歌，鬆的時候用會想閉眼睛的歌。</div>
+  <div class="src">de Witte M, et al. Effects of music interventions on stress-related outcomes. Health Psychol Rev 2020;14(2):294-324. 節拍範圍依該回顧與放鬆音樂研究常用區間整理。</div>
+</section>
+<!-- 音樂時間表 -->
+<section class="slide" data-title="今天的音樂時間表" data-note="這一頁給自己和助教看，課前把播放清單照段落排好。
+原則：有講解就不放；有動作就放；正念段全程安靜。音量以可以正常講話為準。
+每首歌約 4 分鐘，所以 12 分鐘的段落準備 3 首，6 分鐘準備 2 首。">
+  <div class="tag">講師用</div>
+  <h1>今天的<em>音樂時間表</em>：講解不放，動作才放</h1>
+  <div class="body">
+    <table class="tb compact">
+      <tr><th style="width:330px">段落</th><th style="width:110px">分鐘</th><th>音樂</th><th style="width:150px">節拍</th><th style="width:380px">提示</th></tr>
+      <tr><td>開場、先量一下</td><td>10</td><td>輕背景或不放</td><td>60 到 70</td><td>音量小，可講話</td></tr>
+      <tr><td>按摩實證與地圖</td><td>15</td><td>不放</td><td>—</td><td>講解段</td></tr>
+      <tr class="hi"><td>自我按摩五站（兩人一組）</td><td>12</td><td>慢歌，無歌詞或熟悉老歌輕音樂版</td><td>60 到 70</td><td>3 首，一站換一段</td></tr>
+      <tr class="hi"><td>還有哪裡可以按＋按摩球</td><td>12</td><td>同上</td><td>60 到 75</td><td>3 首</td></tr>
+      <tr><td>伸展實證</td><td>10</td><td>不放</td><td>—</td><td>講解段</td></tr>
+      <tr class="hi"><td>動態伸展六式</td><td>6</td><td>熟悉快歌，大家會想跟著動</td><td>90 到 100</td><td>2 首</td></tr>
+      <tr class="hi"><td>靜態伸展六式</td><td>10</td><td>慢歌</td><td>60 到 80</td><td>2 到 3 首，吐氣跟節拍</td></tr>
+      <tr><td>正念：定義、掃描、嘆息</td><td>20</td><td>不放，或自然聲</td><td>—</td><td>身體掃描全程安靜</td></tr>
+      <tr class="hi"><td>一首歌的音樂伸展收尾</td><td>5</td><td>一首大家會唱的歌</td><td>先快後慢</td><td>跟著歌曲段落走</td></tr>
+      <tr><td>再量一次、帶回家</td><td>10</td><td>輕背景</td><td>60 到 70</td><td>合計約 110 分鐘</td></tr>
+    </table>
+    <div class="note-box" style="margin-top:10px;font-size:22px;padding:12px 18px"><b>原則：</b>有講解就不放，有動作才放，正念段全程安靜。自己喜歡、熟悉的音樂效果不輸研究者挑的（de Witte 2020）。</div>
+  </div>
+</section>
+
+<!-- 第三部分 -->
+<section class="slide section" data-title="第三部分：正念" data-note="轉場。身體已經鬆了，現在把注意力帶回來。音樂關掉，燈可以調暗一點。
+先問：「剛剛按摩的時候，有沒有哪一刻你什麼都沒想，只注意到手的感覺？」那一刻就是正念。">
+  <img class="secph" src="img/breathing_park.jpg" alt="">
+  <div class="tag">第三部分</div>
+  <div class="num">03</div>
+  <h1>正念：把注意力帶回來</h1>
+  <p class="lead">剛剛按摩時「只注意到手的感覺」的那一刻，就是正念。它可以練，也量得到。</p>
+</section>
+
+<!-- 4a 什麼是正念 -->
+<section class="slide" data-title="什麼是正念？什麼是正念減壓？" data-note="先問全場：「有人上過正念課或用過正念 App 嗎？」
+用三個要素講定義，再用「不是什麼」破除誤解：不是放空、不是正向思考、不是宗教。
+MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程，所以研究做得最多；但它的核心練習（身體掃描、覺察呼吸）今天就會做。">
+  <div class="tag">先弄清楚名詞</div>
+  <h1>什麼是<em>正念</em>？什麼是<em>正念減壓</em>？</h1>
+  <div class="body grid g2">
+    <div class="card hi">
+      <h3><span class="ic">🧠</span>正念（Mindfulness）</h3>
+      <p>把注意力<b>有意地</b>放在<b>當下</b>正在發生的事，而且<b>不急著評價</b>。三個要素缺一不可。</p>
+      <p><span class="pill t">有意地</span>是我決定要注意，不是恍神。</p>
+      <p><span class="pill t">當下</span>注意現在的呼吸、身體、聲音，不是過去與未來。</p>
+      <p><span class="pill t">不評價</span>肩膀緊就是緊，不加一句「我真糟」。</p>
+      <p style="margin-top:8px"><b>它不是：</b>放空、正向思考、宗教儀式，也不是「把念頭趕走」。念頭來了，看見它，再回到呼吸，這一來一回就是練習。</p>
+    </div>
+    <div class="card teal">
+      <h3><span class="ic">🏥</span>正念減壓（MBSR）</h3>
+      <p>1979 年卡巴金（Jon Kabat-Zinn）在美國麻州大學醫學中心為慢性病與慢性疼痛患者設計的<b>標準化課程</b>，把正念從宗教脈絡拿出來，放進醫院。</p>
+      <p><b>標準格式：</b>8 週、每週一次約 2.5 小時團體課、一天靜修日、每天在家練習約 45 分鐘。</p>
+      <p><b>練什麼：</b>身體掃描、覺察呼吸的靜坐、正念瑜伽（緩慢伸展）、正念行走，以及把覺察帶進吃飯、洗碗等日常。</p>
+      <p>因為格式固定，全世界的研究做得最多，所以「正念有沒有效」的證據多半來自它。衍生版本 MBCT 用於預防憂鬱復發。</p>
+    </div>
+  </div>
+  <div class="src">Kabat-Zinn J. (1990) Full Catastrophe Living；Kabat-Zinn J. (2003) Clin Psychol Sci Pract 10(2):144-156。</div>
+</section>
+<!-- 4b 一定要很專業嗎 -->
+<section class="slide" data-title="正念一定要很專業嗎？日常怎麼做？" data-note="這是學員最關心的：我沒時間上八週課，怎麼辦？
+三個研究的訊息一致：時數不是關鍵，持續與日常化才是。
+右邊六個日常做法請現場挑一個，讓每個人說出「我要把它接在哪個既有習慣後面」，這叫習慣綁定，比立志更有效。">
+  <div class="tag">不用很專業</div>
+  <h1>一定要上八週課嗎？<em>不用</em>，但要<em>每天一點點</em></h1>
+  <div class="body grid g2">
+    <div style="display:grid;gap:10px">
+      <div class="card small" style="font-size:21px;padding:10px 16px;line-height:1.4"><h3>上課時數長短，效果差不多</h3><p>整理多個 MBSR 研究後發現，<b>課堂時數與效果量沒有顯著相關</b>，縮短版的課程仍有效。</p><p style="font-size:20px;color:var(--muted)">Carmody &amp; Baer 2009, J Clin Psychol</p></div>
+      <div class="card small" style="font-size:21px;padding:10px 16px;line-height:1.4"><h3>每天 13 分鐘，八週就有差</h3><p>沒有冥想經驗的成人每天跟著引導練 13 分鐘，<b>8 週</b>後注意力、記憶、情緒調節與焦慮都改善；4 週時還看不出來，所以要<b>持續</b>。</p><p style="font-size:20px;color:var(--muted)">Basso 等 2019, Behav Brain Res</p></div>
+      <div class="card small" style="font-size:21px;padding:10px 16px;line-height:1.4"><h3>連洗碗都可以</h3><p>只是「專心感受水溫、泡沫、碗的觸感」地洗碗，緊張感下降約 27%、靈感上升約 25%。</p><p style="font-size:20px;color:var(--muted)">Hanley 等 2015, Mindfulness</p></div>
+    </div>
+    <div class="card hi" style="padding:16px 22px">
+      <h3><span class="ic">🏠</span>日常生活怎麼結合：挑一個就好</h3>
+      <ul class="list" style="font-size:24px">
+        <li><b>刷牙、洗碗、洗澡</b>：一次只做這一件事，注意觸感、溫度、聲音。</li>
+        <li><b>紅燈、等車、排隊</b>：做三次慢呼吸，吐氣比吸氣長。</li>
+        <li><b>吃飯前三口</b>：放慢，注意味道與咀嚼。</li>
+        <li><b>走路</b>：感覺腳底踩地的感覺，走到門口為止。</li>
+        <li><b>心煩的時候</b>：STOP 四步，說出情緒的名字。</li>
+        <li><b>睡前</b>：躺著做三分鐘身體掃描。</li>
+      </ul>
+      <p style="margin-top:6px;font-size:24px"><b>習慣綁定：</b>把它接在一個你本來就會做的事後面，例如「倒完咖啡 → 三次呼吸」。分心不是失敗，發現分心就是練到了。</p>
+    </div>
+  </div>
+  <div class="src">Carmody J, Baer RA. J Clin Psychol 2009;65(6):627-638. Basso JC, et al. Behav Brain Res 2019;356:208-220. Hanley AW, et al. Mindfulness 2015;6:1095-1103.</div>
+</section>
+<!-- 5 正念有效嗎 -->
+<section class="slide" data-title="正念真的有效嗎？" data-note="先問全場：「你覺得正念有效嗎？」舉手。
+再公布：有效，但是「中等效果」，不是神藥。效果量 0.3 到 0.5 的意思是：平均來說，有做的人比沒做的人好一截，但不是每個人都一樣。
+講 Goyal 2014 是 JAMA 內科的大型回顧，Khoury 2015 專看健康人。">
+  <div class="tag">大哉問 ③</div>
+  <h1>正念真的有效嗎？</h1>
+  <div class="body verdict">
+    <div class="big"><div class="ans">有效<br><span style="font-size:40px">但是中等效果</span></div><div class="sub">對焦慮、憂鬱、壓力有一致的改善，效果大小屬「中等」，不是萬靈丹。</div></div>
+    <div class="rest">
+      <div class="card"><h3>Goyal 等 2014・JAMA Internal Medicine</h3><p>整理 <b>47 個隨機試驗、3,515 人</b>。正念冥想對焦慮（效果量約 0.38）、憂鬱（約 0.30）、疼痛有中等程度的證據。</p></div>
+      <div class="card"><h3>Khoury 等 2015・J Psychosom Res</h3><p>專看<b>健康人</b>的正念減壓（MBSR）：對壓力、焦慮、憂鬱有<b>中等程度</b>的改善，各研究差異大。</p></div>
+      <div class="card small teal"><p><b>為什麼是中等？</b>因為受試者多是健康人，起點本來就不高。用在<b>焦慮症與情緒疾患患者</b>身上，效果量達 0.97 與 0.95，屬於大效果（Hofmann 等 2010，39 研究）。效果量 0.2 小、0.5 中、0.8 大。</p></div>
+    </div>
+  </div>
+  <div class="src">Goyal M, et al. JAMA Intern Med 2014;174(3):357-368. Khoury B, et al. J Psychosom Res 2015;78(6):519-528. Hofmann SG, et al. J Consult Clin Psychol 2010;78(2):169-183.</div>
+</section>
+<!-- 12 覺察定義 -->
+<section class="slide" data-title="覺察是什麼" data-note="用 Kabat-Zinn 的定義，但翻成白話：「有意地注意現在，不急著評價」。
+對比三種狀態：想事情、評價、覺察。可用例子：肩膀痠。想事情＝「等一下要去買菜」；評價＝「我怎麼又痠了，真糟」；覺察＝「右邊肩膀有一股緊緊的、熱熱的感覺」。
+心思遊蕩 47% 的數字很好記，哈佛用手機 App 追蹤兩千多人得到的。">
+  <div class="tag">覺察的定義</div>
+  <h1>覺察＝<em>有意地注意現在</em>，不急著評價</h1>
+  <div class="body grid g2">
+    <div class="card teal">
+      <h3><span class="ic">💬</span>三種狀態，差在哪裡？</h3>
+      <p><span class="pill gray">想事情</span>肩膀痠的時候：「等一下還要去買菜、接孫子……」</p>
+      <p><span class="pill r">評價</span>「我怎麼又痠了，年紀大了真沒用。」</p>
+      <p><span class="pill g">覺察</span>「右邊肩膀有一股緊緊的、熱熱的感覺，呼吸的時候它會動。」</p>
+      <p style="margin-top:10px"><b>覺察只有第三種。</b>它描述，不解釋，也不罵自己。</p>
+    </div>
+    <div style="display:grid;gap:18px">
+      <div class="stat"><div class="n">47%</div><div class="u">清醒時間，心思不在當下</div><div class="d">哈佛用手機追蹤 2,250 人，發現心思遊蕩時，人比較不快樂，不管在想什麼。</div></div>
+      <div class="card small"><p><b>Kabat-Zinn 的原話：</b>「以特定的方式去注意：有意地、在當下、不帶評價。」覺察是一種<b>可以練的肌肉</b>，不是一種天分。</p></div>
+    </div>
+  </div>
+  <div class="src">Killingsworth MA, Gilbert DT. Science 2010;330:932. Kabat-Zinn J. (1994) Wherever You Go, There You Are.</div>
+</section>
+<!-- 13 我怎麼知道自己有在覺察 -->
+<section class="slide" data-title="我怎麼判斷自己有在覺察？" data-note="這是學員很常問的問題。用五個可以自我檢核的訊號，改寫自正念量表（FFMQ）的五個面向：觀察、描述、有意識地行動、不評價、不反應。
+請大家現場勾：剛剛那一分鐘，你做到了幾個？三個以上就已經在覺察了。
+強調「發現自己跑掉了，就是覺察」，很多人以為分心代表失敗，其實發現分心的那一刻就是成功。">
+  <div class="tag">自我檢核</div>
+  <h1>我怎麼知道自己<em>有在覺察</em>？五個訊號</h1>
+  <div class="body">
+    <div class="checks" id="awareChecks">
+      <label><input type="checkbox"><span><b>說得出身體感覺</b>：現在能講出三個身體感覺（例如腳底壓著地、呼吸在哪裡、哪裡緊）。</span></label>
+      <label><input type="checkbox"><span><b>抓得到跑掉的那一刻</b>：發現自己剛剛在想別的事，並且回來了。</span></label>
+      <label><input type="checkbox"><span><b>用描述代替批評</b>：心裡出現的是「肩膀緊緊的」，不是「我怎麼這麼糟」。</span></label>
+      <label><input type="checkbox"><span><b>感覺來了不急著反應</b>：有不舒服，但可以多看它幾秒再決定要不要動。</span></label>
+      <label><input type="checkbox"><span><b>知道自己正在做什麼</b>：吃飯知道在吃飯，走路知道在走路，不是自動駕駛。</span></label>
+      <label><input type="checkbox"><span><b>能分辨想法和事實</b>：「我一定做不好」是一個念頭，不是事情的結果。</span></label>
+    </div>
+    <div class="result" id="awareRes">勾選剛剛那一分鐘你做到的項目。</div>
+  </div>
+  <div class="src">改寫自 Baer RA, et al. (2006) Five Facet Mindfulness Questionnaire, Assessment 13(1):27-45 的五個面向。</div>
+</section>
+<!-- 14 覺察的步驟 -->
+<section class="slide" data-title="覺察的四個步驟 STOP" data-note="STOP 是正念減壓課程常用的口訣，好記、隨時可做。
+第三步「說出名字」有腦科學根據：Lieberman 2007 用 fMRI 發現，把情緒說出名字（「我現在很煩」），杏仁核的活動會下降。
+請全場一起做一次 STOP，大約 30 秒。">
+  <div class="tag">覺察的步驟</div>
+  <h1>四步口訣：<em>S・T・O・P</em></h1>
+  <div class="body grid g4">
+    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">S</span>Stop 停</h3><p>不管在做什麼，先停一秒。手放下、腳踩穩。</p><p><b>口訣：</b>「先停。」</p></div>
+    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">T</span>Take a breath 吸一口</h3><p>慢慢吸氣、更慢吐氣。吐氣比吸氣長，副交感就會啟動。</p><p><b>口訣：</b>「吐長一點。」</p></div>
+    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">O</span>Observe 看一看</h3><p>身體哪裡緊？心裡是什麼情緒？<b>說出名字</b>：「我現在很煩」「肩膀很緊」。</p><p><b>口訣：</b>「它叫什麼？」</p></div>
+    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">P</span>Proceed 再繼續</h3><p>帶著剛剛看到的，決定下一步：伸展一下、喝口水、或就繼續做。</p><p><b>口訣：</b>「我選擇。」</p></div>
+  </div>
+  <div class="note-box"><b>為什麼要說出名字？</b>腦造影研究發現，把情緒用語言標記出來，杏仁核（警報中心）的活動會下降，前額葉會接手。這叫「情緒標記」（affect labeling）。</div>
+  <div class="src">Lieberman MD, et al. Psychol Sci 2007;18(5):421-428. STOP 口訣出自正念減壓（MBSR）課程常用教材。</div>
+</section>
+<!-- 15 實作：60 秒 -->
+<section class="slide" data-title="實作：六十秒身體掃描" data-note="按下開始後，每十秒換一個部位。講師只要照螢幕的提示念，語速放慢。
+結束後問：「有人發現自己原本沒注意到的緊繃嗎？」通常會有人說下巴或肩膀。
+這就是覺察的直接體驗，不用解釋太多。">
+  <div class="tag">實作 ⑥ 　🔇 不放音樂或自然聲</div>
+  <h1>六十秒<em>身體掃描</em></h1>
+  <p class="lead">閉眼或看著地板都可以。不用放鬆它，只要注意它。</p>
+  <div class="body">
+    <div class="timer">
+      <div class="ring" id="scanRing"><span id="scanNum">60</span></div>
+      <div class="cue" id="scanCue">按下開始，跟著提示把注意力移到每個部位。<small>每十秒換一個部位：頭與臉、肩頸、胸與呼吸、肚子、雙手、雙腳。</small></div>
+    </div>
+    <div style="display:flex;gap:16px;margin-top:22px"><button class="btn o" id="scanStart">開始六十秒</button><button class="btn ghost" id="scanReset">重來</button></div>
+  </div>
+</section>
+<!-- 16 覺察的實證 -->
+<section class="slide" data-title="覺察的實證" data-note="這一頁回答「覺察真的有用嗎」。四個證據：情緒標記、身體掃描、短期訓練也有效、長期大腦變化。
+講到 Balban 2023 時可預告：下一頁就做「循環嘆息」，每天五分鐘就有效。">
+  <div class="tag">覺察的實證</div>
+  <h1>覺察不是玄學，<em>腦和身體都量得到</em></h1>
+  <div class="body grid g2">
+    <div class="card"><h3><span class="ic">🧠</span>說出情緒，警報就降</h3><p>用語言標記情緒時，杏仁核活動下降、右腹外側前額葉活動上升。這是「說出來就好一點」的腦科學版本。</p><p class="src-inline" style="font-size:20px;color:var(--muted)">Lieberman 2007, Psychol Sci</p></div>
+    <div class="card"><h3><span class="ic">🧘</span>八週課程，壓力中等改善</h3><p>正念減壓（MBSR）在健康人身上對壓力有中等效果；對焦慮、憂鬱也一致有效。</p><p style="font-size:20px;color:var(--muted)">Khoury 2015, J Psychosom Res；Goyal 2014, JAMA Intern Med</p></div>
+    <div class="card"><h3><span class="ic">🌬️</span>每天五分鐘呼吸，一個月見效</h3><p>隨機試驗比較三種呼吸法與正念冥想：每天五分鐘的<b>循環嘆息</b>（兩次吸、一次長吐）改善心情、降低呼吸速率的效果最好。</p><p style="font-size:20px;color:var(--muted)">Balban 2023, Cell Rep Med</p></div>
+    <div class="card"><h3><span class="ic">🫁</span>呼吸訓練降壓力</h3><p>12 個隨機試驗、785 人的統合分析：呼吸練習降低自評壓力，效果量約 0.35（小到中）。</p><p style="font-size:20px;color:var(--muted)">Fincham 2023, Sci Rep</p></div>
+  </div>
+  <div class="src">Lieberman MD, et al. 2007. Khoury B, et al. 2015. Balban MY, et al. Cell Rep Med 2023;4(1):100895. Fincham GW, et al. Sci Rep 2023;13:432.</div>
+</section>
+<!-- 17 實作：循環嘆息 -->
+<section class="slide" data-title="實作：循環嘆息" data-note="這是伸展前的暖身呼吸，也是今天最容易帶回家的技巧。
+動作：鼻子吸一口到七分滿，再快速補吸一小口到全滿，然後用嘴巴慢慢吐到底。吐氣要比吸氣長。
+按開始，跟著圓球做五輪，大約一分鐘。長輩若頭暈就改成一般慢呼吸。">
+  <div class="tag">實作 ⑦ 　🔇 不放音樂</div>
+  <h1><em>循環嘆息</em>：兩次吸，一次長吐</h1>
+  <div class="body">
+    <div class="breath">
+      <div class="orb"><div id="orb"></div></div>
+      <div class="cue" id="breathCue">按下開始，跟著圓球呼吸。<small>鼻子吸一口（七分滿）→ 再補吸一小口（全滿）→ 嘴巴慢慢吐到底。吐氣要比吸氣長。做五輪，約一分鐘。頭暈就停，改成一般慢呼吸。</small></div>
+    </div>
+    <div style="display:flex;gap:16px;margin-top:26px;align-items:center"><button class="btn o" id="breathStart">開始五輪</button><button class="btn ghost" id="breathStop">停止</button><span style="font-size:24px;color:var(--muted)">研究做法：每天五分鐘，連續一個月，心情改善幅度優於同時間的正念冥想。</span></div>
+  </div>
+  <div class="src">Balban MY, Neri E, Kogon MM, et al. Brief structured respiration practices enhance mood and reduce physiological arousal. Cell Rep Med 2023.</div>
+</section>
+<!-- 一首歌收尾 -->
+<section class="slide" data-title="收尾：一首歌的音樂伸展" data-note="挑一首約 4 分鐘、大家會唱、節奏中等的歌（台語老歌、鄧麗君都適合）。
+講師跟著歌曲段落喊口令，時間只是參考，依實際歌曲調整。
+這是今天最快樂的五分鐘，讓大家唱出來、動起來，笑聲是最好的放鬆指標。">
+  <div class="tag">實作 ⑧ 收尾 <span class="mpill">🎵 一首大家會唱的歌・約 4 到 5 分鐘</span></div>
+  <h1>收尾：<em>一首歌</em>，把今天的伸展串起來</h1>
+  <div class="body" style="flex-direction:row;gap:20px">
+    <table class="tb compact" style="flex:1">
+      <tr><th style="width:170px">歌曲段落</th><th style="width:150px">大約時間</th><th>動作（動態 → 靜態 → 嘆氣）</th><th style="width:230px">口令</th></tr>
+      <tr><td>前奏</td><td>0:00 到 0:20</td><td>坐直或站穩，三次慢呼吸，吐氣比吸氣長</td><td>「聽前奏，吐長一點」</td></tr>
+      <tr class="hi"><td>主歌 A</td><td>0:20 到 1:00</td><td>肩膀畫大圓 8 下、手臂前後擺盪 8 下</td><td>「把背包甩掉」</td></tr>
+      <tr class="hi"><td>副歌 1</td><td>1:00 到 1:40</td><td>原地踏步抬膝＋轉體看後面</td><td>「看看後面有誰」</td></tr>
+      <tr><td>主歌 B／間奏</td><td>1:40 到 2:30</td><td>頸側伸展，左右各停 20 秒（靜態）</td><td>「肩膀往地板沉」</td></tr>
+      <tr class="hi"><td>副歌 2</td><td>2:30 到 3:10</td><td>側彎摘果子＋開胸擴背</td><td>「摘最上面那顆」</td></tr>
+      <tr><td>尾奏</td><td>3:10 到結束</td><td>雙手上舉，吐氣「哈」整身放下，三次</td><td>「把今天的重量放下」</td></tr>
+    </table>
+    <div class="pcard" style="flex:0 0 400px"><img src="img/seniors_arms.jpg" alt="" style="height:380px"><div class="cap"><b>歌怎麼挑</b>：約 4 分鐘、大家會唱、中等節奏（約 80 到 90 拍）。唱出來也算呼吸練習。</div></div>
+  </div>
+</section>
+
+<!-- 8 共同機制 -->
+<section class="slide" data-title="三種方法的共同機制" data-note="這一頁把三個答案串起來：正念、按摩、運動看起來不同，其實都在按同一顆「關機鍵」，也就是迷走神經和副交感系統。
+講 HRV 可以用「心跳的彈性」比喻：彈性好的心跳，代表身體有能力在緊張後快速回到平靜。
+這頁講完，大家會理解為什麼今天的伸展和按摩都要「慢」、要「配呼吸」。">
+  <div class="tag">把三個答案串起來</div>
+  <h1>方法不同，<em>按的是同一顆關機鍵</em></h1>
+  <div class="body grid g3">
+    <div class="card"><h3><span class="ic">🫀</span>啟動副交感</h3><p>慢呼吸、中等力道的觸摸、緩慢伸展，都會提高迷走神經活性，表現為<b>心率變異（HRV）上升</b>、心跳下降。</p><p>HRV 可以想成「心跳的彈性」，彈性好，緊張後才回得來。</p></div>
+    <div class="card"><h3><span class="ic">🧠</span>把注意力拉回身體</h3><p>壓力多半來自「想過去、想未來」。注意呼吸、注意肌肉被拉開的感覺，大腦的預設模式網絡就會安靜下來。</p><p>這就是覺察在做的事。</p></div>
+    <div class="card"><h3><span class="ic">📉</span>把身體訊號調低</h3><p>肌肉放鬆、呼吸變慢，身體回傳給大腦的訊號是「沒事了」，大腦才願意解除備戰。</p><p>所以<b>身體先放鬆，情緒才跟得上</b>。</p></div>
+  </div>
+  <div class="note-box"><b>今天的設計原則：</b>慢、配合呼吸、中等力道、把注意力放在身體上。每一個動作都是在練這四件事。</div>
+  <div class="src">Thayer JF, Lane RD. (2009) Neurosci Biobehav Rev. Porges SW. (2007) Biol Psychol. 綜合整理。</div>
+</section>
+<!-- 7a 什麼才是效果大 -->
+<section class="slide" data-title="那什麼才是「效果大」？" data-note="學員會問：你都說中等，那什麼才是大的？這一頁直接回答。
+帶的時候先讓大家看「共同特徵」那一列：效果大的方法，不是更神奇，而是起點高、有人帶、身體直接參與。
+然後指出今天的課就是用這三個特徵設計的：慢呼吸是生理回饋的核心做法、動態伸展配音樂是跳舞的低門檻版、按摩是觸摸。
+跳舞那一項要誠實說：研究少、證據確定性低。">
+  <div class="tag">回答一個好問題</div>
+  <h1>那什麼才是「<em>效果大</em>」？效果量 0.8 以上的研究</h1>
+  <div class="body">
+    <table class="tb compact">
+      <tr><th style="width:250px">方法</th><th style="width:140px">效果量</th><th>研究</th><th style="width:300px">和今天的關係</th></tr>
+      <tr class="hi"><td>正念用在焦慮症、情緒疾患患者</td><td><b>0.97 / 0.95</b></td><td>39 研究、1,140 人。健康人約 0.5，患者約 1.0：症狀越明顯，改善空間越大（Hofmann 2010）。</td><td>同一套方法，起點不同結果不同；照顧者常是高起點。</td></tr>
+      <tr class="hi"><td>心率變異生理回饋<br>（每分鐘約 6 次的慢呼吸）</td><td><b>0.81 到 0.83</b></td><td>24 研究、484 人。自評壓力與焦慮大幅下降，與次數、有無焦慮症無關（Goessl 2017）。</td><td><span class="pill o">今天會做</span>吸 4 秒、吐 6 秒的慢呼吸，不用儀器。</td></tr>
+      <tr><td>認知行為型壓力管理課程</td><td><b>約 1.16</b></td><td>36 研究、55 種介入。整體 0.53，認知行為型遠高於放鬆型與組織型（Richardson &amp; Rothstein 2008）。</td><td>有人帶、有結構、有作業。STOP 是它的入門版。</td></tr>
+      <tr><td>跳舞（對憂鬱）</td><td><b>0.96</b> <span style="font-size:16px;color:var(--muted)">研究少</span></td><td>218 試驗。走路慢跑 0.62、瑜伽 0.55、肌力 0.49；跳舞最大但只有少數小型研究，確定性低（Noetel 2024）。</td><td><span class="pill o">今天會做</span>動態伸展配音樂，是跳舞的低門檻版。</td></tr>
+      <tr><td>觸摸與按摩（對皮質醇）</td><td><b>0.78</b></td><td>212 研究。皮質醇 0.78、疼痛 0.69、焦慮 0.64，頭臉部更好（Packheiser 2024）。</td><td><span class="pill o">今天會做</span>自我按摩五站，頭與後頸優先。</td></tr>
+      <tr><td>音樂治療（治療師帶）</td><td><b>0.72</b></td><td>比自己聽音樂的 0.38 到 0.55 大（de Witte 2022）。</td><td>第三堂藝術輔療會做。</td></tr>
+    </table>
+    <div class="note-box" style="margin-top:10px;font-size:22px;padding:12px 18px"><b>效果大的三個共同特徵：</b>起點高（症狀明顯的人進步多）、有人帶且有結構、身體直接參與（呼吸、跳舞、觸摸）。今天的課就是照這三點設計的。</div>
+  </div>
+  <div class="src">Hofmann SG, et al. 2010. Goessl VC, et al. Psychol Med 2017;47(15):2578-2586. Richardson KM, Rothstein HR. J Occup Health Psychol 2008;13(1):69-93. Noetel M, et al. BMJ 2024;384:e075847. Packheiser J, et al. 2024. de Witte M, et al. Health Psychol Rev 2022;16(1):134-159.</div>
+</section>
+<!-- 9 前十名 -->
+<section class="slide" data-title="研究中前十名的減壓技巧" data-note="這張榜單是依各統合分析的效果量由大到小整理，不是單一研究的排名，請誠實告訴學員：不同研究的族群不同，排名只是參考。
+請先讓大家猜第一名是什麼，再按下「揭曉」讓長條動起來。
+標了「今天會做」的，就是這堂課的內容。">
+  <div class="tag">研究怎麼排名</div>
+  <h1>依統合分析效果量排序的<em>前十名減壓技巧</em></h1>
+  <div class="body">
+    <div class="rank" id="rank"></div>
+    <div style="display:flex;gap:16px;align-items:center;margin-top:14px"><button class="btn o" id="rankBtn">揭曉排名</button><span style="font-size:22px;color:var(--muted)">長條長度代表效果量（0.2 小、0.5 中、0.8 大），不同研究的族群不同，排名僅供參考。</span></div>
+  </div>
+  <div class="src">Packheiser 2024；Singh 2023；Khoury 2015；de Witte 2020（Health Psychol Rev，104 個 RCT）；Manzoni 2008（BMC Psychiatry）；Pascoe 2017（Psychoneuroendocrinology）；Fincham 2023（Sci Rep）；Montero-Marín 2013；Hunter 2019（Front Psychol）；Holt-Lunstad 2010（PLoS Med）。</div>
+</section>
+<!-- 10 怎麼讀榜單 -->
+<section class="slide" data-title="怎麼讀這張榜單" data-note="避免大家回去只做第一名。
+三個提醒：效果量是平均值；次數比時間長重要（Packheiser 2024）；最有效的方法永遠是你會持續做的那一個。
+可以問：「哪一個你覺得自己做得到、而且會做？」">
+  <div class="tag">榜單的三個提醒</div>
+  <h1>最好的技巧，是<em>你會持續做</em>的那一個</h1>
+  <div class="body grid g3">
+    <div class="card hi"><h3><span class="ic">📏</span>效果量是「平均」</h3><p>0.5 的意思是：有做的人平均比沒做的人好半個標準差。有人幫助很大，有人沒感覺。</p><p>所以要<b>自己試、自己量</b>，今天最後會再量一次。</p></div>
+    <div class="card hi"><h3><span class="ic">🔁</span>次數比時間長重要</h3><p>觸摸研究發現：<b>做幾次</b>比<b>每次做多久</b>更能預測效果。</p><p>每天十分鐘，勝過每月一次兩小時。</p></div>
+    <div class="card hi"><h3><span class="ic">🧩</span>組合比單一強</h3><p>今天的課刻意把<b>覺察 ＋ 呼吸 ＋ 伸展 ＋ 按摩 ＋ 音樂</b>疊在一起。</p><p>它們按的是同一顆關機鍵，疊起來更容易按到。</p></div>
+  </div>
+  <div class="note-box"><b>問自己一句：</b>榜單上哪一個，是我明天早上起來真的會做的？那個就是你的第一名。</div>
+</section>
 <!-- 32 再量一次 -->
 <section class="slide" data-title="再量一次：現在幾分" data-note="請大家再閉眼三秒，感覺肩膀、下巴、眉頭，選一個數字。
 點完會自動和一開始比較。請幾位分享差了幾分、哪裡最有感。
@@ -947,7 +1017,6 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
     <div class="note-box"><b>沒變也沒關係：</b>能誠實說出「我還是 7 分」，本身就是覺察。有些人的身體需要多做幾次才會相信「可以放鬆了」。</div>
   </div>
 </section>
-
 <!-- 33 帶回家 -->
 <section class="slide" data-title="帶回家：每天十分鐘" data-note="把今天的內容濃縮成每天十分鐘的菜單，請學員拍照。
 強調：做幾次比做多久重要；哪一個做得到就先做哪一個。
@@ -963,7 +1032,6 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
   <div class="note-box" style="margin-top:22px"><b>只記三句話：</b>做幾次比做多久重要。慢、配吐氣、中等力道。最好的方法是你明天真的會做的那一個。</div>
   <div class="src">下一堂：身心修復｜練習身心運動，找回天然的自癒力。聯絡人：許晊豪老師。</div>
 </section>
-
 <!-- 參考文獻（一） -->
 <section class="slide" data-title="參考文獻（一）" data-note="這幾頁給想深入的老師和學生看，不用逐條講。可以說：「今天每一個數字，都查得到。」">
   <div class="tag">參考文獻</div>
@@ -982,7 +1050,6 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
     <p>Goessl VC, Curtiss JE, Hofmann SG. The effect of heart rate variability biofeedback training on stress and anxiety: a meta-analysis. Psychol Med. 2017;47(15):2578-2586.</p>
   </div>
 </section>
-
 <!-- 參考文獻（二） -->
 <section class="slide" data-title="參考文獻（二）" data-note="同上。若有學員想要文獻清單，可將網址直接分享。">
   <div class="tag">參考文獻</div>
@@ -1001,7 +1068,6 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
     <p>Meier M, Unternaehrer E, Dimitroff SJ, et al. Standardized massage interventions as protocols for the induction of psychophysiological relaxation in the laboratory. Sci Rep. 2020;10:14774.</p>
   </div>
 </section>
-
 <!-- 參考文獻（三） -->
 <section class="slide" data-title="參考文獻（三）" data-note="同上。若有學員想要文獻清單，可將網址直接分享。">
   <div class="tag">參考文獻</div>
@@ -1018,13 +1084,32 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
     <p>Wiewelhove T, Döweling A, Schneider C, et al. A meta-analysis of the effects of foam rolling on performance and recovery. Front Physiol. 2019;10:376.</p>
   </div>
 </section>
+<!-- 圖片來源 -->
+<section class="slide" data-title="圖片來源" data-note="不用講。圖片皆來自 Pexels，授權可免費用於教學，不需署名。">
+  <div class="tag">圖片來源</div>
+  <h1>圖片來源</h1>
+  <div class="body ref" style="font-size:19px;columns:2">
+    <p>照片皆取自 Pexels（pexels.com），依 Pexels 授權可免費使用於教學簡報，不需署名；此處仍列出原始網址以便查核。</p>
+    <p>封面長者坐姿運動課：pexels.com/photo/11674390</p>
+    <p>第一部分肩頸按摩：pexels.com/photo/7235054</p>
+    <p>第二部分長者伸展：pexels.com/photo/6815695</p>
+    <p>第三部分戶外呼吸：pexels.com/photo/40266639</p>
+    <p>自己按後頸：pexels.com/photo/4506105</p>
+    <p>頭皮按摩：pexels.com/photo/6663371</p>
+    <p>手部按摩：pexels.com/photo/3865552</p>
+    <p>腳底自我按摩：pexels.com/photo/13716991</p>
+    <p>按摩球靠牆：pexels.com/photo/4498299</p>
+    <p>刺球：pexels.com/photo/11170468</p>
+    <p>收尾長者舉手伸展：pexels.com/photo/6975769</p>
+  </div>
+</section>
 
 <!-- 導覽列 -->
 <div id="bar">
   <div class="l"><span class="brand">愛迪樂 × 耕莘 USR</span><button id="tocBtn">目錄 <span class="kbd">M</span></button></div>
   <div class="r">
     <button id="prevBtn">◀ 上一頁</button>
-    <span class="cnt" id="cnt">1 / 41</span>
+    <span class="cnt" id="cnt">1 / 46</span>
     <button id="nextBtn">下一頁 ▶</button>
     <button id="noteBtn">講師提示 <span class="kbd">N</span></button>
     <button id="fsBtn">全螢幕 <span class="kbd">F</span></button>
