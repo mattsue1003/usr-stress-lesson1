@@ -34,6 +34,10 @@ h2{font-size:34px;font-weight:700;color:var(--ink);margin-bottom:12px}
 .lead{font-size:30px;line-height:1.55;color:var(--muted);margin-bottom:22px}
 .lead b,.card b,.row b{color:var(--orange);font-weight:700}
 .body{flex:1;display:flex;flex-direction:column;min-height:0}
+.fitwrap{flex:1;display:flex;flex-direction:column;min-height:0}
+.fitwrap.measure{flex:none!important;height:auto!important}
+#stage.nofx .slide.active{animation:none}
+.grid>.card{display:flex;flex-direction:column;justify-content:center}
 .src{position:absolute;left:96px;right:96px;bottom:70px;font-size:17px;color:var(--muted);line-height:1.35;max-height:48px;overflow:hidden}
 .src::before{content:"來源：";font-weight:700;color:var(--teal)}
 .grid{display:grid;gap:22px}
@@ -164,7 +168,7 @@ table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
 .timer .ring{width:300px;height:300px;border-radius:50%;background:conic-gradient(var(--orange) var(--p,0%),#E7E0F1 0);display:flex;align-items:center;justify-content:center;flex:none;position:relative}
 .timer .ring::after{content:"";position:absolute;inset:22px;border-radius:50%;background:#fff}
 .timer .ring span{position:relative;font-size:84px;font-weight:900;color:var(--ink);font-variant-numeric:tabular-nums}
-.timer .cue{flex:1;background:#fff;border:2px solid var(--line);border-radius:24px;padding:28px 32px;font-size:40px;font-weight:700;line-height:1.4;min-height:220px;display:flex;align-items:center;box-shadow:var(--shadow)}
+.timer .cue{flex:1;background:#fff;border:2px solid var(--line);border-radius:24px;padding:28px 32px;font-size:40px;font-weight:700;line-height:1.4;min-height:220px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow)}
 .timer .cue small{display:block;font-size:24px;color:var(--muted);font-weight:400;margin-top:10px}
 .btn{background:var(--teal);color:#fff;border:none;border-radius:14px;padding:12px 28px;font-size:26px;font-weight:700;box-shadow:var(--shadow)}
 .btn.o{background:var(--orange)}
@@ -956,6 +960,38 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
     setTimeout(()=>showModal(i===ans?'答對了！'+title:'正確答案：'+title,body),700);});}
   quiz('q1',1,'B 動作慢、配合呼吸、持續做','研究一致看到效果的，是<b>持續數週、每天 10 到 15 分鐘、慢速配呼吸</b>的伸展：焦慮下降、心率變異上升、血壓下降。<br><br>拉得太痠會啟動交感神經，反而是在「備戰」。動態與靜態都有角色，但真正啟動放鬆的是<b>慢、吐氣、停留</b>。');
   quiz('q2',1,'B 中等力道，舒服的痠','Diego 與 Field 2004 比較輕壓與中壓：<b>中等力道</b>的人心跳下降、腦波出現放鬆型態、自評壓力下降最多；<b>輕撫</b>的人反而心跳上升、更清醒。<br><br>太痛會啟動交感神經與防衛。所以記住：壓下去皮膚會凹、覺得「舒服的痠」，就是對的力道。');
+
+  /* 依剩餘空間自動放大內容（最多 1.4 倍），避免頁面下方大片留白 */
+  function fitAll(){
+    const act=slides.find(x=>x.classList.contains('active'))||slides[0];
+    stage.classList.add('nofx');
+    slides.forEach(s=>{
+      const body=s.querySelector(':scope > .body'); if(!body) return;
+      let w=body.querySelector(':scope > .fitwrap');
+      if(!w){
+        w=document.createElement('div'); w.className='fitwrap';
+        [...body.classList].forEach(c=>{ if(c!=='body'){ w.classList.add(c); body.classList.remove(c);} });
+        const st=body.getAttribute('style'); if(st){ w.setAttribute('style',st); body.removeAttribute('style'); }
+        while(body.firstChild) w.appendChild(body.firstChild);
+        body.appendChild(w);
+      }
+      slides.forEach(x=>x.classList.remove('active')); s.classList.add('active');
+      const fits=z=>{
+        w.style.zoom=z.toFixed(3); w.classList.add('measure');
+        const H=w.getBoundingClientRect().height, A=body.getBoundingClientRect().height;
+        const wideOK=w.scrollWidth<=w.clientWidth+1;
+        w.classList.remove('measure');
+        return H<=A*0.97 && wideOK;
+      };
+      let lo=1, hi=1.4;
+      if(!fits(1)){ w.style.zoom='1'; return; }
+      for(let k=0;k<8;k++){ const mid=(lo+hi)/2; if(fits(mid)) lo=mid; else hi=mid; }
+      w.style.zoom=lo.toFixed(3);
+    });
+    slides.forEach(x=>x.classList.remove('active')); act.classList.add('active');
+    stage.classList.remove('nofx');
+  }
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fitAll);
 
   /* 起始頁 */
   const h=location.hash.match(/#\/(\d+)/);go(h?+h[1]-1:0);
