@@ -107,7 +107,11 @@ table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
 /* 導覽列 */
 #bar{position:fixed;left:0;right:0;bottom:0;height:60px;background:rgba(43,27,61,.94);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:20px;z-index:50;backdrop-filter:blur(6px)}
 #bar .l,#bar .r{display:flex;align-items:center;gap:10px}
-#bar button{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:10px;padding:7px 14px;font-size:19px;font-weight:700}
+#bar button{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:10px;padding:7px 14px;font-size:19px;font-weight:700;white-space:nowrap;flex:none}
+#bar .l,#bar .r{flex-wrap:nowrap;min-width:0}
+#bar .brand{white-space:nowrap}
+@media (max-width:1100px){#bar .brand{display:none}#bar button{padding:6px 10px;font-size:16px}#bar .kbd{display:none}#bar .cnt{min-width:64px;font-size:16px}}
+@media (max-width:700px){#bar .dsk{display:none}#bar #viewBtn{display:none}}
 #bar button:hover{background:var(--orange);border-color:var(--orange)}
 #bar .brand{font-weight:700;color:var(--amber);letter-spacing:.05em}
 #bar .cnt{font-variant-numeric:tabular-nums;font-weight:700;min-width:90px;text-align:center}
@@ -267,7 +271,12 @@ body.mobile table.tb{display:block;overflow-x:auto;-webkit-overflow-scrolling:to
 body.mobile table.tb th,body.mobile table.tb td{white-space:normal;min-width:120px}
 body.mobile #bar{height:56px;padding:0 8px;font-size:16px}
 body.mobile #bar .brand,body.mobile .kbd,body.mobile #bar .dsk{display:none}
-body.mobile #bar button{padding:9px 12px;font-size:16px}
+body.mobile #bar button{padding:9px 10px;font-size:16px}
+#bar .short{display:none}
+body.mobile #bar .long{display:none}
+body.mobile #bar .short{display:inline}
+body.mobile #bar .l,body.mobile #bar .r{gap:6px}
+body.mobile #bar{justify-content:space-between}
 body.mobile #bar .cnt{min-width:64px;font-size:16px}
 body.mobile #notes{width:100%;bottom:56px;top:auto;height:60vh;border-left:0;border-top:6px solid var(--orange);transform:translateY(calc(100% + 60px))}
 body.mobile #notes.open{transform:none}
@@ -964,12 +973,12 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
   <div class="tag">實作 ⑤ 延伸 <span class="mpill">🎵 慢歌 60 到 80 拍・約 5 分鐘</span></div>
   <h1>腿後伸展：<em>椅子、牆、毛巾</em>都可以</h1>
   <div class="body" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
-    <div class="pcard"><img src="img/ham_floor.jpg" alt="" style="height:165px"><div class="cap" style="font-size:20px;padding:8px 12px"><b>椅子版（坐姿）</b><br>坐椅前緣，一腿伸直腳跟著地、腳尖勾起，背打直從髖部前傾，停 30 到 60 秒。</div></div>
-    <div class="pcard"><img src="img/ham_towel_seated.jpg" alt="" style="height:165px"><div class="cap" style="font-size:20px;padding:8px 12px"><b>毛巾版（坐姿）</b><br>毛巾繞過腳掌，雙手拉毛巾、背打直往前帶，腳尖往自己勾。</div></div>
-    <div class="pcard"><img src="img/ham_towel_lying.jpg" alt="" style="height:165px"><div class="cap" style="font-size:20px;padding:8px 12px"><b>毛巾版（躺姿）</b><br>平躺，毛巾繞腳掌把腿拉向天花板，另一腿彎曲踩地，膝蓋可微彎。</div></div>
-    <div class="pcard"><img src="img/legs_wall.jpg" alt="" style="height:165px"><div class="cap" style="font-size:20px;padding:8px 12px"><b>牆版（躺姿）</b><br>臀部靠牆，雙腿靠牆上舉 1 到 2 分鐘；想加強就把腳尖勾起。</div></div>
-    <div class="pcard"><img src="img/calf_wall.jpg" alt="" style="height:165px"><div class="cap" style="font-size:20px;padding:8px 12px"><b>牆版（站姿，小腿）</b><br>雙手推牆，後腳跟踩地、膝伸直，前膝微彎，停 30 秒換腳。</div></div>
-    <div class="pcard"><img src="img/wall_hinge.jpg" alt="" style="height:165px"><div class="cap" style="font-size:20px;padding:8px 12px"><b>桌子或牆版（站姿）</b><br>雙手扶桌或牆，臀部往後推、背打直成 L 形，腿後與背一起拉開，停 30 秒。</div></div>
+    <div class="pcard"><img src="img/ham_floor.jpg" alt="" style="height:135px"><div class="cap" style="font-size:19px;padding:7px 11px;line-height:1.4"><b>椅子版（坐姿）</b><br>坐椅前緣，一腿伸直腳跟著地、腳尖勾起，背打直從髖部前傾，停 30 到 60 秒。</div></div>
+    <div class="pcard"><img src="img/ham_towel_seated.jpg" alt="" style="height:135px"><div class="cap" style="font-size:19px;padding:7px 11px;line-height:1.4"><b>毛巾版（坐姿）</b><br>毛巾繞過腳掌，雙手拉毛巾、背打直往前帶，腳尖往自己勾。</div></div>
+    <div class="pcard"><img src="img/ham_towel_lying.jpg" alt="" style="height:135px"><div class="cap" style="font-size:19px;padding:7px 11px;line-height:1.4"><b>毛巾版（躺姿）</b><br>平躺，毛巾繞腳掌把腿拉向天花板，另一腿彎曲踩地，膝蓋可微彎。</div></div>
+    <div class="pcard"><img src="img/legs_wall.jpg" alt="" style="height:135px"><div class="cap" style="font-size:19px;padding:7px 11px;line-height:1.4"><b>牆版（躺姿）</b><br>臀部靠牆，雙腿靠牆上舉 1 到 2 分鐘；想加強就把腳尖勾起。</div></div>
+    <div class="pcard"><img src="img/calf_wall.jpg" alt="" style="height:135px"><div class="cap" style="font-size:19px;padding:7px 11px;line-height:1.4"><b>牆版（站姿，小腿）</b><br>雙手推牆，後腳跟踩地、膝伸直，前膝微彎，停 30 秒換腳。</div></div>
+    <div class="pcard"><img src="img/wall_hinge.jpg" alt="" style="height:135px"><div class="cap" style="font-size:19px;padding:7px 11px;line-height:1.4"><b>桌子或牆版（站姿）</b><br>雙手扶桌或牆，臀部往後推、背打直成 L 形，腿後與背一起拉開，停 30 秒。</div></div>
     <div class="card teal" style="grid-column:span 2;font-size:21px;padding:14px 16px"><h3 style="font-size:23px">要點</h3><p>背要直，從<b>髖部</b>前傾，不是彎腰去碰腳。腳尖往自己勾會更有感。每種停 30 到 60 秒、每腿 2 回，吐氣時再鬆一點。長輩優先椅子版與毛巾坐姿版。</p></div>
   </div>
 </section>
@@ -1392,10 +1401,10 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
 <div id="bar">
   <div class="l"><span class="brand">愛迪樂 × 耕莘 USR</span><button id="tocBtn">目錄 <span class="kbd">M</span></button><button id="viewBtn" title="切換手機版與投影版">版面：投影</button></div>
   <div class="r">
-    <button id="prevBtn">◀ 上一頁</button>
+    <button id="prevBtn"><span class="long">◀ 上一頁</span><span class="short">◀</span></button>
     <span class="cnt" id="cnt">1 / 54</span>
-    <button id="nextBtn">下一頁 ▶</button>
-    <button id="noteBtn">講師提示 <span class="kbd">N</span></button>
+    <button id="nextBtn"><span class="long">下一頁 ▶</span><span class="short">▶</span></button>
+    <button id="noteBtn"><span class="long">講師提示</span><span class="short">提示</span> <span class="kbd">N</span></button>
     <button id="fsBtn" class="dsk">全螢幕 <span class="kbd">F</span></button>
   </div>
 </div>
