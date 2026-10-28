@@ -90,7 +90,7 @@ table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
 .warn b{color:var(--orange)}
 
 /* 封面與章節 */
-.cover{background:radial-gradient(1200px 700px at 20% 10%,#E6DCF4 0%,var(--cream) 55%);justify-content:center;padding:80px 120px}
+.cover{background:radial-gradient(1200px 700px at 20% 10%,#E6DCF4 0%,var(--cream) 55%);justify-content:flex-start;padding:110px 120px 80px}
 .cover .kicker{font-size:28px;color:var(--teal);font-weight:700;letter-spacing:.1em;margin-bottom:18px}
 .cover h1{font-size:92px;line-height:1.15;margin-bottom:20px}
 .cover .sub{font-size:36px;color:var(--muted);line-height:1.5;margin-bottom:40px}
@@ -289,6 +289,14 @@ body.mobile #modal .b{font-size:20px}
 body.mobile #rotateTip{display:flex;position:fixed;left:12px;right:12px;bottom:66px;z-index:95;background:rgba(43,27,61,.92);color:#fff;border-radius:14px;padding:10px 14px;font-size:15px;align-items:center;gap:10px}
 body.mobile #rotateTip button{margin-left:auto;background:rgba(255,255,255,.15);border:none;color:#fff;border-radius:8px;padding:6px 10px;font-size:14px}
 body.mobile.landscape #rotateTip,body.mobile.tipoff #rotateTip{display:none}
+
+.qrbox{position:absolute;left:120px;bottom:56px;display:flex;align-items:center;gap:16px;background:#fff;border:2px solid var(--line);border-radius:18px;padding:10px 18px 10px 10px;box-shadow:var(--shadow);z-index:2}
+.qrbox img{width:120px;height:120px;display:block;border-radius:8px}
+.qrbox b{display:block;font-size:24px;color:var(--ink)}
+.qrbox small{display:block;font-size:16px;color:var(--muted);margin-top:4px}
+.qrnote{display:flex;align-items:center;gap:18px}
+.qrnote img{width:118px;height:118px;flex:none;border-radius:8px;border:2px solid var(--line);background:#fff}
+body.mobile .qrbox{position:static;margin-top:16px;width:fit-content}
 </style>
 </head>
 <body>
@@ -304,6 +312,7 @@ body.mobile.landscape #rotateTip,body.mobile.tipoff #rotateTip{display:none}
   <h1>覺察壓力<br><em>卸下負擔</em></h1>
   <div class="sub">動態伸展與按摩放鬆的實證與實作<br>掌握真正有研究支持的身心減壓技巧</div>
   <div class="meta"><span>🏫 耕莘專校宜蘭校區</span><span>👥 老師・學生・長照夥伴・社區長者</span><span>💜 愛迪樂</span></div>
+  <div class="qrbox"><img src="img/qr.png" alt="QR code"><div><b>掃描帶走簡報</b><small>mattsue1003.github.io/usr-stress-lesson1</small></div></div>
 </section>
 <!-- 2 今天的路線 -->
 <section class="slide" data-title="今天的路線" data-note="講清楚今天的節奏：先動手按摩，身體暖了再講研究；伸展配音樂；正念放最後收心。
@@ -1317,7 +1326,7 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
     <div class="stat"><div class="n">4<span style="font-size:30px">分</span></div><div class="u">伸展</div><div class="d">動態 1 分鐘叫醒，靜態 3 式各 40 秒配吐氣。</div></div>
     <div class="stat"><div class="n">3<span style="font-size:30px">分</span></div><div class="u">自我按摩</div><div class="d">頭皮、後頸、肩膀各一分鐘，中等力道、慢。</div></div>
   </div>
-  <div class="note-box" style="margin-top:22px"><b>只記三句話：</b>做幾次比做多久重要。慢、配吐氣、中等力道。最好的方法是你明天真的會做的那一個。</div>
+  <div class="note-box qrnote" style="margin-top:22px"><img src="img/qr.png" alt="QR code"><div><b>只記三句話：</b>做幾次比做多久重要。慢、配吐氣、中等力道。最好的方法是你明天真的會做的那一個。<br><b>掃描帶走簡報：</b>mattsue1003.github.io/usr-stress-lesson1</div></div>
   <div class="src">下一堂：身心修復｜練習身心運動，找回天然的自癒力。聯絡人：許晊豪老師。</div>
 </section>
 <!-- 參考文獻（一） -->
