@@ -19,7 +19,7 @@ html,body{height:100%;background:var(--ink);font-family:"Noto Sans TC","Microsof
 button{font-family:inherit;cursor:pointer}
 
 /* ---------- 舞台與縮放 ---------- */
-#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--ink)}
+#viewport{position:fixed;inset:0;bottom:60px;display:flex;align-items:center;justify-content:center;background:var(--ink)}
 #stage{width:1600px;height:900px;flex:none;position:relative;background:var(--cream);transform-origin:center center;box-shadow:0 0 0 1px rgba(255,255,255,.06);overflow:hidden}
 .slide{position:absolute;inset:0;padding:60px 96px 126px;display:none;flex-direction:column;background:var(--cream)}
 .slide.active{display:flex;animation:fade .35s ease}
@@ -68,6 +68,7 @@ table.tb th{background:var(--ink);color:#fff;padding:10px 16px;text-align:left;f
 table.tb td{padding:10px 16px;border-top:1px solid var(--line);vertical-align:top;line-height:1.45}
 table.tb tr.hi td{background:var(--sand)}
 table.tb.compact td,table.tb.compact th{padding:8px 14px;font-size:20px;line-height:1.4}
+table.tb.tight td,table.tb.tight th{padding:6px 14px;font-size:19px}
 table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
 .verdict{display:flex;flex-direction:row!important;gap:26px;align-items:stretch}
 .verdict .big{flex:0 0 420px;background:var(--ink);color:#fff;border-radius:26px;padding:30px;display:flex;flex-direction:column;justify-content:center;gap:10px}
@@ -104,16 +105,16 @@ table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
 .section .tag{color:var(--amber)}
 
 /* 導覽列 */
-#bar{position:absolute;left:0;right:0;bottom:0;height:60px;background:rgba(43,27,61,.94);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:20px;z-index:50;backdrop-filter:blur(6px)}
+#bar{position:fixed;left:0;right:0;bottom:0;height:60px;background:rgba(43,27,61,.94);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:20px;z-index:50;backdrop-filter:blur(6px)}
 #bar .l,#bar .r{display:flex;align-items:center;gap:10px}
 #bar button{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:10px;padding:7px 14px;font-size:19px;font-weight:700}
 #bar button:hover{background:var(--orange);border-color:var(--orange)}
 #bar .brand{font-weight:700;color:var(--amber);letter-spacing:.05em}
 #bar .cnt{font-variant-numeric:tabular-nums;font-weight:700;min-width:90px;text-align:center}
-#prog{position:absolute;left:0;top:0;height:8px;background:var(--orange);width:0;z-index:60;transition:width .3s}
+#prog{position:fixed;left:0;top:0;height:8px;background:var(--orange);width:0;z-index:60;transition:width .3s}
 
 /* 講師提示抽屜 */
-#notes{position:absolute;top:0;right:0;bottom:60px;width:480px;background:#fff;border-left:6px solid var(--orange);box-shadow:-10px 0 30px rgba(0,0,0,.15);transform:translateX(100%);transition:transform .25s;z-index:70;display:flex;flex-direction:column}
+#notes{position:fixed;top:0;right:0;bottom:60px;width:480px;background:#fff;border-left:6px solid var(--orange);box-shadow:-10px 0 30px rgba(0,0,0,.15);transform:translateX(100%);transition:transform .25s;z-index:70;display:flex;flex-direction:column}
 #notes.open{transform:none}
 #notes header{background:var(--sand);color:var(--ink);font-weight:900;font-size:22px;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
 #notes header button{background:transparent;border:none;font-size:26px;color:var(--ink)}
@@ -121,7 +122,7 @@ table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
 #notes .nb b{color:var(--orange)}
 
 /* 目錄 */
-#toc{position:absolute;inset:0;background:rgba(43,27,61,.96);z-index:80;display:none;padding:50px 80px 80px;color:#fff;overflow:auto}
+#toc{position:fixed;inset:0;bottom:60px;background:rgba(43,27,61,.96);z-index:80;display:none;padding:50px 80px 80px;color:#fff;overflow:auto}
 #toc.open{display:block}
 #toc h2{color:var(--amber);font-size:36px;margin-bottom:20px}
 #toc .items{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 24px}
@@ -131,7 +132,7 @@ table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
 #toc .close{position:absolute;top:24px;right:36px;font-size:40px;background:none;border:none;color:#fff}
 
 /* 彈窗 */
-#modal{position:absolute;inset:0;background:rgba(43,27,61,.55);z-index:90;display:none;align-items:center;justify-content:center}
+#modal{position:fixed;inset:0;background:rgba(43,27,61,.55);z-index:90;display:none;align-items:center;justify-content:center}
 #modal.open{display:flex}
 #modal .box{width:900px;max-width:90%;background:#fff;border-radius:30px;padding:40px 46px;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:pop .3s ease}
 @keyframes pop{from{transform:scale(.9);opacity:0}to{transform:none;opacity:1}}
@@ -224,18 +225,72 @@ table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
 .pcard .cap{padding:12px 16px;font-size:22px;line-height:1.45}
 .pcard .cap b{color:var(--teal)}
 .mpill{display:inline-flex;align-items:center;gap:8px;background:var(--mist);border:2px solid #CFC3E6;border-radius:999px;padding:4px 16px;font-size:21px;font-weight:700;color:var(--teal);margin-left:12px;vertical-align:middle}
+
+/* ---------- 手機版 ---------- */
+#rotateTip{display:none}
+body.mobile{overflow:auto;background:var(--cream)}
+body.mobile #viewport{position:static;display:block;background:var(--cream);padding-bottom:70px}
+body.mobile #stage{width:100%;height:auto;transform:none!important;box-shadow:none;overflow:visible}
+body.mobile .slide{position:relative;inset:auto;height:auto;min-height:0;padding:18px 16px 24px;zoom:.62}
+body.mobile .slide.active{display:flex;animation:none}
+body.mobile .fitwrap{zoom:1!important;flex:none}
+body.mobile .body{flex:none}
+body.mobile .fitwrap[style],body.mobile .body[style]{flex-direction:column!important;align-items:stretch!important}
+body.mobile .fitwrap>div[style],body.mobile .fitwrap>ol[style],body.mobile .fitwrap>table[style],body.mobile .body>div[style],body.mobile .body>ol[style],body.mobile .body>table[style],body.mobile .body>.pcard[style]{flex:none!important;width:auto!important}
+body.mobile .grid,body.mobile .checks,body.mobile .opts,body.mobile .rank,body.mobile .fitwrap[style*="grid"],body.mobile .body[style*="grid"]{display:grid!important;grid-template-columns:1fr!important}
+body.mobile .moves{grid-template-columns:1fr 1fr!important}
+body.mobile .verdict{flex-direction:column!important}
+body.mobile .verdict .big{flex:none}
+body.mobile .bodymap{flex-direction:column!important;align-items:center}
+body.mobile .bodymap .pts{grid-template-columns:1fr!important}
+body.mobile .timer,body.mobile .breath{flex-direction:column}
+body.mobile .timer .cue{min-height:0}
+body.mobile .src{position:static;margin-top:14px;max-height:none}
+body.mobile .ref{columns:1!important}
+body.mobile .pcard img{height:220px!important}
+body.mobile .card[style*="grid-column"]{grid-column:auto!important}
+body.mobile .section{padding:18px 16px 28px;min-height:0;justify-content:flex-start}
+body.mobile .secph{position:static;width:100%;height:240px;-webkit-mask-image:none;mask-image:none;border-radius:18px;margin-bottom:18px}
+body.mobile .section h1{font-size:60px}
+body.mobile .section .num{font-size:90px}
+body.mobile .cover{padding:18px 16px 28px}
+body.mobile .cover h1{font-size:76px}
+body.mobile .coverph{position:static;width:100%;height:260px;transform:none;margin:16px 0 0;border-width:4px}
+body.mobile .blob,body.mobile .blob2{display:none}
+body.mobile .cover .kicker,body.mobile .cover h1,body.mobile .cover .sub,body.mobile .cover .meta{max-width:none}
+body.mobile .scale{gap:6px}
+body.mobile .scale button{height:72px;font-size:30px;border-radius:12px}
+body.mobile svg[viewBox]{max-width:100%;height:auto}
+body.mobile .fitwrap>div[style*="display:flex"],body.mobile .body>div[style*="display:flex"]{flex-wrap:wrap;justify-content:center}
+body.mobile .steps{grid-template-columns:1fr!important}
+body.mobile table.tb{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+body.mobile table.tb th,body.mobile table.tb td{white-space:normal;min-width:120px}
+body.mobile #bar{height:56px;padding:0 8px;font-size:16px}
+body.mobile #bar .brand,body.mobile .kbd,body.mobile #bar .dsk{display:none}
+body.mobile #bar button{padding:9px 12px;font-size:16px}
+body.mobile #bar .cnt{min-width:64px;font-size:16px}
+body.mobile #notes{width:100%;bottom:56px;top:auto;height:60vh;border-left:0;border-top:6px solid var(--orange);transform:translateY(calc(100% + 60px))}
+body.mobile #notes.open{transform:none}
+body.mobile #toc{bottom:56px;padding:20px 16px 40px}
+body.mobile #toc .items{grid-template-columns:1fr}
+body.mobile #toc h2{font-size:26px}
+body.mobile #modal .box{padding:24px 22px;border-radius:20px}
+body.mobile #modal .t{font-size:28px}
+body.mobile #modal .b{font-size:20px}
+body.mobile #rotateTip{display:flex;position:fixed;left:12px;right:12px;bottom:66px;z-index:95;background:rgba(43,27,61,.92);color:#fff;border-radius:14px;padding:10px 14px;font-size:15px;align-items:center;gap:10px}
+body.mobile #rotateTip button{margin-left:auto;background:rgba(255,255,255,.15);border:none;color:#fff;border-radius:8px;padding:6px 10px;font-size:14px}
+body.mobile.landscape #rotateTip,body.mobile.tipoff #rotateTip{display:none}
 </style>
 </head>
 <body>
 <div id="viewport">
 <div id="stage">
-<div id="prog"></div>
 
 <!-- 1 封面 -->
 <section class="slide cover" data-title="封面" data-note="開場先不要講理論。請大家坐好，先問一句：「今天走進來的時候，肩膀是鬆的還是緊的？」讓現場先動起來。
 介紹自己與愛迪樂，說明三堂課的脈絡：第一堂覺察與放鬆、第二堂身心修復、第三堂藝術輔療。
 提醒：今天的動作全部可以坐著做，不舒服就停。">
-  <div class="blob"></div><img class="coverph" src="img/seated_class.jpg" alt="">
+  <div class="blob"></div><img class="coverph" src="img/cover_happy.jpg" alt="">
   <div class="kicker">耕莘健康管理專科學校｜大學社會責任計畫（USR）｜第一堂</div>
   <h1>覺察壓力<br><em>卸下負擔</em></h1>
   <div class="sub">動態伸展與按摩放鬆的實證與實作<br>掌握真正有研究支持的身心減壓技巧</div>
@@ -307,7 +362,6 @@ table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
   <h1>按摩：先用手，把身體叫回來</h1>
   <p class="lead">不先講理論。先感受，再看研究為什麼這樣說。</p>
 </section>
-
 <!-- 6 按摩有效嗎 -->
 <section class="slide" data-title="按摩真的有效嗎？" data-note="這一頁是今天最有力的證據之一。
 Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究、將近 13,000 人。
@@ -543,30 +597,207 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
   </div>
   <div class="note-box" style="margin-top:12px"><b>帶法：</b>問全場「還有哪裡緊？」把答案接到這四張圖。全部用「舒服的痠」，每處約 1 分鐘；前頸、膝蓋後側、瘀青處不按。</div>
 </section>
+<!-- 徒手 手肘前臂 -->
+<section class="slide" data-title="徒手按摩：手肘、前臂、手掌" data-note="先示範手肘外側：用對側拇指找骨突下方最痠的點，中等力道按住畫小圓 20 秒，再往手腕方向推前臂。
+手心側與手背側各做一次。每區 30 秒，一手共約 3 分鐘，換手。
+照顧者、常用手機與做家事的人，這一區通常最有感。">
+  <div class="tag">實作 ② 徒手細節 <span class="mpill">🎵 慢歌 60 到 70 拍</span></div>
+  <h1>徒手按摩：<em>手肘、前臂、手掌</em></h1>
+  <div class="body" style="flex-direction:row;gap:22px;align-items:center">
+    <div style="flex:none"><svg viewBox="0 0 560 260" width="560" height="260" xmlns="http://www.w3.org/2000/svg" aria-label="手臂地圖">
+  <text x="280" y="22" text-anchor="middle" font-size="19" font-weight="900" fill="#5E4B8B" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">手臂（手心朝上）</text>
+  <g fill="#EDE6F6" stroke="#BBAAD4" stroke-width="3">
+    <path d="M20 95 Q20 70 60 68 L200 72 Q230 72 232 100 Q230 130 200 130 L60 134 Q20 132 20 105 Z"/>
+    <circle cx="232" cy="101" r="34"/>
+    <path d="M262 82 L400 70 Q430 70 440 96 Q430 124 400 126 L262 120 Z"/>
+    <path d="M440 70 Q500 60 520 90 Q530 130 500 145 L470 150 Q440 140 438 120 Z"/>
+    <path d="M520 85 L548 70 Q556 74 550 84 L528 100 Z M525 108 L556 100 Q560 108 552 114 L528 120 Z M522 126 L550 128 Q554 136 546 140 L522 138 Z M510 142 L532 152 Q532 160 524 160 L504 152 Z"/>
+  </g>
+  <path d="M262 92 L400 84" stroke="#9B7FC7" stroke-width="12" stroke-linecap="round" opacity=".9"/>
+  <path d="M262 112 L400 116" stroke="#C9B3E6" stroke-width="12" stroke-linecap="round"/>
+  <g font-weight="900" font-size="18" text-anchor="middle" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+    <circle cx="232" cy="62" r="17" fill="#7B4FB3"/><text x="232" y="69" fill="#fff">1</text><circle cx="232" cy="140" r="17" fill="#7B4FB3"/><text x="232" y="147" fill="#fff">2</text><circle cx="330" cy="80" r="17" fill="#5E4B8B"/><text x="330" y="87" fill="#fff">3</text><circle cx="330" cy="128" r="17" fill="#9B7FC7"/><text x="330" y="135" fill="#fff">4</text><circle cx="470" cy="100" r="17" fill="#5E4B8B"/><text x="470" y="107" fill="#fff">5</text><circle cx="540" cy="96" r="17" fill="#9B7FC7"/><text x="540" y="103" fill="#fff">6</text>
+  </g>
+  <g font-size="16" fill="#2B1B3D" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif"><text x="20" y="190">1 手肘外側骨突下方（網球肘點）　2 手肘內側骨突下方（高爾夫球肘點）</text><text x="20" y="214">3 前臂手背側肌群，從手肘往手腕推　4 前臂手心側肌群，拇指按壓畫圓</text><text x="20" y="238">5 虎口與掌心　6 每根手指由根部捏到指尖，輕拉一下</text></g>
+</svg></div>
+    <ol class="steps" style="flex:1;gap:8px;min-width:0">
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>手肘外側（1）</b>：對側拇指找骨突下方最痠的點，按住畫小圓 20 秒，再沿前臂往手腕推 5 次。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>手肘內側（2）</b>：同樣做法，力道輕一點，內側較敏感。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>前臂兩面（3、4）</b>：手背側用四指、手心側用拇指，從手肘推到手腕，各 5 次；找到緊點停 10 秒。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>虎口與掌心（5）</b>：拇指壓住畫圓各 30 秒。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>手指（6）</b>：每根由根部捏到指尖，最後輕拉一下。</li>
+    </ol>
+  </div>
+  <div class="src">力道以「舒服的痠」為準（10 分痛裡 4 到 6 分）；有腕隧道症候群或急性發炎的手，避開發炎處。</div>
+</section>
 
-<!-- 按摩球 -->
-<section class="slide" data-title="按摩球：靠牆、靠椅子，自己來" data-note="發球。先示範靠牆：球放在肩胛骨與脊椎之間，絕對不壓脊椎，膝蓋微彎，身體上下小幅移動。
-再示範坐姿：臀部坐球、腳底踩球。長輩全部用坐姿版本，不用靠牆。
-每處 30 到 60 秒，最多 2 分鐘；痛就停。沒有球的人用網球或手指繼續。">
-  <div class="tag">實作 ③ 按摩球 <span class="mpill">🎵 慢歌 60 到 75 拍・約 6 分鐘</span></div>
-  <h1>按摩球：<em>靠牆、靠椅子</em>，自己來</h1>
-  <div class="body" style="flex-direction:row;gap:20px">
-    <div style="flex:0 0 480px;display:flex;flex-direction:column;gap:12px">
-      <div class="pcard" style="flex:none"><img src="img/ball_wall.jpg" alt="" style="height:360px"><div class="cap"><b>靠牆版</b>：球夾在肩膀後側或肩胛骨與脊椎之間，膝蓋微彎，身體小幅上下移動。</div></div>
-      <div class="pcard" style="flex:none;flex-direction:row;align-items:center"><img src="img/ball_hand.jpg" alt="" style="width:150px;height:110px"><div class="cap"><b>沒有球？</b>網球、刺球都可以；手掌壓球在桌上畫圓。</div></div>
-    </div>
-    <div style="flex:1;display:flex;flex-direction:column;gap:10px;min-width:0">
-      <ol class="steps" style="gap:8px">
-        <li style="font-size:22px;padding:10px 20px 10px 90px"><b>上背靠牆</b>：球放肩胛骨與脊椎之間（不壓脊椎），身體上下移動 30 秒，換邊。</li>
-        <li style="font-size:22px;padding:10px 20px 10px 90px"><b>肩膀後側靠牆</b>：球在肩膀後方，手臂慢慢畫圈，找「舒服的痠」停 20 秒。</li>
-        <li style="font-size:22px;padding:10px 20px 10px 90px"><b>臀部坐球（椅子）</b>：球放一側臀部肌肉下，身體微傾，左右搖 30 秒，換邊。</li>
-        <li style="font-size:22px;padding:10px 20px 10px 90px"><b>腳底踩球（椅子）</b>：坐著，腳踩球從腳跟滾到腳趾，一腳 1 分鐘。長者最安全的一站。</li>
-        <li style="font-size:22px;padding:10px 20px 10px 90px"><b>大腿後側坐球</b>：坐椅子前緣，球放大腿下方，腿前後滑動 30 秒。</li>
-      </ol>
-      <div class="warn" style="font-size:20px;padding:10px 16px"><b>安全：</b>避開脊椎正中、骨頭、關節；瘀青、血栓風險、吃抗凝血藥者不做；每處 30 到 60 秒，最多 2 分鐘；痛就停。長者一律坐姿版。</div>
+<!-- 徒手 翹腳小腿 -->
+<section class="slide" data-title="徒手按摩：翹腳按小腿" data-note="請大家坐穩，一腳翹到另一腿膝蓋上，小腿肚朝上。做不到翹腳的人，腳踩地、身體前傾也可以按。
+先用雙手拇指從腳踝往膝蓋推小腿肚中央，再換四指捏內外側，最後捏阿基里斯腱上方。
+強調：膝窩繞過去不壓；有靜脈曲張或小腿單側腫痛的人不按，請他改按手部。">
+  <div class="tag">實作 ② 徒手細節 <span class="mpill">🎵 慢歌 60 到 70 拍</span></div>
+  <h1>徒手按摩：<em>翹腳按小腿</em></h1>
+  <div class="body" style="flex-direction:row;gap:22px;align-items:center">
+    <div style="flex:none"><svg viewBox="0 0 560 260" width="560" height="260" xmlns="http://www.w3.org/2000/svg" aria-label="小腿地圖">
+  <text x="280" y="22" text-anchor="middle" font-size="19" font-weight="900" fill="#5E4B8B" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">翹腳時的小腿（腳踝放在另一腿膝蓋上，小腿肚朝上）</text>
+  <g fill="#EDE6F6" stroke="#BBAAD4" stroke-width="3">
+    <path d="M40 80 Q30 100 40 125 L120 128 Q200 160 330 150 Q420 140 450 115 L450 85 Q420 70 330 72 Q200 62 120 76 Z"/>
+    <path d="M450 80 L480 70 Q520 72 530 100 L540 150 Q538 170 520 168 L470 160 Q452 140 450 120 Z"/>
+    <circle cx="70" cy="102" r="30"/>
+  </g>
+  <ellipse cx="250" cy="128" rx="110" ry="24" fill="#C9B3E6" opacity=".8"/>
+  <path d="M370 112 L440 100" stroke="#9B7FC7" stroke-width="12" stroke-linecap="round"/>
+  <path d="M130 88 L330 82" stroke="#DDD6E8" stroke-width="10" stroke-linecap="round"/>
+  <g font-weight="900" font-size="18" text-anchor="middle" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+    <circle cx="250" cy="128" r="17" fill="#7B4FB3"/><text x="250" y="135" fill="#fff">1</text><circle cx="170" cy="128" r="17" fill="#7B4FB3"/><text x="170" y="135" fill="#fff">2</text><circle cx="330" cy="128" r="17" fill="#7B4FB3"/><text x="330" y="135" fill="#fff">3</text><circle cx="405" cy="106" r="17" fill="#9B7FC7"/><text x="405" y="113" fill="#fff">4</text><circle cx="230" cy="84" r="17" fill="#5E4B8B"/><text x="230" y="91" fill="#fff">5</text>
+    <circle cx="70" cy="102" r="17" fill="#fff" stroke="#B8405E" stroke-width="3"/><text x="70" y="109" fill="#B8405E">✕</text>
+  </g>
+  <g font-size="16" fill="#2B1B3D" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif"><text x="20" y="200">1 小腿肚中央　2 小腿肚內側（靠骨頭邊緣）　3 小腿肚外側　4 阿基里斯腱上方，捏住上下滑</text><text x="20" y="224">5 脛骨外側的肌肉（脛前肌），四指按壓　✕ 膝窩不壓，繞過去</text><text x="20" y="248">做法：雙手拇指或四指，從腳踝往膝蓋方向慢慢推、捏，每區 30 秒，換腳。</text></g>
+</svg></div>
+    <ol class="steps" style="flex:1;gap:8px;min-width:0">
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>姿勢</b>：坐穩，一腳翹到另一腿膝蓋上，小腿肚朝上。做不到翹腳的人，腳踩地、身體前傾也可以。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>小腿肚中央（1）</b>：雙手拇指從腳踝往膝蓋方向慢慢推 5 次，找到最緊的一段停 10 秒。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>內側、外側（2、3）</b>：四指與拇指像捏麵糰，由下往上捏，各 30 秒。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>阿基里斯腱上方（4）</b>：拇指食指捏住，上下滑動 20 秒。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>脛前肌（5）</b>：四指按脛骨外側的肌肉，由下往上壓 5 次。膝窩繞過不壓。</li>
+    </ol>
+  </div>
+  <div class="src">禁忌：靜脈曲張明顯、小腿單側腫痛或懷疑血栓者不按；吃抗凝血藥者力道改輕。</div>
+</section>
+
+<!-- 臉部穴位 -->
+<section class="slide" data-title="臉部與頭部穴位地圖" data-note="臉部力道一律輕到中等，用指腹，不用指甲。眼窩周邊只按眼眶骨的邊緣，不壓眼球。
+下頜與脖子交界（G）在下巴角後下方，按的是肌肉，不要往前頸喉嚨方向壓。
+每點按壓或畫圓約 10 秒，整套約 3 分鐘，適合當收尾或睡前做。">
+  <div class="tag">實作 ② 徒手細節 <span class="mpill">🎵 慢歌 60 到 70 拍</span></div>
+  <h1>臉部與頭部<em>穴位地圖</em>：耳後、下頜、頭部、眼窩</h1>
+  <div class="body" style="flex-direction:row;gap:16px;align-items:center">
+    <div style="flex:none;display:flex;gap:6px"><svg viewBox="0 0 360 470" width="330" height="430" xmlns="http://www.w3.org/2000/svg" aria-label="臉部穴位">
+  <text x="180" y="22" text-anchor="middle" font-size="19" font-weight="900" fill="#5E4B8B" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">正面</text>
+  <g fill="#EDE6F6" stroke="#BBAAD4" stroke-width="3">
+    <path d="M180 60 Q290 60 292 190 Q292 300 230 350 Q180 380 130 350 Q68 300 68 190 Q70 60 180 60 Z"/>
+    <ellipse cx="64" cy="200" rx="14" ry="30"/><ellipse cx="296" cy="200" rx="14" ry="30"/>
+    <path d="M150 390 L150 440 L210 440 L210 390 Z"/>
+  </g>
+  <g fill="none" stroke="#9B7FC7" stroke-width="3"><path d="M105 160 Q140 140 175 160"/><path d="M185 160 Q220 140 255 160"/><ellipse cx="140" cy="200" rx="26" ry="12"/><ellipse cx="220" cy="200" rx="26" ry="12"/><path d="M180 200 L170 260 Q180 268 190 260"/><path d="M150 310 Q180 326 210 310"/></g>
+  <g font-weight="900" font-size="16" text-anchor="middle" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+    <circle cx="112" cy="160" r="15" fill="#7B4FB3"/><text x="112" y="167" fill="#fff">A</text><circle cx="248" cy="160" r="15" fill="#7B4FB3"/><text x="248" y="167" fill="#fff">A</text>
+    <circle cx="140" cy="148" r="15" fill="#7B4FB3"/><text x="140" y="155" fill="#fff">B</text><circle cx="220" cy="148" r="15" fill="#7B4FB3"/><text x="220" y="155" fill="#fff">B</text>
+    <circle cx="92" cy="172" r="15" fill="#7B4FB3"/><text x="92" y="179" fill="#fff">C</text><circle cx="268" cy="172" r="15" fill="#7B4FB3"/><text x="268" y="179" fill="#fff">C</text>
+    <circle cx="140" cy="226" r="15" fill="#9B7FC7"/><text x="140" y="233" fill="#fff">D</text><circle cx="220" cy="226" r="15" fill="#9B7FC7"/><text x="220" y="233" fill="#fff">D</text>
+    <circle cx="84" cy="140" r="15" fill="#5E4B8B"/><text x="84" y="147" fill="#fff">E</text><circle cx="276" cy="140" r="15" fill="#5E4B8B"/><text x="276" y="147" fill="#fff">E</text>
+    <circle cx="62" cy="236" r="15" fill="#5E4B8B"/><text x="62" y="243" fill="#fff">F</text><circle cx="298" cy="236" r="15" fill="#5E4B8B"/><text x="298" y="243" fill="#fff">F</text>
+    <circle cx="104" cy="318" r="15" fill="#5E4B8B"/><text x="104" y="325" fill="#fff">G</text><circle cx="256" cy="318" r="15" fill="#5E4B8B"/><text x="256" y="325" fill="#fff">G</text>
+    <circle cx="180" cy="58" r="15" fill="#7B4FB3"/><text x="180" y="65" fill="#fff">H</text>
+  </g>
+</svg><svg viewBox="0 0 360 470" width="330" height="430" xmlns="http://www.w3.org/2000/svg" aria-label="側面">
+  <text x="180" y="22" text-anchor="middle" font-size="19" font-weight="900" fill="#5E4B8B" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">側面</text>
+  <g fill="#EDE6F6" stroke="#BBAAD4" stroke-width="3">
+    <path d="M150 440 L150 330 Q140 300 160 265 L190 265 Q215 300 215 330 L270 440 Z"/>
+    <path d="M100 160 Q95 70 185 58 Q275 50 285 150 Q290 210 250 245 L205 268 Q160 272 140 240 Q110 220 100 160 Z"/>
+    <ellipse cx="252" cy="160" rx="13" ry="24" fill="#E2D7F2"/>
+  </g>
+  <g font-weight="900" font-size="16" text-anchor="middle" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+    <circle cx="190" cy="66" r="15" fill="#7B4FB3"/><text x="190" y="73" fill="#fff">H</text><circle cx="128" cy="128" r="15" fill="#5E4B8B"/><text x="128" y="135" fill="#fff">E</text><circle cx="268" cy="196" r="15" fill="#5E4B8B"/><text x="268" y="203" fill="#fff">F</text><circle cx="232" cy="252" r="15" fill="#5E4B8B"/><text x="232" y="259" fill="#fff">G</text><circle cx="262" cy="230" r="15" fill="#9B7FC7"/><text x="262" y="237" fill="#fff">I</text>
+    <circle cx="190" cy="300" r="15" fill="#fff" stroke="#B8405E" stroke-width="3"/><text x="190" y="307" fill="#B8405E">✕</text>
+  </g>
+  <g font-size="16" fill="#2B1B3D" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif"><text x="40" y="350">✕ 前頸喉嚨兩側不按</text></g>
+</svg></div>
+    <div style="flex:1;min-width:0;display:grid;gap:8px">
+      <div class="card small" style="font-size:21px;padding:10px 16px"><h3 style="font-size:23px">眼窩周邊（A、B、C、D）</h3><p>A 攢竹：眉頭內側凹處。B 魚腰：眉毛中點。C 絲竹空：眉尾。D 四白／承泣：眼眶下緣骨頭上。指腹輕按各 10 秒，沿眼眶骨畫一圈 3 次，<b>不壓眼球</b>。</p></div>
+      <div class="card small" style="font-size:21px;padding:10px 16px"><h3 style="font-size:23px">太陽穴與頭頂（E、H）</h3><p>E 太陽穴：眉尾與眼角後方凹處，畫圓 20 秒。H 百會：頭頂正中，中指按壓 10 秒，放開，重複 3 次。</p></div>
+      <div class="card small" style="font-size:21px;padding:10px 16px"><h3 style="font-size:23px">耳後與下頜（F、G、I）</h3><p>F 翳風：耳垂後方凹處，指腹輕按 10 秒。G 下頜角後下方與脖子交界：按肌肉畫圓，<b>不往前頸喉嚨壓</b>。I 風池：後腦髮際線下、兩側凹處，拇指按住頭微後仰 10 秒。</p></div>
     </div>
   </div>
-  <div class="src">證據提醒：滾筒與按摩球的研究主要支持減少痠痛與增加柔軟度（Wiewelhove 2019；Grieve 2015），對自律神經的效果不一致，所以放在「配角」位置。</div>
+  <div class="src">穴位按壓對焦慮有中等證據（Au 2015）；臉部力道輕到中等，用指腹不用指甲。</div>
+</section>
+
+<!-- 按摩球地圖 -->
+<section class="slide" data-title="按摩球地圖：哪裡可以放球" data-note="先看地圖再發球。紅虛線是脊椎，整堂課都不壓；膝窩不直接壓，壓它上下方的肌肉。
+8 個位置分成靠牆版與坐姿版，接下來兩頁示範。長輩一律用坐姿版，站不穩的人不靠牆。">
+  <div class="tag">實作 ③ 按摩球</div>
+  <h1>按摩球地圖：<em>八個位置</em>，哪裡可以放球</h1>
+  <div class="body" style="flex-direction:row;gap:18px;align-items:center">
+    <div style="flex:none;display:flex;gap:8px"><svg viewBox="0 0 360 560" width="300" height="470" xmlns="http://www.w3.org/2000/svg" aria-label="背面">
+  <text x="180" y="22" text-anchor="middle" font-size="19" font-weight="900" fill="#5E4B8B" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">背面</text>
+  <g fill="#EDE6F6" stroke="#BBAAD4" stroke-width="3">
+    <ellipse cx="180" cy="80" rx="42" ry="48"/><rect x="162" y="124" width="36" height="30" rx="10"/>
+    <path d="M112 152 Q180 140 248 152 L262 300 Q180 318 98 300 Z"/>
+    <path d="M112 152 L66 180 L48 320 L84 326 L102 220 Z"/><path d="M248 152 L294 180 L312 320 L276 326 L258 220 Z"/>
+    <path d="M104 300 L96 470 L142 470 L160 320 Z"/><path d="M256 300 L264 470 L218 470 L200 320 Z"/>
+    <ellipse cx="119" cy="490" rx="28" ry="16"/><ellipse cx="241" cy="490" rx="28" ry="16"/>
+  </g>
+  <line x1="180" y1="150" x2="180" y2="310" stroke="#B8405E" stroke-width="3" stroke-dasharray="6 5"/>
+  <g font-weight="900" font-size="17" text-anchor="middle" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+    <circle cx="150" cy="195" r="17" fill="#7B4FB3"/><text x="150" y="202" fill="#fff">1</text><circle cx="210" cy="195" r="17" fill="#7B4FB3"/><text x="210" y="202" fill="#fff">1</text><circle cx="128" cy="230" r="17" fill="#5E4B8B"/><text x="128" y="237" fill="#fff">2</text><circle cx="232" cy="230" r="17" fill="#5E4B8B"/><text x="232" y="237" fill="#fff">2</text><circle cx="108" cy="172" r="17" fill="#9B7FC7"/><text x="108" y="179" fill="#fff">3</text><circle cx="252" cy="172" r="17" fill="#9B7FC7"/><text x="252" y="179" fill="#fff">3</text>
+    <circle cx="148" cy="282" r="17" fill="#7B4FB3"/><text x="148" y="289" fill="#fff">4</text><circle cx="212" cy="282" r="17" fill="#7B4FB3"/><text x="212" y="289" fill="#fff">4</text><circle cx="126" cy="330" r="17" fill="#5E4B8B"/><text x="126" y="337" fill="#fff">5</text><circle cx="234" cy="330" r="17" fill="#5E4B8B"/><text x="234" y="337" fill="#fff">5</text>
+    <circle cx="124" cy="400" r="15" fill="#fff" stroke="#B8405E" stroke-width="3"/><text x="124" y="407" fill="#B8405E">✕</text><circle cx="236" cy="400" r="15" fill="#fff" stroke="#B8405E" stroke-width="3"/><text x="236" y="407" fill="#B8405E">✕</text>
+    <circle cx="118" cy="438" r="17" fill="#9B7FC7"/><text x="118" y="445" fill="#fff">6</text><circle cx="242" cy="438" r="17" fill="#9B7FC7"/><text x="242" y="445" fill="#fff">6</text>
+  </g>
+  <text x="180" y="540" text-anchor="middle" font-size="15" fill="#B8405E" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">紅虛線＝脊椎，不壓；✕＝膝窩，不壓</text>
+</svg><svg viewBox="0 0 360 560" width="300" height="470" xmlns="http://www.w3.org/2000/svg" aria-label="正面">
+  <text x="180" y="22" text-anchor="middle" font-size="19" font-weight="900" fill="#5E4B8B" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">正面</text>
+  <g fill="#EDE6F6" stroke="#BBAAD4" stroke-width="3">
+    <ellipse cx="180" cy="80" rx="42" ry="48"/><rect x="162" y="124" width="36" height="30" rx="10"/>
+    <path d="M112 152 Q180 140 248 152 L262 300 Q180 318 98 300 Z"/>
+    <path d="M112 152 L66 180 L48 320 L84 326 L102 220 Z"/><path d="M248 152 L294 180 L312 320 L276 326 L258 220 Z"/>
+    <path d="M104 300 L96 470 L142 470 L160 320 Z"/><path d="M256 300 L264 470 L218 470 L200 320 Z"/>
+    <ellipse cx="119" cy="490" rx="28" ry="16"/><ellipse cx="241" cy="490" rx="28" ry="16"/>
+  </g>
+  <path d="M120 158 L240 158" stroke="#BBAAD4" stroke-width="3"/>
+  <g font-weight="900" font-size="17" text-anchor="middle" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+    <circle cx="132" cy="180" r="17" fill="#7B4FB3"/><text x="132" y="187" fill="#fff">7</text><circle cx="228" cy="180" r="17" fill="#7B4FB3"/><text x="228" y="187" fill="#fff">7</text>
+    <circle cx="119" cy="490" r="17" fill="#9B7FC7"/><text x="119" y="497" fill="#fff">8</text><circle cx="241" cy="490" r="17" fill="#9B7FC7"/><text x="241" y="497" fill="#fff">8</text>
+  </g>
+  <text x="180" y="540" text-anchor="middle" font-size="15" fill="#6B6280" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">7 胸部前側（鎖骨下方、靠肩膀內側）　8 腳底</text>
+</svg></div>
+    <div style="flex:1;min-width:0;display:grid;gap:8px">
+      <div class="card small" style="font-size:21px;padding:10px 16px"><h3 style="font-size:23px"><span class="pill o">靠牆版</span>站著背靠牆</h3><p><b>1 上背</b>：肩胛骨之間、脊椎兩側。<b>2 肩胛骨</b>：內側緣與下角。<b>3 肩膀後側</b>。<b>4 下背</b>：腰兩側、骨盆上方。<b>7 胸部前側</b>：面向牆，球在鎖骨下靠肩膀處。</p></div>
+      <div class="card small" style="font-size:21px;padding:10px 16px"><h3 style="font-size:23px"><span class="pill t">坐姿版</span>坐在椅子上</h3><p><b>5 臀部</b>：坐在球上，外上方。<b>6 小腿後側</b>：小腿放球上前後滑，膝窩繞過。<b>8 腳底</b>：踩球滾。坐姿版也能做 4 下背（椅背與腰之間夾球）。</p></div>
+      <div class="warn" style="font-size:20px;padding:10px 16px"><b>通則：</b>每處 30 到 60 秒，最多 2 分鐘；找到痠點停住呼吸 3 口再移動；痛、麻、暈就停。避開脊椎、骨頭、關節、膝窩、瘀青。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 按摩球靠牆 -->
+<section class="slide" data-title="按摩球：靠牆版" data-note="示範靠牆：背對牆站，膝蓋微彎，球夾在肩胛骨與脊椎之間，用腿的屈伸讓球上下移動。
+胸部前側要面向牆，球放鎖骨下方靠肩膀內側，身體慢慢靠上去，手臂可以慢慢上下擺動加強。
+站不穩、怕跌倒的人改坐姿版。">
+  <div class="tag">實作 ③ 按摩球 <span class="mpill">🎵 慢歌 60 到 75 拍・約 5 分鐘</span></div>
+  <h1>按摩球<em>靠牆版</em>：上背、肩胛骨、肩膀、下背、胸前</h1>
+  <div class="body" style="flex-direction:row;gap:20px">
+    <div class="pcard" style="flex:0 0 400px"><img src="img/ball_wall.jpg" alt="" style="height:430px"><div class="cap"><b>基本姿勢</b>：背對牆、腳離牆一步、膝蓋微彎，用腿的屈伸讓球滾動，不用手。</div></div>
+    <ol class="steps" style="flex:1;gap:8px;min-width:0">
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>上背（1）</b>：球在肩胛骨與脊椎之間，身體上下移動 30 秒，換邊。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>肩胛骨（2）</b>：球在肩胛骨內側緣，同側手臂抱向對側肩，讓肩胛骨打開，小幅上下 30 秒。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>肩膀後側（3）</b>：球在肩膀後方肉厚處，手臂慢慢畫圈 20 秒。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>下背（4）</b>：球在腰兩側、骨盆上方的肌肉，<b>不在脊椎上</b>，左右微轉身 30 秒，換邊。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>胸部前側（7）</b>：面向牆，球在鎖骨下靠肩膀內側，身體靠上去，手臂上下擺 20 秒，換邊。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 按摩球坐姿 -->
+<section class="slide" data-title="按摩球：坐姿版" data-note="全部坐著做，這是長輩的主版本。
+臀部坐球最有感，請大家把重心慢慢移到球上，不要一下全壓。
+小腿後側：腳放在前面的椅子上或伸直放地上，球在小腿下，腿前後滑；膝窩繞過去。沒有第二張椅子時用腳底踩球代替。">
+  <div class="tag">實作 ③ 按摩球 <span class="mpill">🎵 慢歌 60 到 75 拍・約 5 分鐘</span></div>
+  <h1>按摩球<em>坐姿版</em>：臀部、小腿後側、膝窩上下、腳底</h1>
+  <div class="body" style="flex-direction:row;gap:20px">
+    <ol class="steps" style="flex:1;gap:8px;min-width:0">
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>臀部坐球（5）</b>：球放一側臀部外上方，重心慢慢移過去，身體前後左右小幅搖 30 到 60 秒，換邊。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>大腿後側</b>：坐椅子前緣，球放大腿後側下方，腿前後滑 30 秒。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>小腿後側（6）</b>：腳放前面的椅子上或腿伸直放地，球在小腿肚下，腿前後滑 30 秒；另一腳壓上來可加強。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>膝窩上下</b>：膝窩本身<b>不壓</b>，球放膝窩上方 3 指（大腿後側）與下方 3 指（小腿肚上緣），各 20 秒。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>腳底（8）</b>：踩球從腳跟滾到腳趾，一腳 1 分鐘。</li>
+      <li style="font-size:22px;padding:10px 18px 10px 88px"><b>下背坐姿版（4）</b>：球夾在椅背與腰側肌肉之間，身體微微左右轉 30 秒。</li>
+    </ol>
+    <div style="flex:0 0 380px;display:flex;flex-direction:column;gap:12px">
+      <div class="pcard" style="flex:none"><img src="img/foot_self.jpg" alt="" style="height:230px"><div class="cap"><b>坐姿版最安全</b>：站不穩、怕跌倒的人全部用這一頁。</div></div>
+      <div class="pcard" style="flex:none;flex-direction:row;align-items:center"><img src="img/ball_hand.jpg" alt="" style="width:140px;height:100px"><div class="cap">沒有球？網球、刺球都可以。</div></div>
+    </div>
+  </div>
+  <div class="src">證據提醒：滾筒與按摩球主要支持減少痠痛與增加柔軟度（Wiewelhove 2019；Grieve 2015），對自律神經的效果不一致，所以放在配角位置。</div>
 </section>
 
 <!-- 31 安全 -->
@@ -603,7 +834,6 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
   <h1>伸展：配著音樂動起來</h1>
   <p class="lead">哪種伸展比較能減壓？研究有答案，而且關鍵不在「哪一種」。</p>
 </section>
-
 <!-- 7 運動有效嗎 -->
 <section class="slide" data-title="運動真的有效嗎？" data-note="Singh 2023 是目前最大的傘狀回顧，發表在英國運動醫學期刊。
 重點：所有類型的運動都有效、強度高一點效果更好、12 週內的短期計畫效果反而最明顯。
@@ -709,6 +939,57 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
     <div class="note-box" style="margin-top:14px"><b>講師口令：</b>「吸……吐……吐的時候再鬆一點點。」每式之間停三秒，請大家感覺剛剛被拉開的那個地方。</div>
   </div>
 </section>
+<!-- 頸部與軀幹 -->
+<section class="slide" data-title="頸部與軀幹：前後、左右、旋轉" data-note="全部坐著做。頸部四個方向各 2 回、每回停 15 秒；軀幹四個方向各 2 回。
+後仰一律小幅度、不憋氣，有頭暈病史的人後仰只做「看天花板」的程度。
+口令：動的時候吐氣，回來的時候吸氣。">
+  <div class="tag">實作 ⑤ 延伸 <span class="mpill">🎵 慢歌 60 到 80 拍・約 5 分鐘</span></div>
+  <h1>頸部與軀幹：<em>前後、左右、旋轉</em>，坐著做</h1>
+  <div class="body" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+    <div class="pcard"><img src="img/neck_side.jpg" alt="" style="height:190px"><div class="cap"><b>頸 前後</b><br>低頭看口袋 15 秒；再小幅抬頭看天花板 10 秒。</div></div>
+    <div class="pcard"><img src="img/neck_turn.jpg" alt="" style="height:190px"><div class="cap"><b>頸 側彎</b><br>耳朵往肩膀靠，對側肩往下沉，各 15 秒。</div></div>
+    <div class="pcard"><img src="img/arms_open.jpg" alt="" style="height:190px"><div class="cap"><b>頸 旋轉</b><br>下巴水平轉向肩膀，眼睛跟著看，各 15 秒。</div></div>
+    <div class="pcard"><img src="img/forward_reach.jpg" alt="" style="height:190px"><div class="cap"><b>軀幹 前彎</b><br>雙手往前伸，背從髖部往前倒，停 15 秒。</div></div>
+    <div class="pcard"><img src="img/stretch_couple.jpg" alt="" style="height:190px"><div class="cap"><b>軀幹 後仰開胸</b><br>雙手扶椅背或腰後，胸口向上打開，小幅後仰 10 秒。</div></div>
+    <div class="pcard"><img src="img/side_bend.jpg" alt="" style="height:190px"><div class="cap"><b>軀幹 側彎</b><br>一手高舉往對側倒，像摘高處的果子，各 15 秒。</div></div>
+    <div class="pcard"><img src="img/twist_seated.jpg" alt="" style="height:190px"><div class="cap"><b>軀幹 旋轉</b><br>雙手交疊胸前，慢慢轉向後方看，各 15 秒。</div></div>
+    <div class="card teal" style="font-size:21px;padding:14px 16px"><h3 style="font-size:23px">口令</h3><p>動的時候<b>吐氣</b>，回來時吸氣。每個方向 2 回。後仰一律小幅度、不憋氣。頭暈就停。</p></div>
+  </div>
+</section>
+
+<!-- 腿後伸展 -->
+<section class="slide" data-title="腿後伸展：椅子、牆、毛巾" data-note="四種道具版本任選一到兩種做，每種各停 30 到 60 秒、每腿 2 回。
+長輩優先椅子版與毛巾坐姿版；躺地版給年輕學員或在家做。
+提醒：背要直，從髖部前傾，不要彎腰駝背去碰腳。">
+  <div class="tag">實作 ⑤ 延伸 <span class="mpill">🎵 慢歌 60 到 80 拍・約 5 分鐘</span></div>
+  <h1>腿後伸展：<em>椅子、牆、毛巾</em>都可以</h1>
+  <div class="body" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+    <div class="pcard"><img src="img/ham_floor.jpg" alt="" style="height:210px"><div class="cap"><b>椅子版（坐姿）</b><br>坐椅前緣，一腿伸直腳跟著地、腳尖勾起，背打直從髖部前傾，停 30 到 60 秒。</div></div>
+    <div class="pcard"><img src="img/ham_towel_seated.jpg" alt="" style="height:210px"><div class="cap"><b>毛巾版（坐姿）</b><br>毛巾繞過腳掌，雙手拉毛巾、背打直往前帶，腳尖往自己勾。</div></div>
+    <div class="pcard"><img src="img/ham_towel_lying.jpg" alt="" style="height:210px"><div class="cap"><b>毛巾版（躺姿）</b><br>平躺，毛巾繞腳掌把腿拉向天花板，另一腿彎曲踩地，膝蓋可微彎。</div></div>
+    <div class="pcard"><img src="img/legs_wall.jpg" alt="" style="height:210px"><div class="cap"><b>牆版（躺姿）</b><br>臀部靠牆，雙腿靠牆上舉 1 到 2 分鐘；想加強就把腳尖勾起。</div></div>
+    <div class="pcard"><img src="img/calf_wall.jpg" alt="" style="height:210px"><div class="cap"><b>牆版（站姿，小腿）</b><br>雙手推牆，後腳跟踩地、膝伸直，前膝微彎，停 30 秒換腳。</div></div>
+    <div class="pcard"><img src="img/wall_hinge.jpg" alt="" style="height:210px"><div class="cap"><b>桌子或牆版（站姿）</b><br>雙手扶桌或牆，臀部往後推、背打直成 L 形，腿後與背一起拉開，停 30 秒。</div></div>
+    <div class="card teal" style="grid-column:span 2;font-size:21px;padding:14px 16px"><h3 style="font-size:23px">要點</h3><p>背要直，從<b>髖部</b>前傾，不是彎腰去碰腳。腳尖往自己勾會更有感。每種停 30 到 60 秒、每腿 2 回，吐氣時再鬆一點。長輩優先椅子版與毛巾坐姿版。</p></div>
+  </div>
+</section>
+
+<!-- 胸部伸展 -->
+<section class="slide" data-title="胸部伸展：牆、桌子、毛巾、椅子" data-note="胸部伸展對整天低頭含胸的人最有感，也是呼吸變深的關鍵。
+牆角版與門框版最容易做；肩膀有舊傷的人，手肘不要高過肩膀。
+每種停 30 秒、2 回，吸氣時胸口打開。">
+  <div class="tag">實作 ⑤ 延伸 <span class="mpill">🎵 慢歌 60 到 80 拍・約 4 分鐘</span></div>
+  <h1>胸部伸展：<em>牆、桌子、毛巾、椅子</em></h1>
+  <div class="body" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+    <div class="pcard"><img src="img/chest_wall.jpg" alt="" style="height:230px"><div class="cap"><b>牆版（單手）</b><br>側身站，手掌與前臂貼牆、手肘與肩同高，身體慢慢往反方向轉，停 30 秒換邊。</div></div>
+    <div class="pcard"><img src="img/wall_hinge.jpg" alt="" style="height:230px"><div class="cap"><b>桌子版</b><br>雙手扶桌，往後退一步，胸口往地板沉、頭在手臂之間，停 30 秒。</div></div>
+    <div class="pcard"><img src="img/arms_open.jpg" alt="" style="height:230px"><div class="cap"><b>椅子版（坐姿）</b><br>雙手在椅背後交扣或各抓椅背，肩胛骨往中間夾，胸口向前向上，停 30 秒。</div></div>
+    <div class="card" style="font-size:21px;padding:14px 16px"><h3 style="font-size:23px">毛巾版</h3><p>雙手握毛巾兩端、比肩寬，吸氣把毛巾舉過頭，吐氣慢慢往後帶到肩膀後方，再舉回來。做 8 次，肩膀緊的人毛巾握寬一點。</p></div>
+    <div class="card" style="font-size:21px;padding:14px 16px"><h3 style="font-size:23px">門框版</h3><p>站在門框中，雙手前臂貼門框兩側、手肘與肩同高，一腳往前跨，胸口往前推，停 30 秒。</p></div>
+    <div class="card teal" style="font-size:21px;padding:14px 16px"><h3 style="font-size:23px">要點</h3><p><b>吸氣</b>時胸口打開，肩膀不聳。肩膀有舊傷者手肘不高過肩。每種 30 秒、2 回。做完深呼吸三次，感覺肺有沒有變大。</p></div>
+  </div>
+</section>
+
 <!-- 24 音樂怎麼選 -->
 <section class="slide" data-title="音樂怎麼選" data-note="具體規格：動態伸展用 90 到 100 拍的熟悉歌曲；靜態伸展與按摩用 60 到 80 拍、沒有歌詞或大家很熟的慢歌。
 研究提示：由參與者自己選喜歡的音樂，效果不會比較差，長輩熟悉的台語老歌、鄧麗君都很適合。
@@ -730,23 +1011,23 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
   <div class="tag">講師用</div>
   <h1>今天的<em>音樂時間表</em>：講解不放，動作才放</h1>
   <div class="body">
-    <table class="tb compact">
+    <table class="tb compact tight">
       <tr><th style="width:330px">段落</th><th style="width:110px">分鐘</th><th>音樂</th><th style="width:150px">節拍</th><th style="width:380px">提示</th></tr>
-      <tr><td>開場、先量一下</td><td>10</td><td>輕背景或不放</td><td>60 到 70</td><td>音量小，可講話</td></tr>
-      <tr><td>按摩實證與地圖</td><td>15</td><td>不放</td><td>—</td><td>講解段</td></tr>
-      <tr class="hi"><td>自我按摩五站（兩人一組）</td><td>12</td><td>慢歌，無歌詞或熟悉老歌輕音樂版</td><td>60 到 70</td><td>3 首，一站換一段</td></tr>
-      <tr class="hi"><td>還有哪裡可以按＋按摩球</td><td>12</td><td>同上</td><td>60 到 75</td><td>3 首</td></tr>
-      <tr><td>伸展實證</td><td>10</td><td>不放</td><td>—</td><td>講解段</td></tr>
+      <tr><td>開場、先量一下</td><td>8</td><td>輕背景或不放</td><td>60 到 70</td><td>音量小，可講話</td></tr>
+      <tr><td>按摩實證與頭頸地圖</td><td>12</td><td>不放</td><td>—</td><td>講解段</td></tr>
+      <tr class="hi"><td>自我按摩五站（兩人一組）</td><td>10</td><td>慢歌，無歌詞或熟悉老歌輕音樂版</td><td>60 到 70</td><td>2 到 3 首，一站換一段</td></tr>
+      <tr class="hi"><td>徒手細節：手肘前臂、小腿、臉部</td><td>10</td><td>同上</td><td>60 到 70</td><td>2 到 3 首</td></tr>
+      <tr class="hi"><td>按摩球：靠牆版＋坐姿版</td><td>10</td><td>同上</td><td>60 到 75</td><td>2 到 3 首</td></tr>
+      <tr><td>伸展實證</td><td>8</td><td>不放</td><td>—</td><td>講解段</td></tr>
       <tr class="hi"><td>動態伸展六式</td><td>6</td><td>熟悉快歌，大家會想跟著動</td><td>90 到 100</td><td>2 首</td></tr>
-      <tr class="hi"><td>靜態伸展六式</td><td>10</td><td>慢歌</td><td>60 到 80</td><td>2 到 3 首，吐氣跟節拍</td></tr>
-      <tr><td>正念：定義、掃描、嘆息</td><td>20</td><td>不放，或自然聲</td><td>—</td><td>身體掃描全程安靜</td></tr>
+      <tr class="hi"><td>靜態六式＋頸軀幹、腿後、胸部</td><td>14</td><td>慢歌</td><td>60 到 80</td><td>3 到 4 首，吐氣跟節拍</td></tr>
+      <tr><td>正念：定義、掃描、嘆息</td><td>18</td><td>不放，或自然聲</td><td>—</td><td>身體掃描全程安靜</td></tr>
       <tr class="hi"><td>一首歌的音樂伸展收尾</td><td>5</td><td>一首大家會唱的歌</td><td>先快後慢</td><td>跟著歌曲段落走</td></tr>
-      <tr><td>再量一次、帶回家</td><td>10</td><td>輕背景</td><td>60 到 70</td><td>合計約 110 分鐘</td></tr>
+      <tr><td>再量一次、帶回家</td><td>8</td><td>輕背景</td><td>60 到 70</td><td>合計約 110 分鐘</td></tr>
     </table>
     <div class="note-box" style="margin-top:10px;font-size:22px;padding:12px 18px"><b>原則：</b>有講解就不放，有動作才放，正念段全程安靜。自己喜歡、熟悉的音樂效果不輸研究者挑的（de Witte 2020）。</div>
   </div>
 </section>
-
 <!-- 第三部分 -->
 <section class="slide section" data-title="第三部分：正念" data-note="轉場。身體已經鬆了，現在把注意力帶回來。音樂關掉，燈可以調暗一點。
 先問：「剛剛按摩的時候，有沒有哪一刻你什麼都沒想，只注意到手的感覺？」那一刻就是正念。">
@@ -756,7 +1037,6 @@ Packheiser 2024 是 Nature Human Behaviour 的大型統合分析，212 篇研究
   <h1>正念：把注意力帶回來</h1>
   <p class="lead">剛剛按摩時「只注意到手的感覺」的那一刻，就是正念。它可以練，也量得到。</p>
 </section>
-
 <!-- 4a 什麼是正念 -->
 <section class="slide" data-title="什麼是正念？什麼是正念減壓？" data-note="先問全場：「有人上過正念課或用過正念 App 嗎？」
 用三個要素講定義，再用「不是什麼」破除誤解：不是放空、不是正向思考、不是宗教。
@@ -942,7 +1222,6 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
     <div class="pcard" style="flex:0 0 400px"><img src="img/seniors_arms.jpg" alt="" style="height:380px"><div class="cap"><b>歌怎麼挑</b>：約 4 分鐘、大家會唱、中等節奏（約 80 到 90 拍）。唱出來也算呼吸練習。</div></div>
   </div>
 </section>
-
 <!-- 8 共同機制 -->
 <section class="slide" data-title="三種方法的共同機制" data-note="這一頁把三個答案串起來：正念、按摩、運動看起來不同，其實都在按同一顆「關機鍵」，也就是迷走神經和副交感系統。
 講 HRV 可以用「心跳的彈性」比喻：彈性好的心跳，代表身體有能力在緊張後快速回到平靜。
@@ -1101,18 +1380,23 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
     <p>按摩球靠牆：pexels.com/photo/4498299</p>
     <p>刺球：pexels.com/photo/11170468</p>
     <p>收尾長者舉手伸展：pexels.com/photo/6975769</p>
+    <p>新封面長者課堂：pexels.com/photo/11674389</p>
+    <p>伸展示範：pexels.com/photo/14036851、5038865、8172929、3768179、4853029、4662451、5036898、6697186、7592340、6975796、6975780、5793654、7900674</p>
   </div>
 </section>
-
+</div><!-- /stage -->
+</div><!-- /viewport -->
+<div id="prog"></div>
+<div id="rotateTip">📱 手機建議橫放或用「下一頁」逐頁看；也可按「目錄」跳頁。<button id="tipClose">知道了</button></div>
 <!-- 導覽列 -->
 <div id="bar">
   <div class="l"><span class="brand">愛迪樂 × 耕莘 USR</span><button id="tocBtn">目錄 <span class="kbd">M</span></button></div>
   <div class="r">
     <button id="prevBtn">◀ 上一頁</button>
-    <span class="cnt" id="cnt">1 / 46</span>
+    <span class="cnt" id="cnt">1 / 54</span>
     <button id="nextBtn">下一頁 ▶</button>
     <button id="noteBtn">講師提示 <span class="kbd">N</span></button>
-    <button id="fsBtn">全螢幕 <span class="kbd">F</span></button>
+    <button id="fsBtn" class="dsk">全螢幕 <span class="kbd">F</span></button>
   </div>
 </div>
 
@@ -1120,8 +1404,7 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
 <div id="toc"><button class="close" id="tocClose">✕</button><h2>目錄</h2><div class="items" id="tocItems"></div></div>
 <div id="modal"><div class="box"><div class="t" id="mT"></div><div class="b" id="mB"></div><button id="mClose">知道了</button></div></div>
 
-</div><!-- /stage -->
-</div><!-- /viewport -->
+
 
 <script>
 (function(){
@@ -1132,8 +1415,16 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
 
   /* 縮放 */
   const stage=document.getElementById('stage');
-  function fit(){const s=Math.min(innerWidth/1600,innerHeight/900);stage.style.transform=`scale(${s})`;}
+  function fit(){
+    const mobile=innerWidth<820||(innerWidth<innerHeight&&innerWidth<1000);
+    document.body.classList.toggle('mobile',mobile);
+    document.body.classList.toggle('landscape',innerWidth>innerHeight);
+    if(mobile){stage.style.transform='';return;}
+    const bh=(document.getElementById('bar')||{}).offsetHeight||60;
+    const s=Math.min(innerWidth/1600,(innerHeight-bh)/900);stage.style.transform=`scale(${s})`;
+  }
   addEventListener('resize',fit);fit();
+  document.getElementById('tipClose').onclick=()=>document.body.classList.add('tipoff');
 
   /* 導覽 */
   const cnt=document.getElementById('cnt'),prog=document.getElementById('prog'),noteBody=document.getElementById('noteBody');
@@ -1143,6 +1434,7 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
     cnt.textContent=`${cur+1} / ${N}`;prog.style.width=((cur+1)/N*100)+'%';
     noteBody.innerHTML=(slides[cur].dataset.note||'（本頁無提示）').replace(/\n/g,'<br>');
     location.hash='#/'+(cur+1);
+    if(document.body.classList.contains('mobile'))scrollTo(0,0);
   }
   document.getElementById('prevBtn').onclick=()=>go(cur-1);
   document.getElementById('nextBtn').onclick=()=>go(cur+1);
@@ -1166,8 +1458,8 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
     else if(k==='f'||k==='F')document.getElementById('fsBtn').click();
     else if(k==='Escape'){notes.classList.remove('open');toc.classList.remove('open');modal.classList.remove('open')}
   });
-  let tx=null;addEventListener('touchstart',e=>tx=e.touches[0].clientX);
-  addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>60)go(dx<0?cur+1:cur-1);tx=null;});
+  let tx=null,ty=null;addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;});
+  addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.5)go(dx<0?cur+1:cur-1);tx=ty=null;});
   function showModal(t,b){document.getElementById('mT').textContent=t;document.getElementById('mB').innerHTML=b;modal.classList.add('open');}
 
   /* 評分 */
@@ -1268,7 +1560,8 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
     slides.forEach(x=>x.classList.remove('active')); act.classList.add('active');
     stage.classList.remove('nofx');
   }
-  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fitAll);
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>{if(!document.body.classList.contains('mobile'))fitAll();});
+  let wasMobile=document.body.classList.contains('mobile');addEventListener('resize',()=>{const m=document.body.classList.contains('mobile');if(wasMobile&&!m)fitAll();wasMobile=m;});
 
   /* 起始頁 */
   const h=location.hash.match(/#\/(\d+)/);go(h?+h[1]-1:0);
