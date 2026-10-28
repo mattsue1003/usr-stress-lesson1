@@ -1424,13 +1424,15 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
 
   /* 縮放 */
   const stage=document.getElementById('stage');
-  let viewPref='auto';try{viewPref=localStorage.getItem('deckView')||'auto';}catch(e){}
+  let viewPref='auto';try{viewPref=sessionStorage.getItem('deckView')||'auto';}catch(e){}
   function isMobile(){
     if(viewPref==='mobile')return true;
     if(viewPref==='desktop')return false;
-    const touch=matchMedia('(pointer:coarse)').matches||navigator.maxTouchPoints>1;
-    return touch&&innerWidth<820;
+    const touch=matchMedia('(pointer:coarse)').matches||navigator.maxTouchPoints>1||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    return innerWidth<500||(touch&&innerWidth<820);
   }
+  try{matchMedia('(pointer:coarse)').addEventListener('change',()=>fit());}catch(e){}
+  addEventListener('orientationchange',()=>setTimeout(fit,100));
   function fit(){
     const mobile=isMobile();
     document.body.classList.toggle('mobile',mobile);
@@ -1442,7 +1444,7 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
   }
   addEventListener('resize',fit);fit();
   document.getElementById('tipClose').onclick=()=>document.body.classList.add('tipoff');
-  document.getElementById('viewBtn').onclick=()=>{viewPref=document.body.classList.contains('mobile')?'desktop':'mobile';try{localStorage.setItem('deckView',viewPref);}catch(e){}fit();if(!document.body.classList.contains('mobile'))fitAll();scrollTo(0,0);};
+  document.getElementById('viewBtn').onclick=()=>{viewPref=document.body.classList.contains('mobile')?'desktop':'mobile';try{sessionStorage.setItem('deckView',viewPref);}catch(e){}fit();if(!document.body.classList.contains('mobile'))fitAll();scrollTo(0,0);};
 
   /* 導覽 */
   const cnt=document.getElementById('cnt'),prog=document.getElementById('prog'),noteBody=document.getElementById('noteBody');
