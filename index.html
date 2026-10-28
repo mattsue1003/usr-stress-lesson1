@@ -278,8 +278,9 @@ body.mobile #bar .short{display:inline}
 body.mobile #bar .l,body.mobile #bar .r{gap:6px}
 body.mobile #bar{justify-content:space-between}
 body.mobile #bar .cnt{min-width:64px;font-size:16px}
-body.mobile #notes{width:100%;bottom:56px;top:auto;height:60vh;border-left:0;border-top:6px solid var(--orange);transform:translateY(calc(100% + 60px))}
-body.mobile #notes.open{transform:none}
+body.mobile #notes{width:100%;bottom:56px;top:auto;height:60vh;border-left:0;border-top:6px solid var(--orange);transform:translateY(120vh);visibility:hidden}
+body.mobile #notes.open{transform:none;visibility:visible}
+body.mobile{overflow-x:hidden}
 body.mobile #toc{bottom:56px;padding:20px 16px 40px}
 body.mobile #toc .items{grid-template-columns:1fr}
 body.mobile #toc h2{font-size:26px}
