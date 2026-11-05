@@ -333,6 +333,14 @@ body.mobile .speaker .photo{flex:none;width:100%;height:360px}
 body.mobile .bdj .pcard img{height:auto!important;aspect-ratio:531/510;object-position:center}
 body.mobile .guide{flex-direction:column}
 body.mobile .guide .cue{min-height:0}
+/* 第二堂第二版：蝴蝶擁抱節拍器、雙欄 */
+.bf{flex:none;display:flex;align-items:center;gap:18px}
+.bfhand{width:150px;height:150px;border-radius:50%;background:#EDE6F6;border:4px solid #CFC3E6;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:900;color:var(--muted);transition:all .25s ease}
+.bfhand.on{background:var(--orange);border-color:var(--orange);color:#fff;transform:scale(1.12);box-shadow:0 10px 28px rgba(123,79,179,.35)}
+.bfmid{width:120px;text-align:center;font-size:64px;font-weight:900;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1}
+.bfmid small{display:block;font-size:22px;color:var(--muted);font-weight:700;margin-top:6px}
+body.mobile .bf{justify-content:center}
+body.mobile .two{flex-direction:column}
 </style>
 </head>
 <body>
@@ -346,7 +354,7 @@ body.mobile .guide .cue{min-height:0}
   <div class="blob"></div><img class="coverph" src="../img/cover2_happy.jpg" alt="">
   <div class="kicker">耕莘健康管理專科學校｜大學社會責任計畫（USR）｜第二堂</div>
   <h1>身心修復<br><em>找回自癒力</em></h1>
-  <div class="sub">練習身心運動：八段錦、太極、慢呼吸<br>補上週的按摩球、伸展與正念</div>
+  <div class="sub">練習身心運動：八段錦、太極、慢呼吸<br>按摩球地板版、紓壓伸展、心理師的穩定化技巧</div>
   <div class="meta"><span>🏫 耕莘專校宜蘭校區</span><span>📅 11/6（五）14:00–16:00</span><span>💜 愛迪樂</span></div>
   <div class="qrbox"><img src="../img/qr2.png" alt="QR code"><div><b>掃描帶走簡報</b><small>mattsue1003.github.io/usr-stress-lesson1/lesson2</small></div></div>
 </section>
@@ -378,10 +386,10 @@ body.mobile .guide .cue{min-height:0}
   <div class="body">
     <ol class="steps" style="grid-template-columns:1fr 1fr">
       <li><b>自癒力是什麼？</b>身體本來就會修復，研究怎麼說</li>
-      <li><b>補上週：按摩球</b>靠牆版、坐姿版，自己鬆開肩背腿</li>
-      <li><b>動態暖身</b>上週沒做完的伸展，配音樂叫醒身體</li>
+      <li><b>按摩球：躺在墊子上</b>複習靠牆、坐姿，今天重點是地板版</li>
+      <li><b>伸展怎麼做最紓壓</b>動態還是靜態？強度、時間、次數</li>
       <li><b>八段錦與太極</b>千年的身心運動，坐著也能做</li>
-      <li><b>呼吸與正念</b>共振呼吸、STOP、六十秒身體掃描</li>
+      <li><b>呼吸與穩定化技巧</b>共振呼吸、蝴蝶擁抱等心理師常用招式</li>
       <li><b>躺著也能修復</b>漸進式肌肉放鬆，帶回家的睡前版</li>
     </ol>
     <div class="note-box"><b>今天的約定：</b>所有動作都可以坐著做。覺得痛、頭暈、喘不過氣，就停下來，舉手讓我知道。</div>
@@ -393,7 +401,7 @@ body.mobile .guide .cue{min-height:0}
   <div class="tag">上週回顧</div>
   <h1>上週大家問的<em>四個好問題</em></h1>
   <div class="body grid g2" style="gap:16px">
-    <div class="card small hi"><h3><span class="ic">🧼</span>洗臉也算頭臉按摩嗎？</h3><p>不能直接畫等號。研究裡是別人幫你按，每次 10 到 20 分鐘、重複多次。但可以把洗臉<b>放慢成一分鐘的臉部按摩</b>，再專心感受水溫，就是一個正念練習。</p></div>
+    <div class="card small hi"><h3><span class="ic">🧼</span>洗臉也算頭臉按摩嗎？</h3><p>不能直接畫等號。研究裡是別人幫你按，每次 10 到 20 分鐘、重複多次。但可以把洗臉<b>放慢成一分鐘的臉部按摩</b>。另外，用<b>冷水</b>敷臉會啟動潛水反射、讓心跳變慢，今天第五部分會教。</p></div>
     <div class="card small hi"><h3><span class="ic">🛋️</span>躺一下、沒睡著也有用嗎？</h3><p>有。Meier 2020 的對照組只是<b>閉眼安靜休息十分鐘</b>，副交感指標上升約 13%，主觀壓力也下降；按摩組約 25%。前提是不滑手機、不做事。</p></div>
     <div class="card small"><h3><span class="ic">💆</span>瑞典式按摩是什麼？</h3><p>西方最常見的放鬆式按摩，五種手法：<b>推撫、揉捏、摩擦、拍擊、振動</b>，力道輕到中等、朝心臟方向。上週的自我按摩用的就是前三種。</p></div>
     <div class="card small"><h3><span class="ic">⌚</span>心率變異（HRV）是什麼？</h3><p>心跳和心跳之間的「彈性」。數值高，代表身體有能力切回修復模式。今天第一部分會細講，<b>也教你用手錶看</b>。</p></div>
@@ -485,12 +493,12 @@ body.mobile .guide .cue{min-height:0}
   <div class="src">Irwin MR, et al. J Am Geriatr Soc 2007;55(4):511-517. Morgan N, et al. PLoS One 2014;9(7):e100903. Siu PM, et al. JAMA Netw Open 2021;4(2):e2037199. Zou L, et al. J Clin Med 2018;7(11):404. Lomas-Vega R, et al. J Am Geriatr Soc 2017;65(9):2037-2043.</div>
 </section>
 <!-- 第二部分 -->
-<section class="slide section" data-title="第二部分：補上週的按摩球" data-note="轉場。發按摩球或網球。說明：上週時間不夠沒帶到，今天先用球把肩背腿鬆開，等一下做八段錦會更順。">
-  <img class="secph" src="../img/ball_wall.jpg" alt="">
+<section class="slide section" data-title="第二部分：按摩球地板版" data-note="轉場。發按摩球或網球，請大家把墊子鋪好。先用三頁快速複習靠牆版與坐姿版，再進入今天的重點：躺在墊子上。">
+  <img class="secph" src="../img/mat_lying.jpg" alt="">
   <div class="tag">第二部分</div>
   <div class="num">02</div>
-  <h1>補上週：按摩球自己來</h1>
-  <p class="lead">先用球把肩背、臀部、腳底鬆開，等一下動起來會更順。</p>
+  <h1>按摩球：躺在墊子上</h1>
+  <p class="lead">先複習靠牆與坐姿，今天的重點是地板版：讓身體的重量幫你按。</p>
 </section>
 <!-- 按摩球地圖 -->
 <section class="slide" data-title="按摩球地圖：哪裡可以放球" data-note="先看地圖再發球。紅虛線是脊椎，整堂課都不壓；膝窩不直接壓，壓它上下方的肌肉。
@@ -577,6 +585,110 @@ body.mobile .guide .cue{min-height:0}
   </div>
   <div class="src">證據提醒：滾筒與按摩球主要支持減少痠痛與增加柔軟度（Wiewelhove 2019；Grieve 2015），對自律神經的效果不一致，所以放在配角位置。</div>
 </section>
+<!-- 安全上下地板 -->
+<section class="slide" data-title="地板版第一步：安全躺下、安全起身" data-note="長輩與照顧者最容易在『上下地板』時受傷，所以先教這一頁，請一位學員上台示範。
+起身時強調兩件事：先側翻再坐起，不要直接仰臥起坐；坐起後停 10 秒，等頭不暈再站。
+有起身困難、嚴重骨質疏鬆、剛手術、容易頭暈的人，直接用靠牆版或坐姿版，不要勉強躺地。">
+  <div class="tag">實作 按摩球地板版</div>
+  <h1>地板版第一步：<em>安全躺下、安全起身</em></h1>
+  <div class="body" style="gap:14px">
+    <div class="two" style="display:flex;gap:18px">
+      <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:28px;font-weight:900;color:var(--teal)">⬇ 躺下（扶著椅子）</div>
+        <ol class="steps" style="gap:8px">
+          <li style="font-size:23px">雙手扶穩椅座，一腳往後，<b>單膝慢慢跪下</b>，再換另一膝。</li>
+          <li style="font-size:23px">雙手撐地，<b>屁股坐到一側</b>，變成側坐。</li>
+          <li style="font-size:23px">用手肘撐地<b>側躺</b>下來，再慢慢翻成仰躺、屈膝踩地。</li>
+        </ol>
+      </div>
+      <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:28px;font-weight:900;color:var(--teal)">⬆ 起身（反過來做）</div>
+        <ol class="steps" style="gap:8px">
+          <li style="font-size:23px">先<b>屈膝、側翻</b>，不要直接仰臥起坐。</li>
+          <li style="font-size:23px">手撐地坐起，<b>停 10 秒</b>，等頭不暈再動。</li>
+          <li style="font-size:23px">轉成跪姿，雙手扶椅座，<b>單膝慢慢站起</b>。</li>
+        </ol>
+      </div>
+    </div>
+    <div class="warn" style="font-size:22px;padding:12px 18px"><b>誰不要躺地：</b>起身困難、嚴重骨質疏鬆、剛手術、容易頭暈或姿勢性低血壓的人，改用靠牆版或坐姿版，效果一樣好。</div>
+  </div>
+</section>
+<!-- 地板版仰躺 -->
+<section class="slide" data-title="按摩球地板版①：仰躺四點" data-note="先示範第 2 點上背，最安全也最有感。口令：找到痠點，停住，慢慢吐氣三次，等它鬆開再移動。
+第 1 點枕骨下，用兩顆網球裝進襪子打結，剛好卡在後腦凹處，很多人會在這裡睡著。
+第 3 點腰側一定要在脊椎旁三指外的肌肉上，骨質疏鬆者跳過。地板版是身體的重量壓在球上，比靠牆用力很多，先從網球開始。">
+  <div class="tag">實作 按摩球地板版 <span class="mpill">🎵 慢歌 60 到 70 拍・約 6 分鐘</span></div>
+  <h1>地板版①：<em>仰躺四點</em>，讓身體重量幫你按</h1>
+  <div class="body" style="flex-direction:row;gap:18px">
+    <div style="flex:0 0 600px;display:flex;flex-direction:column;gap:12px">
+      <svg viewBox="0 0 720 300" width="600" height="250" xmlns="http://www.w3.org/2000/svg" aria-label="仰躺放球位置示意">
+  <rect x="20" y="262" width="680" height="14" rx="7" fill="#E7E0F1"/>
+  <g fill="#EDE6F6" stroke="#BBAAD4" stroke-width="3">
+    <circle cx="88" cy="214" r="34"/>
+    <rect x="118" y="196" width="40" height="30" rx="10"/>
+    <rect x="150" y="186" width="230" height="52" rx="24"/>
+    <ellipse cx="392" cy="214" rx="36" ry="26"/>
+  </g>
+  <g stroke="#BBAAD4" stroke-linecap="round" fill="none">
+    <line x1="410" y1="206" x2="492" y2="122" stroke-width="38"/>
+    <line x1="492" y1="122" x2="556" y2="236" stroke-width="30"/>
+    <line x1="190" y1="196" x2="262" y2="176" stroke-width="18"/>
+  </g>
+  <g stroke="#EDE6F6" stroke-linecap="round" fill="none">
+    <line x1="410" y1="206" x2="492" y2="122" stroke-width="32"/>
+    <line x1="492" y1="122" x2="556" y2="236" stroke-width="24"/>
+  </g>
+  <ellipse cx="574" cy="250" rx="32" ry="11" fill="#EDE6F6" stroke="#BBAAD4" stroke-width="3"/>
+  <g fill="#9B7FC7" stroke="#5E4B8B" stroke-width="2">
+    <circle cx="124" cy="244" r="13"/><circle cx="144" cy="246" r="13"/>
+    <circle cx="200" cy="250" r="13"/>
+    <circle cx="318" cy="250" r="13"/>
+    <circle cx="398" cy="250" r="13"/>
+  </g>
+  <g font-family="Noto Sans TC, Microsoft JhengHei, PingFang TC, sans-serif" font-weight="900" font-size="20" text-anchor="middle">
+    <circle cx="134" cy="150" r="17" fill="#7B4FB3"/><text x="134" y="157" fill="#fff">1</text>
+    <circle cx="200" cy="140" r="17" fill="#7B4FB3"/><text x="200" y="147" fill="#fff">2</text>
+    <circle cx="318" cy="140" r="17" fill="#7B4FB3"/><text x="318" y="147" fill="#fff">3</text>
+    <circle cx="398" cy="150" r="17" fill="#7B4FB3"/><text x="398" y="157" fill="#fff">4</text>
+  </g>
+  <g stroke="#7B4FB3" stroke-width="2" stroke-dasharray="4 4"><line x1="134" y1="168" x2="134" y2="230"/><line x1="200" y1="158" x2="200" y2="236"/><line x1="318" y1="158" x2="318" y2="236"/><line x1="398" y1="168" x2="398" y2="236"/></g>
+  <g font-family="Noto Sans TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="17" fill="#2B1B3D" text-anchor="middle">
+    <text x="134" y="122">枕骨下</text><text x="200" y="112">上背</text><text x="318" y="112">腰側</text><text x="398" y="122">臀部</text>
+  </g>
+  <text x="360" y="36" text-anchor="middle" font-family="Noto Sans TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="21" font-weight="900" fill="#5E4B8B">仰躺、屈膝、腳踩地：球放在身體和墊子之間</text>
+  <text x="360" y="64" text-anchor="middle" font-family="Noto Sans TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="17" fill="#B8405E">脊椎正中、頸椎、肋骨不壓</text>
+</svg>
+      <div class="pcard" style="flex:none"><img src="../img/floor_back.jpg" alt="" style="height:200px;object-position:center 60%"><div class="cap" style="font-size:19px;padding:8px 12px"><b>姿勢參考</b>：雙手抱胸、臀部微抬，用腳控制壓力。用球時改放在單側肌肉上。</div></div>
+    </div>
+    <ol class="steps" style="flex:1;gap:8px;min-width:0">
+      <li style="font-size:21px;padding:10px 16px 10px 86px"><b>枕骨下（1）</b>：兩顆網球裝進襪子打結，放在後腦髮際線下方的凹處，頭的重量交給球，輕輕點頭、左右轉頭 1 到 2 分鐘。不壓頸椎、不壓前頸。</li>
+      <li style="font-size:21px;padding:10px 16px 10px 86px"><b>上背（2）</b>：球在肩胛骨與脊椎之間，雙手抱胸讓肩胛骨打開；臀部微抬、身體上下移動幾公分，或停在痠點吐氣 3 次。換邊。</li>
+      <li style="font-size:21px;padding:10px 16px 10px 86px"><b>腰側（3）</b>：球在腰部<b>脊椎旁三指外</b>的肌肉上，膝蓋慢慢倒向同側，30 到 60 秒。換邊。骨質疏鬆者跳過。</li>
+      <li style="font-size:21px;padding:10px 16px 10px 86px"><b>臀部（4）</b>：球在一側臀部外上方，同側腳翹到對側膝蓋上（4 字形）加強，身體小幅左右搖 30 到 90 秒。換邊。</li>
+    </ol>
+  </div>
+  <div class="src">姿勢參考照：PTPioneer（Tyler Read），Wikimedia Commons，CC BY 2.0。</div>
+</section>
+<!-- 地板版坐地與趴姿 -->
+<section class="slide" data-title="按摩球地板版②：坐地與趴姿" data-note="長坐版用手撐地讓臀部離地，用手臂控制壓力；手腕無力的人只把腿放在球上前後滑。
+趴姿胸前對整天低頭的人最有感，但長輩趴不下去就用牆版。
+最後一站回到椅子上踩腳底，當作收尾，順便練習安全起身。">
+  <div class="tag">實作 按摩球地板版 <span class="mpill">🎵 慢歌 60 到 70 拍・約 5 分鐘</span></div>
+  <h1>地板版②：<em>坐地與趴姿</em>，加上三個原則</h1>
+  <div class="body" style="flex-direction:row;gap:18px">
+    <div style="flex:0 0 470px;display:flex;flex-direction:column;gap:12px">
+      <div class="pcard" style="flex:none"><img src="../img/floor_calf.jpg" alt="" style="height:240px;object-position:center 55%"><div class="cap" style="font-size:19px;padding:8px 12px"><b>長坐姿勢參考</b>：雙手撐地、臀部離地，腿前後滑；用球時放在單側小腿下。</div></div>
+      <div class="card small hi" style="font-size:21px;padding:12px 16px"><h3 style="font-size:23px">地板版三原則</h3><p>① <b>從軟球開始</b>：網球 → 按摩球 → 硬球。</p><p>② 每處 30 到 90 秒，<b>找到痠點停住，慢吐 3 口</b>，等它鬆開。</p><p>③ 痛、麻、頭暈就停，避開脊椎、骨頭、膝窩。</p></div>
+    </div>
+    <ol class="steps" style="flex:1;gap:8px;min-width:0;counter-reset:s 4">
+      <li style="font-size:22px;padding:10px 16px 10px 86px"><b>小腿後側（長坐）</b>：坐在墊子上雙腿伸直，球放小腿肚下，雙手撐地讓臀部離地，腿前後滑 30 到 60 秒；另一腳疊上來加強。膝窩不壓。</li>
+      <li style="font-size:22px;padding:10px 16px 10px 86px"><b>大腿後側（長坐）</b>：球移到大腿後側中段，同樣手撐地前後滑，找到痠點停住。</li>
+      <li style="font-size:22px;padding:10px 16px 10px 86px"><b>胸前（趴姿）</b>：趴著，球放鎖骨下方靠肩膀處，手臂慢慢往外畫圈 30 秒。趴不下去的人改用牆版。</li>
+      <li style="font-size:22px;padding:10px 16px 10px 86px"><b>腳底（回到椅子）</b>：照剛剛教的方式安全起身，坐回椅子踩球，從腳跟滾到腳趾，一腳 1 分鐘收尾。</li>
+    </ol>
+  </div>
+  <div class="src">長坐姿勢參考照：Tyler Read，Wikimedia Commons，CC BY 2.0。</div>
+</section>
 <!-- 31 安全 -->
 <section class="slide" data-title="伸展與按摩的安全注意" data-note="請確實念完。長照機構同仁特別注意抗凝血藥物與骨質疏鬆。
 前頸不按，因為有頸動脈竇。腰椎正中不用滾筒。
@@ -604,12 +716,12 @@ body.mobile .guide .cue{min-height:0}
   <div class="warn"><b>原則：</b>減壓的動作一定是「舒服的」。痛、麻、暈都不是放鬆，是身體在喊停。</div>
 </section>
 <!-- 第三部分 -->
-<section class="slide section" data-title="第三部分：動態暖身" data-note="轉場。換熟悉的快歌，請大家站起來或坐直。動態暖身是八段錦前的準備。">
+<section class="slide section" data-title="第三部分：伸展怎麼做最紓壓" data-note="轉場。先問全場：「要放鬆，動態伸展好還是靜態伸展好？」舉手投票，再看研究。">
   <img class="secph" src="../img/seniors_stretch.jpg" alt="">
   <div class="tag">第三部分</div>
   <div class="num">03</div>
-  <h1>動態暖身：把身體叫醒</h1>
-  <p class="lead">上週沒做完的伸展，今天當作身心運動前的暖身。</p>
+  <h1>伸展：動態提神，靜態紓壓</h1>
+  <p class="lead">同樣是伸展，做法不同，對神經系統的作用剛好相反。</p>
 </section>
 <!-- 19 伸展選擇題 -->
 <section class="slide" data-title="選擇題：伸展減壓的關鍵" data-note="先讓大家猜，再公布。正確答案是「慢、配呼吸、持續做」。
@@ -643,6 +755,28 @@ body.mobile .guide .cue{min-height:0}
   </div>
   <div class="src">Montero-Marín J, et al. Aten Primaria 2013;45(7):376-383. Mueck-Weymann M, et al. Clin Auton Res 2004;14(1):15-18. Ko J, et al. J Phys Act Health 2021;18(1):21-28. de Witte M, et al. Health Psychol Rev 2020;14(2):294-324.</div>
 </section>
+<!-- 伸展處方 -->
+<section class="slide" data-title="紓壓伸展處方：強度、時間、次數" data-note="回答『動態好還是靜態好』：要放鬆選靜態，要提神選動態。
+最新研究的重點講清楚：拉的當下交感神經會上升，而且拉越用力升越多；放開後的休息期，副交感才上升。所以不要拉到痛，停留後要留空檔、配吐氣。
+動態：提高心跳與體溫，適合早上、暖身、精神差時。靜態：慢、停留、配吐氣，適合下班後、運動後、睡前。
+誠實補充：目前沒有一個研究直接找出『最佳』的心理處方，這張表是綜合多篇研究的整理。">
+  <div class="tag">研究怎麼說</div>
+  <h1>紓壓選<em>靜態</em>、提神選<em>動態</em>：伸展處方</h1>
+  <div class="body" style="flex-direction:row;gap:18px">
+    <div class="card small hi" style="flex:0 0 380px;font-size:21px;padding:14px 18px"><h3 style="font-size:23px">拉的當下 vs 放開之後</h3><p>拉的當下，交感神經（油門）上升，<b>拉得越用力上升越多</b>。</p><p>放開後的休息時間，迷走神經（煞車）才上升。</p><p>所以紓壓的關鍵是：<b>輕、停留、放開後留空檔、配吐氣</b>。</p><p><b>動態</b>讓人醒：早上、暖身、精神差。<br><b>靜態</b>讓人鬆：下班、運動後、睡前。</p><p style="font-size:18px;color:var(--muted)">目前沒有研究直接找出「最佳」心理處方，右表是綜合整理。</p></div>
+    <table class="tb compact" style="flex:1">
+      <tr><th style="width:110px">項目</th><th>建議</th><th style="width:330px">根據</th></tr>
+      <tr class="hi"><td>強度</td><td>舒服的伸展感，痛 10 分裡 3 到 4 分</td><td>越用力，交感越高（Lehnen 2026）</td></tr>
+      <tr><td>停留</td><td>每次 30 到 60 秒，吐氣時再鬆一點</td><td>ACSM 建議</td></tr>
+      <tr class="hi"><td>組數</td><td>每部位 2 到 4 回，中間放鬆 15 到 30 秒</td><td>放開後迷走神經上升（Lehnen 2025）</td></tr>
+      <tr><td>時間</td><td>每次 10 到 15 分鐘</td><td>Montero-Marín 2013；Mueck-Weymann 2004</td></tr>
+      <tr class="hi"><td>頻率</td><td>每天，至少每週 5 天</td><td>上面兩篇都是每天做</td></tr>
+      <tr><td>見效</td><td>當次放鬆；約 4 週心率變異改善；約 3 個月焦慮下降</td><td>28 天（Mueck-Weymann）；3 個月（Montero-Marín）</td></tr>
+      <tr class="hi"><td>加分</td><td>躺在墊子上做、配慢呼吸</td><td>地板伸展後副交感上升（Schmitt 2026）；配呼吸恢復更快（Petviset 2025）</td></tr>
+    </table>
+  </div>
+  <div class="src">Behm DG, et al. Eur J Appl Physiol 2026;126(6):2977-2987. Lehnen GCS, et al. J Appl Physiol 2025;139(5):1282-1292；Am J Physiol 2026;330(5):R551-R560. Montero-Marín J, et al. Aten Primaria 2013. Mueck-Weymann M, et al. Clin Auton Res 2004. Schmitt L, et al. Front Physiol 2026;17:1793941. Petviset H, et al. Int J Exerc Sci 2025;18(6):79-91.</div>
+</section>
 <!-- 22 動態伸展 -->
 <section class="slide" data-title="實作：動態伸展六式" data-note="站著或坐著都可以。每式做 8 到 10 下，節奏像走路一樣，不用快。
 講師示範時嘴巴要一直講提示語，讓長輩跟得上。
@@ -661,27 +795,6 @@ body.mobile .guide .cue{min-height:0}
     <div class="note-box" style="margin-top:14px"><b>重點：</b>節奏像走路，不喘、不甩、不憋氣。做完問一句：「現在身體比剛剛醒了幾分？」</div>
   </div>
 </section>
-<!-- 21 伸展細則 -->
-<section class="slide" data-title="減壓伸展的細則" data-note="這一頁是操作規格，可以請學員拍下來。
-最重要的三條：不憋氣、不彈震、痠不痛。
-對長者：停留可以拉長到 30 到 60 秒，因為組織彈性較低、需要較長時間；所有動作都有坐姿版本。">
-  <div class="tag">操作規格</div>
-  <h1>減壓伸展的<em>七條細則</em></h1>
-  <div class="body grid g2" style="gap:16px">
-    <ol class="steps" style="gap:12px">
-      <li><b>強度：</b>拉到「痠痠的、可以忍」就停，大約 10 分痛裡的 3 到 4 分。不追求更開。</li>
-      <li><b>時間：</b>每個姿勢停 15 到 30 秒；長者或較僵硬的人停 30 到 60 秒。</li>
-      <li><b>次數：</b>每個部位做 2 到 4 回，每週至少 2 到 3 天，每天更好。</li>
-      <li><b>呼吸：</b>吐氣時再鬆一點點。全程不憋氣。</li>
-    </ol>
-    <ol class="steps" style="gap:12px;counter-reset:s 4">
-      <li><b>速度：</b>慢慢進去、慢慢出來。不彈震、不甩。</li>
-      <li><b>注意力：</b>眼睛可以閉上，注意被拉開的那條肌肉的感覺。這就是把覺察放進伸展。</li>
-      <li><b>安全：</b>有關節置換、骨質疏鬆、急性發炎、剛手術的部位，先問醫師或治療師；頭暈立刻停。</li>
-    </ol>
-  </div>
-  <div class="src">依 ACSM Guidelines for Exercise Testing and Prescription（第 11 版）柔軟度運動建議整理；長者停留時間依 ACSM 老年人建議。</div>
-</section>
 <!-- 23 靜態伸展 -->
 <section class="slide" data-title="實作：靜態伸展六式" data-note="這是今天的主菜。換成慢音樂，燈可以稍微調暗。
 每式停 30 到 60 秒，講師帶呼吸：「吸……吐……吐的時候再鬆一點點。」
@@ -698,6 +811,21 @@ body.mobile .guide .cue{min-height:0}
       <div class="m"><div class="t"><span class="n">6</span>雙手上舉、整身嘆氣</div><div>吸氣雙手上舉，吐氣時「哈」一聲放下，全身垮下來。做三次。</div><div class="cue">「把今天的重量放下。」</div><div class="why">收尾的儀式，結合循環嘆息。</div></div>
     </div>
     <div class="note-box" style="margin-top:14px"><b>講師口令：</b>「吸……吐……吐的時候再鬆一點點。」每式之間停三秒，請大家感覺剛剛被拉開的那個地方。</div>
+  </div>
+</section>
+<!-- 地板紓壓伸展 -->
+<section class="slide" data-title="實作：墊子上的紓壓伸展三式" data-note="照伸展處方做：每式停 1 分鐘、左右各 2 次、中間放鬆 15 秒，全程吐氣比吸氣長。
+仰躺扭轉時，膝蓋倒向哪邊、頭就轉向另一邊；肩膀盡量貼地，不必讓膝蓋碰地。
+做完這三式，很多人會打哈欠，這就是副交感上來的訊號。">
+  <div class="tag">實作 伸展 <span class="mpill">🎵 慢歌 60 到 70 拍・約 6 分鐘</span></div>
+  <h1>墊子上的<em>紓壓伸展三式</em>：每式 1 分鐘、左右各 2 次</h1>
+  <div class="body" style="flex-direction:row;gap:18px">
+    <div class="pcard" style="flex:0 0 420px"><img src="../img/mat_lying.jpg" alt="" style="height:300px"><div class="cap" style="font-size:20px"><b>預備姿勢</b>：仰躺、屈膝、腳踩地，雙手放身旁，先做三次慢呼吸。</div></div>
+    <ol class="steps" style="flex:1;gap:10px;min-width:0">
+      <li style="font-size:23px"><b>抱膝搖一搖（30 秒）</b>：雙手抱住雙膝拉向胸口，身體左右輕輕搖，讓下背貼地放鬆。</li>
+      <li style="font-size:23px"><b>仰躺扭轉（1 分鐘 × 左右各 2 次）</b>：雙手打開成 T 字，雙膝慢慢倒向一側，頭轉向另一側；肩膀貼地，吐氣時再鬆一點。</li>
+      <li style="font-size:23px"><b>仰躺開胸（1 分鐘 × 2 次）</b>：雙手打開成 W 字，掌心朝上，吐氣讓肩膀往地板沉，感覺胸口打開。</li>
+    </ol>
   </div>
 </section>
 <!-- 頸部與軀幹 -->
@@ -763,7 +891,7 @@ body.mobile .guide .cue{min-height:0}
   <h1>什麼是<em>身心運動</em>？比一般運動多了什麼？</h1>
   <div class="body grid g2" style="gap:16px">
     <div class="card hi"><h3><span class="ic">🧘</span>共同的四個要素</h3><ul class="list"><li><b>動作慢</b>而且連續，不追求速度</li><li><b>配合呼吸</b>，吐氣時放鬆</li><li><b>注意力放在身體</b>的感覺上</li><li><b>不比賽</b>，做到舒服就好</li></ul></div>
-    <div class="card"><h3><span class="ic">🌿</span>常見的身心運動</h3><p><b>太極</b>：重心移動、全身協調，防跌研究最多。</p><p><b>氣功（八段錦）</b>：八個動作、可坐可站，最容易入門。</p><p><b>瑜伽、正念伸展</b>：停留與呼吸為主。</p></div>
+    <div class="card"><h3><span class="ic">🌿</span>常見的身心運動</h3><p><b>太極</b>：重心移動、全身協調，防跌研究最多。</p><p><b>氣功（八段錦）</b>：八個動作、可坐可站，最容易入門。</p><p><b>瑜伽</b>：停留與呼吸為主。</p></div>
     <div class="card teal"><h3><span class="ic">🌬️</span>呼吸是關鍵</h3><p>太極與心率變異的統合分析（11 個隨機試驗）發現：<b>有強調呼吸的太極</b>，心率變異改善更明顯。</p><p style="font-size:19px;color:var(--muted)">Zhou 2023, J Integr Complement Med</p></div>
     <div class="card teal"><h3><span class="ic">⚖️</span>不必糾結哪一種</h3><p>對失眠長者，<b>太極和一般運動</b>改善睡眠的效果差不多。挑喜歡、做得到、會持續的那一種。</p><p style="font-size:19px;color:var(--muted)">Siu 2021, JAMA Netw Open</p></div>
   </div>
@@ -840,12 +968,12 @@ body.mobile .guide .cue{min-height:0}
   <div class="src">Siu PM, et al. JAMA Netw Open 2021. Irwin MR, et al. J Clin Oncol 2017;35(23):2656-2665. Irwin MR, et al. Sleep 2014;37(9):1543-1552.</div>
 </section>
 <!-- 第五部分 -->
-<section class="slide section" data-title="第五部分：呼吸與正念" data-note="轉場。音樂關掉。剛剛八段錦每個動作都配一個呼吸，現在把呼吸單獨拿出來練。">
+<section class="slide section" data-title="第五部分：呼吸與穩定化技巧" data-note="轉場。音樂關掉。先練共振呼吸，再教幾個心理師在諮商室常教的身體技巧，照顧者和長照夥伴回去可以直接用在自己或個案身上。">
   <img class="secph" src="../img/meditate_outdoor.jpg" alt="">
   <div class="tag">第五部分</div>
   <div class="num">05</div>
-  <h1>呼吸與正念：直接按關機鍵</h1>
-  <p class="lead">呼吸是唯一能自己控制的自律神經開關。慢下來，心率變異就跟著上升。</p>
+  <h1>呼吸與穩定化技巧</h1>
+  <p class="lead">心慌、焦慮、睡不著的時候，用身體把自己帶回來：慢呼吸、蝴蝶擁抱、手放胸口。</p>
 </section>
 <!-- 共振呼吸 -->
 <section class="slide" data-title="實作：共振呼吸，每分鐘 6 次" data-note="按開始，跟著圓球做三分鐘。吸 4 秒、吐 6 秒，剛好每分鐘 6 次，這是心率變異最容易被放大的節奏。
@@ -865,117 +993,60 @@ body.mobile .guide .cue{min-height:0}
   </div>
   <div class="src">Zaccaro A, et al. Front Hum Neurosci 2018;12:353. Goessl VC, et al. Psychol Med 2017;47(15):2578-2586.</div>
 </section>
-<!-- 17 實作：循環嘆息 -->
-<section class="slide" data-title="實作：循環嘆息" data-note="這是伸展前的暖身呼吸，也是今天最容易帶回家的技巧。
-動作：鼻子吸一口到七分滿，再快速補吸一小口到全滿，然後用嘴巴慢慢吐到底。吐氣要比吸氣長。
-按開始，跟著圓球做五輪，大約一分鐘。長輩若頭暈就改成一般慢呼吸。">
-  <div class="tag">實作 　🔇 不放音樂</div>
-  <h1><em>循環嘆息</em>：兩次吸，一次長吐</h1>
-  <div class="body">
-    <div class="breath">
-      <div class="orb"><div id="orb"></div></div>
-      <div class="cue" id="breathCue">按下開始，跟著圓球呼吸。<small>鼻子吸一口（七分滿）→ 再補吸一小口（全滿）→ 嘴巴慢慢吐到底。吐氣要比吸氣長。做五輪，約一分鐘。頭暈就停，改成一般慢呼吸。</small></div>
-    </div>
-    <div style="display:flex;gap:16px;margin-top:26px;align-items:center"><button class="btn o" id="breathStart">開始五輪</button><button class="btn ghost" id="breathStop">停止</button><span style="font-size:24px;color:var(--muted)">研究做法：每天五分鐘，連續一個月，心情改善幅度優於同時間的正念冥想。</span></div>
+<!-- 穩定化技巧總覽 -->
+<section class="slide" data-title="心理師常用的身體穩定化技巧" data-note="先說明什麼是穩定化：人被情緒淹沒時，講道理沒有用，要先用身體把神經系統帶回可以思考的範圍。
+證據標籤要照實講：手放胸口有隨機試驗；蝴蝶擁抱、感官著陸是臨床常用但研究少；敲打穴位有統合分析，但品質與機轉仍有爭議。
+長照夥伴可以用在焦躁的長輩身上，但要先問、先示範，碰觸前取得同意。">
+  <div class="tag">穩定化技巧</div>
+  <h1>心理師常用的<em>身體穩定化技巧</em></h1>
+  <div class="body" style="gap:12px">
+    <div class="note-box" style="margin:0;font-size:21px;padding:10px 18px"><b>什麼是穩定化：</b>被情緒淹沒時，先不講道理，<b>用身體把神經系統帶回可以思考的範圍</b>。</div>
+    <table class="tb tight">
+      <tr><th style="width:230px">技巧</th><th>做法一句話</th><th style="width:500px">研究證據</th></tr>
+      <tr class="hi"><td>手放胸口<br>（自我安撫觸摸）</td><td>一手放胸口、一手放肚子，感覺手的溫度，慢慢呼吸</td><td><span class="pill t">隨機試驗</span>159 人做壓力測驗，自我安撫觸摸組的皮質醇較低（Dreisoerner 2021）</td></tr>
+      <tr class="hi"><td>蝴蝶擁抱</td><td>雙手交叉抱肩，左右交替輕拍</td><td><span class="pill">臨床常用</span>源自 EMDR 創傷治療，研究多為沒有對照組的小型研究（如 Lazzaroni 2021）</td></tr>
+      <tr><td>冷水敷臉<br>（潛水反射）</td><td>冷水或冷毛巾敷在眼睛到臉頰 15 到 30 秒，慢慢吐氣</td><td><span class="pill t">生理研究</span>冷水敷臉讓副交感神經更快回升（Al Haddad 2010）；也是辯證行為治療的危機技巧之一</td></tr>
+      <tr><td>5-4-3-2-1 感官著陸</td><td>說出 5 樣看到、4 樣摸到、3 樣聽到、2 樣聞到、1 樣嚐到</td><td><span class="pill gray">臨床常用</span>缺少隨機試驗；適合恐慌、思緒停不下來時</td></tr>
+      <tr><td>雙腳著地</td><td>腳掌用力踩地 5 秒再放鬆，感覺地板撐住你</td><td><span class="pill gray">臨床常用</span>缺少研究，但簡單、安全、隨時能做</td></tr>
+      <tr><td>敲打穴位<br>（情緒釋放技巧）</td><td>指尖輕敲眉頭、眼下、鎖骨下等點，同時說出感受</td><td><span class="pill">統合分析</span>14 個隨機試驗顯示焦慮下降（Clond 2016），但研究品質與機轉仍有爭議</td></tr>
+    </table>
   </div>
-  <div class="src">Balban MY, Neri E, Kogon MM, et al. Brief structured respiration practices enhance mood and reduce physiological arousal. Cell Rep Med 2023.</div>
+  <div class="src">Dreisoerner A, et al. Compr Psychoneuroendocrinol 2021;8:100091. Lazzaroni E, et al. Front Psychol 2021;12:701381. Al Haddad H, et al. Eur J Appl Physiol 2010;108(3):599-606. Clond M. J Nerv Ment Dis 2016;204(5):388-395.</div>
 </section>
-<!-- 4a 什麼是正念 -->
-<section class="slide" data-title="什麼是正念？什麼是正念減壓？" data-note="先問全場：「有人上過正念課或用過正念 App 嗎？」
-用三個要素講定義，再用「不是什麼」破除誤解：不是放空、不是正向思考、不是宗教。
-MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程，所以研究做得最多；但它的核心練習（身體掃描、覺察呼吸）今天就會做。">
-  <div class="tag">先弄清楚名詞</div>
-  <h1>什麼是<em>正念</em>？什麼是<em>正念減壓</em>？</h1>
-  <div class="body grid g2">
-    <div class="card hi">
-      <h3><span class="ic">🧠</span>正念（Mindfulness）</h3>
-      <p>把注意力<b>有意地</b>放在<b>當下</b>正在發生的事，而且<b>不急著評價</b>。三個要素缺一不可。</p>
-      <p><span class="pill t">有意地</span>是我決定要注意，不是恍神。</p>
-      <p><span class="pill t">當下</span>注意現在的呼吸、身體、聲音，不是過去與未來。</p>
-      <p><span class="pill t">不評價</span>肩膀緊就是緊，不加一句「我真糟」。</p>
-      <p style="margin-top:8px"><b>它不是：</b>放空、正向思考、宗教儀式，也不是「把念頭趕走」。念頭來了，看見它，再回到呼吸，這一來一回就是練習。</p>
+<!-- 蝴蝶擁抱 -->
+<section class="slide" data-title="實作：蝴蝶擁抱" data-note="按開始，畫面會左右交替亮起，大家跟著輕拍，一分鐘。速度要慢，像穩定的心跳，不是打鼓。
+可以請大家一邊拍，一邊想一個讓自己安心的畫面，或只注意呼吸就好。
+停下後問：「現在身體有什麼不一樣？」若有人浮現強烈情緒，請他張開眼睛、雙腳踩地，講師過去陪伴。">
+  <div class="tag">實作 穩定化 <span class="mpill">🔇 不放音樂・約 1 到 2 分鐘</span></div>
+  <h1><em>蝴蝶擁抱</em>：左右輕拍，把自己穩住</h1>
+  <div class="body" style="flex-direction:row;gap:26px;align-items:center">
+    <div class="bf">
+      <div class="bfhand" id="bfL">左</div>
+      <div class="bfmid"><span id="bfNum">60</span><small>秒</small></div>
+      <div class="bfhand" id="bfR">右</div>
     </div>
-    <div class="card teal">
-      <h3><span class="ic">🏥</span>正念減壓（MBSR）</h3>
-      <p>1979 年卡巴金（Jon Kabat-Zinn）在美國麻州大學醫學中心為慢性病與慢性疼痛患者設計的<b>標準化課程</b>，把正念從宗教脈絡拿出來，放進醫院。</p>
-      <p><b>標準格式：</b>8 週、每週一次約 2.5 小時團體課、一天靜修日、每天在家練習約 45 分鐘。</p>
-      <p><b>練什麼：</b>身體掃描、覺察呼吸的靜坐、正念瑜伽（緩慢伸展）、正念行走，以及把覺察帶進吃飯、洗碗等日常。</p>
-      <p>因為格式固定，全世界的研究做得最多，所以「正念有沒有效」的證據多半來自它。衍生版本 MBCT 用於預防憂鬱復發。</p>
-    </div>
-  </div>
-  <div class="src">Kabat-Zinn J. (1990) Full Catastrophe Living；Kabat-Zinn J. (2003) Clin Psychol Sci Pract 10(2):144-156。</div>
-</section>
-<!-- 5 正念有效嗎 -->
-<section class="slide" data-title="正念真的有效嗎？" data-note="先問全場：「你覺得正念有效嗎？」舉手。
-再公布：有效，但是「中等效果」，不是神藥。效果量 0.3 到 0.5 的意思是：平均來說，有做的人比沒做的人好一截，但不是每個人都一樣。
-講 Goyal 2014 是 JAMA 內科的大型回顧，Khoury 2015 專看健康人。">
-  <div class="tag">大哉問 ③</div>
-  <h1>正念真的有效嗎？</h1>
-  <div class="body verdict">
-    <div class="big"><div class="ans">有效<br><span style="font-size:40px">但是中等效果</span></div><div class="sub">對焦慮、憂鬱、壓力有一致的改善，效果大小屬「中等」，不是萬靈丹。</div></div>
-    <div class="rest">
-      <div class="card"><h3>Goyal 等 2014・JAMA Internal Medicine</h3><p>整理 <b>47 個隨機試驗、3,515 人</b>。正念冥想對焦慮（效果量約 0.38）、憂鬱（約 0.30）、疼痛有中等程度的證據。</p></div>
-      <div class="card"><h3>Khoury 等 2015・J Psychosom Res</h3><p>專看<b>健康人</b>的正念減壓（MBSR）：對壓力、焦慮、憂鬱有<b>中等程度</b>的改善，各研究差異大。</p></div>
-      <div class="card small teal"><p><b>為什麼是中等？</b>因為受試者多是健康人，起點本來就不高。用在<b>焦慮症與情緒疾患患者</b>身上，效果量達 0.97 與 0.95，屬於大效果（Hofmann 等 2010，39 研究）。效果量 0.2 小、0.5 中、0.8 大。</p></div>
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:10px">
+      <ol class="steps" style="gap:8px">
+        <li style="font-size:22px"><b>交叉：</b>雙臂在胸前交叉，指尖放在對側的鎖骨下方或上臂，像蝴蝶的翅膀。</li>
+        <li style="font-size:22px"><b>輕拍：</b>跟著畫面左右交替，慢慢輕拍，像穩定的心跳。</li>
+        <li style="font-size:22px"><b>呼吸：</b>眼睛閉上或看地板，用肚子慢慢呼吸。</li>
+        <li style="font-size:22px"><b>停下：</b>一到兩分鐘後停手，深呼吸一次，感覺現在的身體。</li>
+      </ol>
+      <div style="display:flex;gap:12px"><button class="btn o" id="bfStart">開始一分鐘</button><button class="btn ghost" id="bfStop">停止</button></div>
+      <div class="warn" style="font-size:20px;padding:10px 16px"><b>提醒：</b>這是穩定情緒的自助技巧，不是 EMDR 治療。若浮現強烈的回憶或情緒，就停下、張開眼睛、雙腳踩地；有創傷經驗的人，請由專業人員陪同。</div>
     </div>
   </div>
-  <div class="src">Goyal M, et al. JAMA Intern Med 2014;174(3):357-368. Khoury B, et al. J Psychosom Res 2015;78(6):519-528. Hofmann SG, et al. J Consult Clin Psychol 2010;78(2):169-183.</div>
 </section>
-<!-- 4b 一定要很專業嗎 -->
-<section class="slide" data-title="正念一定要很專業嗎？日常怎麼做？" data-note="這是學員最關心的：我沒時間上八週課，怎麼辦？
-三個研究的訊息一致：時數不是關鍵，持續與日常化才是。
-右邊六個日常做法請現場挑一個，讓每個人說出「我要把它接在哪個既有習慣後面」，這叫習慣綁定，比立志更有效。">
-  <div class="tag">不用很專業</div>
-  <h1>一定要上八週課嗎？<em>不用</em>，但要<em>每天一點點</em></h1>
-  <div class="body grid g2">
-    <div style="display:grid;gap:10px">
-      <div class="card small" style="font-size:21px;padding:10px 16px;line-height:1.4"><h3>上課時數長短，效果差不多</h3><p>整理多個 MBSR 研究後發現，<b>課堂時數與效果量沒有顯著相關</b>，縮短版的課程仍有效。</p><p style="font-size:20px;color:var(--muted)">Carmody &amp; Baer 2009, J Clin Psychol</p></div>
-      <div class="card small" style="font-size:21px;padding:10px 16px;line-height:1.4"><h3>每天 13 分鐘，八週就有差</h3><p>沒有冥想經驗的成人每天跟著引導練 13 分鐘，<b>8 週</b>後注意力、記憶、情緒調節與焦慮都改善；4 週時還看不出來，所以要<b>持續</b>。</p><p style="font-size:20px;color:var(--muted)">Basso 等 2019, Behav Brain Res</p></div>
-      <div class="card small" style="font-size:21px;padding:10px 16px;line-height:1.4"><h3>連洗碗都可以</h3><p>只是「專心感受水溫、泡沫、碗的觸感」地洗碗，緊張感下降約 27%、靈感上升約 25%。</p><p style="font-size:20px;color:var(--muted)">Hanley 等 2015, Mindfulness</p></div>
-    </div>
-    <div class="card hi" style="padding:16px 22px">
-      <h3><span class="ic">🏠</span>日常生活怎麼結合：挑一個就好</h3>
-      <ul class="list" style="font-size:24px">
-        <li><b>刷牙、洗碗、洗澡</b>：一次只做這一件事，注意觸感、溫度、聲音。</li>
-        <li><b>紅燈、等車、排隊</b>：做三次慢呼吸，吐氣比吸氣長。</li>
-        <li><b>吃飯前三口</b>：放慢，注意味道與咀嚼。</li>
-        <li><b>走路</b>：感覺腳底踩地的感覺，走到門口為止。</li>
-        <li><b>心煩的時候</b>：STOP 四步，說出情緒的名字。</li>
-        <li><b>睡前</b>：躺著做三分鐘身體掃描。</li>
-      </ul>
-      <p style="margin-top:6px;font-size:24px"><b>習慣綁定：</b>把它接在一個你本來就會做的事後面，例如「倒完咖啡 → 三次呼吸」。分心不是失敗，發現分心就是練到了。</p>
-    </div>
-  </div>
-  <div class="src">Carmody J, Baer RA. J Clin Psychol 2009;65(6):627-638. Basso JC, et al. Behav Brain Res 2019;356:208-220. Hanley AW, et al. Mindfulness 2015;6:1095-1103.</div>
-</section>
-<!-- 14 覺察的步驟 -->
-<section class="slide" data-title="覺察的四個步驟 STOP" data-note="STOP 是正念減壓課程常用的口訣，好記、隨時可做。
-第三步「說出名字」有腦科學根據：Lieberman 2007 用 fMRI 發現，把情緒說出名字（「我現在很煩」），杏仁核的活動會下降。
-請全場一起做一次 STOP，大約 30 秒。">
-  <div class="tag">覺察的步驟</div>
-  <h1>四步口訣：<em>S・T・O・P</em></h1>
-  <div class="body grid g4">
-    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">S</span>Stop 停</h3><p>不管在做什麼，先停一秒。手放下、腳踩穩。</p><p><b>口訣：</b>「先停。」</p></div>
-    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">T</span>Take a breath 吸一口</h3><p>慢慢吸氣、更慢吐氣。吐氣比吸氣長，副交感就會啟動。</p><p><b>口訣：</b>「吐長一點。」</p></div>
-    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">O</span>Observe 看一看</h3><p>身體哪裡緊？心裡是什麼情緒？<b>說出名字</b>：「我現在很煩」「肩膀很緊」。</p><p><b>口訣：</b>「它叫什麼？」</p></div>
-    <div class="card hi"><h3><span class="ic" style="color:var(--orange);font-weight:900">P</span>Proceed 再繼續</h3><p>帶著剛剛看到的，決定下一步：伸展一下、喝口水、或就繼續做。</p><p><b>口訣：</b>「我選擇。」</p></div>
-  </div>
-  <div class="note-box"><b>為什麼要說出名字？</b>腦造影研究發現，把情緒用語言標記出來，杏仁核（警報中心）的活動會下降，前額葉會接手。這叫「情緒標記」（affect labeling）。</div>
-  <div class="src">Lieberman MD, et al. Psychol Sci 2007;18(5):421-428. STOP 口訣出自正念減壓（MBSR）課程常用教材。</div>
-</section>
-<!-- 15 實作：60 秒 -->
-<section class="slide" data-title="實作：六十秒身體掃描" data-note="按下開始後，每十秒換一個部位。講師只要照螢幕的提示念，語速放慢。
-結束後問：「有人發現自己原本沒注意到的緊繃嗎？」通常會有人說下巴或肩膀。
-這就是覺察的直接體驗，不用解釋太多。">
-  <div class="tag">實作 　🔇 不放音樂或自然聲</div>
-  <h1>六十秒<em>身體掃描</em></h1>
-  <p class="lead">閉眼或看著地板都可以。不用放鬆它，只要注意它。</p>
-  <div class="body">
-    <div class="timer">
-      <div class="ring" id="scanRing"><span id="scanNum">60</span></div>
-      <div class="cue" id="scanCue">按下開始，跟著提示把注意力移到每個部位。<small>每十秒換一個部位：頭與臉、肩頸、胸與呼吸、肚子、雙手、雙腳。</small></div>
-    </div>
-    <div style="display:flex;gap:16px;margin-top:22px"><button class="btn o" id="scanStart">開始六十秒</button><button class="btn ghost" id="scanReset">重來</button></div>
+<!-- 四個隨時可用的技巧 -->
+<section class="slide" data-title="實作：隨時可用的四招" data-note="四招都帶大家做一次，每招約一分鐘。冷水敷臉現場用濕的涼毛巾示範即可。
+長照夥伴的應用：長輩焦躁時，可以陪他把手放在胸口一起呼吸，或簡化成『說出三樣你看到的東西』。碰觸前先問、先示範。">
+  <div class="tag">實作 穩定化</div>
+  <h1>隨時可用的<em>四招</em>：心慌、睡不著、照顧累了都能用</h1>
+  <div class="body grid g4" style="gap:14px">
+    <div class="pcard"><img src="../img/hand_chest.jpg" alt="" style="height:210px;object-position:center 35%"><div class="cap" style="font-size:19px;padding:8px 12px"><b>手放胸口</b><br>一手胸口、一手肚子，感覺手的溫度。吸 4 秒、吐 6 秒做 5 次，心裡對自己說：「辛苦了，我在這裡。」</div></div>
+    <div class="card small" style="font-size:20px;padding:14px 16px"><h3 style="font-size:23px"><span class="ic">🦶</span>雙腳著地</h3><p>坐好、雙腳踩平。腳掌<b>用力往下踩 5 秒、放鬆 5 秒</b>，做 3 次。</p><p>感覺椅子和地板撐住你，說：「我現在在這裡，很安全。」</p><p style="color:var(--teal);font-weight:700">適合：恍神、突然想起不好的事。</p></div>
+    <div class="card small" style="font-size:20px;padding:14px 16px"><h3 style="font-size:23px"><span class="ic">🖐️</span>5-4-3-2-1</h3><p>說出 <b>5</b> 樣看到的、<b>4</b> 樣摸得到的、<b>3</b> 種聽到的聲音、<b>2</b> 種聞到的味道、<b>1</b> 種嘴裡的味道。</p><p style="color:var(--teal);font-weight:700">適合：恐慌、腦袋停不下來。長輩可簡化成「說出三樣看到的東西」。</p></div>
+    <div class="pcard"><img src="../img/wash_face.jpg" alt="" style="height:210px"><div class="cap" style="font-size:19px;padding:8px 12px"><b>冷水敷臉</b><br>涼水或冷毛巾敷在眼睛到臉頰 15 到 30 秒，慢慢吐氣，心跳會變慢。<span style="color:var(--bad);font-weight:700">心臟病、心律不整、低血壓、雷諾氏症者不用；長者用涼水不用冰水。</span></div></div>
   </div>
 </section>
 <!-- 第六部分 -->
@@ -1022,7 +1093,7 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
   <h1>每天<em>二十分鐘</em>的身心修復菜單</h1>
   <div class="body grid g4">
     <div class="stat"><div class="n">10<span style="font-size:30px">分</span></div><div class="u">早上：八段錦一輪</div><div class="d">坐姿或站姿都可以，一個動作配一個呼吸。</div></div>
-    <div class="stat"><div class="n">1<span style="font-size:30px">分</span></div><div class="u">白天：STOP</div><div class="d">停、吸一口、看一看、說出名字。隨時隨地。</div></div>
+    <div class="stat"><div class="n">1<span style="font-size:30px">分</span></div><div class="u">心慌時：蝴蝶擁抱</div><div class="d">雙手交叉抱肩，左右輕拍，配慢呼吸。</div></div>
     <div class="stat"><div class="n">3<span style="font-size:30px">分</span></div><div class="u">睡前：共振呼吸</div><div class="d">吸 4 秒、吐 6 秒，每分鐘 6 次。</div></div>
     <div class="stat"><div class="n">5<span style="font-size:30px">分</span></div><div class="u">躺下：漸進式放鬆</div><div class="d">從腳到臉，收緊 5 秒、放鬆 10 秒。</div></div>
   </div>
@@ -1030,7 +1101,7 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
   <div class="src">下一堂（11/13）：藝術輔療｜手作放鬆時刻，分享照顧者可使用的藝術及社區資源。聯絡人：許晊豪老師。</div>
 </section>
 <!-- 音樂時間表 -->
-<section class="slide" data-title="今天的音樂時間表" data-note="講師用。課前把播放清單照段落排好。原則和上週一樣：講解不放，動作才放，呼吸與正念段安靜。">
+<section class="slide" data-title="今天的音樂時間表" data-note="講師用。課前把播放清單照段落排好。原則和上週一樣：講解不放，動作才放，呼吸與穩定化技巧段安靜。">
   <div class="tag">講師用</div>
   <h1>今天的<em>音樂時間表</em></h1>
   <div class="body">
@@ -1038,12 +1109,12 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
       <tr><th style="width:360px">段落</th><th style="width:100px">分鐘</th><th>音樂</th><th style="width:150px">節拍</th></tr>
       <tr><td>開場、講師介紹、上週問題</td><td>12</td><td>輕背景，可講話</td><td>60 到 70</td></tr>
       <tr><td>自癒力與研究</td><td>12</td><td>不放</td><td>—</td></tr>
-      <tr class="hi"><td>按摩球：靠牆版＋坐姿版</td><td>12</td><td>慢歌，無歌詞或熟悉老歌輕音樂</td><td>60 到 75</td></tr>
-      <tr class="hi"><td>動態暖身六式</td><td>6</td><td>熟悉快歌，大家會想跟著動</td><td>90 到 100</td></tr>
+      <tr class="hi"><td>按摩球：複習＋地板版</td><td>15</td><td>慢歌，無歌詞或熟悉老歌輕音樂</td><td>60 到 75</td></tr>
+      <tr class="hi"><td>伸展：動態暖身六式</td><td>6</td><td>熟悉快歌，大家會想跟著動</td><td>90 到 100</td></tr>
       <tr class="hi"><td>八段錦八式（一到兩輪）</td><td>15</td><td>八段錦口令音樂或慢歌</td><td>60 到 70</td></tr>
       <tr class="hi"><td>太極入門兩式</td><td>8</td><td>慢歌或古箏</td><td>60 到 70</td></tr>
       <tr><td>中場休息</td><td>10</td><td>輕背景</td><td>—</td></tr>
-      <tr><td>共振呼吸、正念、身體掃描</td><td>15</td><td>不放，或自然聲</td><td>—</td></tr>
+      <tr><td>共振呼吸、蝴蝶擁抱、穩定化技巧</td><td>12</td><td>不放，或自然聲</td><td>—</td></tr>
       <tr class="hi"><td>漸進式肌肉放鬆（躺或坐）</td><td>8</td><td>自然聲或極慢音樂</td><td>50 到 60</td></tr>
       <tr><td>再量一次、帶回家、下週預告</td><td>8</td><td>輕背景</td><td>60 到 70</td></tr>
     </table>
@@ -1055,17 +1126,18 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
   <div class="tag">參考文獻</div>
   <h1>今天引用的研究（一）</h1>
   <div class="body ref">
-    <p>Balban MY, Neri E, Kogon MM, et al. Brief structured respiration practices enhance mood and reduce physiological arousal. Cell Rep Med. 2023;4(1):100895.</p>
-    <p>Basso JC, McHale A, Ende V, et al. Brief, daily meditation enhances attention, memory, mood, and emotional regulation in non-experienced meditators. Behav Brain Res. 2019;356:208-220.</p>
-    <p>Bower JE, Irwin MR. Mind-body therapies and control of inflammatory biology: a descriptive review. Brain Behav Immun. 2016;51:1-11.</p>
-    <p>Carmody J, Baer RA. How long does a mindfulness-based stress reduction program need to be? J Clin Psychol. 2009;65(6):627-638.</p>
-    <p>de Witte M, Spruit A, van Hooren S, et al. Effects of music interventions on stress-related outcomes: a systematic review and two meta-analyses. Health Psychol Rev. 2020;14(2):294-324.</p>
-    <p>Goessl VC, Curtiss JE, Hofmann SG. The effect of heart rate variability biofeedback training on stress and anxiety: a meta-analysis. Psychol Med. 2017;47(15):2578-2586.</p>
-    <p>Goyal M, Singh S, Sibinga EMS, et al. Meditation programs for psychological stress and well-being: a systematic review and meta-analysis. JAMA Intern Med. 2014;174(3):357-368.</p>
-    <p>Grieve R, Goodwin F, Alfaki M, et al. The immediate effect of bilateral self myofascial release on the plantar surface of the feet on hamstring and lumbar spine flexibility. J Bodyw Mov Ther. 2015;19(3):544-552.</p>
-    <p>Hanley AW, Warner AR, Dehili VM, et al. Washing dishes to wash the mind: brief instruction in an informal mindfulness practice. Mindfulness. 2015;6:1095-1103.</p>
-    <p>Hofmann SG, Sawyer AT, Witt AA, Oh D. The effect of mindfulness-based therapy on anxiety and depression: a meta-analytic review. J Consult Clin Psychol. 2010;78(2):169-183.</p>
-    <p>Irwin MR, Olmstead R, Oxman MN. Augmenting immune responses to varicella zoster virus in older adults: a randomized, controlled trial of Tai Chi. J Am Geriatr Soc. 2007;55(4):511-517.</p>
+    <p>Al Haddad H, Laursen PB, Ahmaidi S, Buchheit M. Influence of cold water face immersion on post-exercise parasympathetic reactivation. Eur J Appl Physiol. 2010;108(3):599-606.</p>
+    <p>Behm DG, Warneke K, Blazevich AJ, et al. What are the neurological, neurovascular, and psychological responses to stretching across the general population? Eur J Appl Physiol. 2026;126(6):2977-2987.</p>
+    <p>Clond M. Emotional Freedom Techniques for anxiety: a systematic review with meta-analysis. J Nerv Ment Dis. 2016;204(5):388-395.</p>
+    <p>Dreisoerner A, Junker NM, Schlotz W, et al. Self-soothing touch and being hugged reduce cortisol responses to stress: a randomized controlled trial on stress, physical touch, and social identity. Compr Psychoneuroendocrinol. 2021;8:100091.</p>
+    <p>Frenda S, Pinto G, Nakamura M, et al. Vascular and autonomic recovery after resistance training with and without post-exercise static stretching: a randomized controlled crossover trial. Eur J Appl Physiol. 2026. doi:10.1007/s00421-026-06411-6.</p>
+    <p>Lazzaroni E, Invernizzi R, Fogliato E, et al. Coronavirus disease 2019 emergency and remote eye movement desensitization and reprocessing group therapy with adolescents and young adults: overcoming lockdown with the butterfly hug. Front Psychol. 2021;12:701381.</p>
+    <p>Lehnen GCS, Guerrero RVD, Cunha GMR, et al. Cardiovascular and autonomic responses in young adults during and after mechanoreflex activation via passive forearm stretching: are there sex differences? J Appl Physiol. 2025;139(5):1282-1292.</p>
+    <p>Lehnen GCS, Araujo MS, Neri JV, et al. Passive forearm stretching evokes robust and load-dependent muscle sympathetic nerve activity responses in humans. Am J Physiol Regul Integr Comp Physiol. 2026;330(5):R551-R560.</p>
+    <p>Petviset H, Pakulanon S, Rusmeeroj S, et al. Yoga vs. static stretching: recovery impact on male athletes' post-HIIT heart rate, respiratory rate, blood pressure, and heart rate variability analysis. Int J Exerc Sci. 2025;18(6):79-91.</p>
+    <p>Schmitt L, Munz A, Schmitt C, et al. Acute effects of "Munz Floor" fascial stretching on autonomic nervous responses assessed by heart rate variability. Front Physiol. 2026;17:1793941.</p>
+    <p>Singh B, Olds T, Curtis R, et al. Effectiveness of physical activity interventions for improving depression, anxiety and distress: an overview of systematic reviews. Br J Sports Med. 2023;57(18):1203-1209.</p>
+    <p>Yasukawa T, Yamazato Y, Tanobe K, et al. Effect of stretching on the electroencephalography of people with irritable bowel syndrome. Cureus. 2025;17(9):e92709.</p>
   </div>
 </section>
 <!-- 參考文獻（二） -->
@@ -1073,17 +1145,18 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
   <div class="tag">參考文獻</div>
   <h1>今天引用的研究（二）</h1>
   <div class="body ref">
+    <p>Bower JE, Irwin MR. Mind-body therapies and control of inflammatory biology: a descriptive review. Brain Behav Immun. 2016;51:1-11.</p>
+    <p>de Witte M, Spruit A, van Hooren S, et al. Effects of music interventions on stress-related outcomes: a systematic review and two meta-analyses. Health Psychol Rev. 2020;14(2):294-324.</p>
+    <p>Goessl VC, Curtiss JE, Hofmann SG. The effect of heart rate variability biofeedback training on stress and anxiety: a meta-analysis. Psychol Med. 2017;47(15):2578-2586.</p>
+    <p>Grieve R, Goodwin F, Alfaki M, et al. The immediate effect of bilateral self myofascial release on the plantar surface of the feet on hamstring and lumbar spine flexibility. J Bodyw Mov Ther. 2015;19(3):544-552.</p>
+    <p>Irwin MR, Olmstead R, Oxman MN. Augmenting immune responses to varicella zoster virus in older adults: a randomized, controlled trial of Tai Chi. J Am Geriatr Soc. 2007;55(4):511-517.</p>
     <p>Irwin MR, Olmstead R, Carrillo C, et al. Cognitive behavioral therapy vs. Tai Chi for late life insomnia and inflammatory risk: a randomized controlled comparative efficacy trial. Sleep. 2014;37(9):1543-1552.</p>
     <p>Irwin MR, Olmstead R, Carrillo C, et al. Tai Chi Chih compared with cognitive behavioral therapy for the treatment of insomnia in survivors of breast cancer. J Clin Oncol. 2017;35(23):2656-2665.</p>
-    <p>Kabat-Zinn J. Full Catastrophe Living. New York: Delacorte; 1990.</p>
-    <p>Khoury B, Sharma M, Rush SE, Fournier C. Mindfulness-based stress reduction for healthy individuals: a meta-analysis. J Psychosom Res. 2015;78(6):519-528.</p>
     <p>Ko J, Deprez D, Shaw K, et al. Stretching is superior to brisk walking for reducing blood pressure in people with high-normal blood pressure or stage I hypertension. J Phys Act Health. 2021;18(1):21-28.</p>
-    <p>Lieberman MD, Eisenberger NI, Crockett MJ, et al. Putting feelings into words: affect labeling disrupts amygdala activity. Psychol Sci. 2007;18(5):421-428.</p>
     <p>Lomas-Vega R, Obrero-Gaitán E, Molina-Ortega FJ, Del-Pino-Casado R. Tai Chi for risk of falls: a meta-analysis. J Am Geriatr Soc. 2017;65(9):2037-2043.</p>
     <p>Manzoni GM, Pagnini F, Castelnuovo G, Molinari E. Relaxation training for anxiety: a ten-years systematic review with meta-analysis. BMC Psychiatry. 2008;8:41.</p>
     <p>Meier M, Unternaehrer E, Dimitroff SJ, et al. Standardized massage interventions as protocols for the induction of psychophysiological relaxation in the laboratory. Sci Rep. 2020;10:14774.</p>
     <p>Montero-Marín J, Asún S, Estrada-Marcén N, et al. Effectiveness of a stretching program on anxiety levels of workers in a logistic platform. Aten Primaria. 2013;45(7):376-383.</p>
-    <p>Morgan N, Irwin MR, Chung M, Wang C. The effects of mind-body therapies on the immune system: meta-analysis. PLoS One. 2014;9(7):e100903.</p>
   </div>
 </section>
 <!-- 參考文獻（三） -->
@@ -1091,6 +1164,7 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
   <div class="tag">參考文獻</div>
   <h1>今天引用的研究（三）</h1>
   <div class="body ref">
+    <p>Morgan N, Irwin MR, Chung M, Wang C. The effects of mind-body therapies on the immune system: meta-analysis. PLoS One. 2014;9(7):e100903.</p>
     <p>Mueck-Weymann M, Janshoff G, Mueck H. Stretching increases heart rate variability in healthy athletes complaining about limited muscular flexibility. Clin Auton Res. 2004;14(1):15-18.</p>
     <p>Siu PM, Yu AP, Tam BT, et al. Effects of tai chi or exercise on sleep in older adults with insomnia: a randomized clinical trial. JAMA Netw Open. 2021;4(2):e2037199.</p>
     <p>Wiewelhove T, Döweling A, Schneider C, et al. A meta-analysis of the effects of foam rolling on performance and recovery. Front Physiol. 2019;10:376.</p>
@@ -1118,6 +1192,11 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
     <p>第五部分戶外靜坐：pexels.com/photo/8939919</p>
     <p>太極起勢：pexels.com/photo/8940504</p>
     <p>智慧手錶：pexels.com/photo/5081914</p>
+    <p>地板版仰躺姿勢參考：PTPioneer（Tyler Read），Wikimedia Commons（Foam rolling on back），CC BY 2.0。</p>
+    <p>地板版長坐姿勢參考：Tyler Read，Wikimedia Commons（Calf foam rolling），CC BY 2.0。</p>
+    <p>墊子上躺著：pexels.com/photo/8795387</p>
+    <p>手放胸口：pexels.com/photo/7623581</p>
+    <p>冷水洗臉：pexels.com/photo/36400032</p>
     <p>按摩球與伸展示範照沿用第一堂，來源見第一堂簡報。</p>
   </div>
 </section>
@@ -1130,7 +1209,7 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
   <div class="l"><span class="brand">愛迪樂 × 耕莘 USR</span><button id="tocBtn">目錄 <span class="kbd">M</span></button><button id="viewBtn" title="切換手機版與投影版">版面：投影</button></div>
   <div class="r">
     <button id="prevBtn"><span class="long">◀ 上一頁</span><span class="short">◀</span></button>
-    <span class="cnt" id="cnt">1 / 48</span>
+    <span class="cnt" id="cnt">1 / 49</span>
     <button id="nextBtn"><span class="long">下一頁 ▶</span><span class="short">▶</span></button>
     <button id="noteBtn"><span class="long">講師提示</span><span class="short">提示</span> <span class="kbd">N</span></button>
     <button id="fsBtn" class="dsk">全螢幕 <span class="kbd">F</span></button>
@@ -1274,6 +1353,19 @@ MBSR 介紹重點：它是一套 1979 年在醫院裡發展出來的標準課程
       parts.forEach((_,i)=>{T.push(setTimeout(()=>on&&show(i,'tense'),t));t+=5000;T.push(setTimeout(()=>on&&show(i,'relax'),t));t+=10000;});
       T.push(setTimeout(()=>{if(!on)return;on=false;num.textContent='✓';ring.style.setProperty('--p','100%');cue.innerHTML='全身都放鬆了。<small>保持這個感覺，再做三次慢呼吸。先不要急著站起來。</small>';},t));};
     sp.onclick=()=>{on=false;T.forEach(clearTimeout);T=[];num.textContent=parts.length;ring.style.setProperty('--p','0%');cue.innerHTML='已停止。<small>隨時可以再開始。</small>';};
+  })();
+
+  /* 蝴蝶擁抱節拍 */
+  (function(){
+    const L=document.getElementById('bfL'),R=document.getElementById('bfR'),num=document.getElementById('bfNum'),st=document.getElementById('bfStart'),sp=document.getElementById('bfStop');
+    if(!L||!st) return;
+    let T=null,beat=0;
+    function reset(n){clearInterval(T);T=null;L.classList.remove('on');R.classList.remove('on');num.textContent=n;}
+    st.onclick=()=>{if(T)return;beat=0;num.textContent=60;
+      T=setInterval(()=>{beat++;const left=beat%2===1;L.classList.toggle('on',left);R.classList.toggle('on',!left);
+        num.textContent=Math.max(0,60-Math.floor(beat*0.9));
+        if(beat*0.9>=60){reset('✓');}},900);};
+    sp.onclick=()=>reset(60);
   })();
 
   /* 選擇題 */
