@@ -173,7 +173,7 @@ table.tb td:first-child{font-weight:900;color:var(--teal);white-space:nowrap}
 .timer{display:flex;gap:30px;align-items:center}
 .timer .ring{width:300px;height:300px;border-radius:50%;background:conic-gradient(var(--orange) var(--p,0%),#E7E0F1 0);display:flex;align-items:center;justify-content:center;flex:none;position:relative}
 .timer .ring::after{content:"";position:absolute;inset:22px;border-radius:50%;background:#fff}
-.timer .ring span{position:relative;font-size:84px;font-weight:900;color:var(--ink);font-variant-numeric:tabular-nums}
+.timer .ring span{position:relative;z-index:1;font-size:84px;font-weight:900;color:var(--ink);font-variant-numeric:tabular-nums}
 .timer .cue{flex:1;background:#fff;border:2px solid var(--line);border-radius:24px;padding:28px 32px;font-size:40px;font-weight:700;line-height:1.4;min-height:220px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow)}
 .timer .cue small{display:block;font-size:24px;color:var(--muted);font-weight:400;margin-top:10px}
 .btn{background:var(--teal);color:#fff;border:none;border-radius:14px;padding:12px 28px;font-size:26px;font-weight:700;box-shadow:var(--shadow)}
