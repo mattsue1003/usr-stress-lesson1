@@ -472,13 +472,41 @@ body.mobile .two{flex-direction:column}
     <div class="pcard" style="flex:0 0 330px"><img src="../img/watch_hr.jpg" alt="" style="height:420px"><div class="cap"><b>手錶看得到</b>：多數智慧手錶都會記錄，睡眠時量最穩定。</div></div>
     <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:14px;min-width:0">
       <div class="card small"><h3>是什麼</h3><p>兩下心跳之間的間隔<b>不是固定的</b>。放鬆時間隔變化大（彈性好），緊張時變得像節拍器。單位是毫秒（ms）。</p></div>
-      <div class="card small"><h3>怎麼看</h3><p><b>只跟自己比</b>，不跟別人比。看一週的平均趨勢；連續幾天明顯低於自己的平常值，就是「該休息了」的訊號。年紀越大數值越低是正常的。</p></div>
+      <div class="card small"><h3>怎麼看</h3><p><b>主要跟自己比</b>。看一週的平均趨勢；連續幾天明顯低於自己的平常值，就是「該休息了」的訊號。年紀越大數值越低是正常的，各年齡的參考值在下一頁。</p></div>
       <div class="card small"><h3>哪裡看</h3><p>Apple Watch：「健康」App 的心率變異（SDNN）。Garmin、Fitbit、Oura：多為睡眠時的 RMSSD。<b>不同品牌不能互比</b>。</p></div>
       <div class="card small teal"><h3>怎麼讓它上升</h3><p>研究一致的做法：<b>慢呼吸</b>（每分鐘約 6 次）、太極瑜伽、規律運動、睡飽。今天都會練到。</p></div>
       <div class="warn" style="grid-column:span 2;font-size:22px;padding:12px 18px"><b>提醒：</b>手錶數值是參考，不是診斷。心律不整、服用乙型阻斷劑等藥物，都會影響數值。</div>
     </div>
   </div>
   <div class="src">Zaccaro A, et al. Front Hum Neurosci 2018;12:353. Zou L, et al. J Clin Med 2018;7(11):404.</div>
+</section>
+<!-- HRV 年齡參考值 -->
+<section class="slide" data-title="心率變異的數值：跟年齡有關" data-note="先講結論：年紀越大，數值越低，這是正常老化，不是生病。65 歲以上平均大約只有 25 到 34 歲的一半左右。
+表上的數字是躺著休息 5 分鐘、用心電圖量的研究值（德國 1906 位健康成人）。手錶的量法不同，數字只能粗略對照，最重要的是跟自己的平常值比。
+Apple Watch 顯示的是 SDNN；Garmin、Oura、Fitbit 多半顯示睡眠時的 RMSSD，睡覺時量通常比白天高。
+醫院的『SDNN 小於 50 毫秒風險較高』是 24 小時心電圖、心肌梗塞後病人的標準，不能拿來套手錶的短時間數值。">
+  <div class="tag">回答上週的問題</div>
+  <h1>心率變異的數值：<em>跟年齡有關</em>，年紀越大越低</h1>
+  <div class="body" style="flex-direction:row;gap:18px">
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:10px">
+      <table class="tb compact">
+        <tr><th style="width:120px">年齡</th><th>SDNN 平均<br><small style="font-weight:400">女／男（Apple Watch 用這個）</small></th><th>RMSSD 平均<br><small style="font-weight:400">女／男（Garmin、Oura 多用這個）</small></th></tr>
+        <tr><td>25–34 歲</td><td><b>49／50</b>　<span style="color:var(--muted)">約 30–70</span></td><td><b>43／40</b>　<span style="color:var(--muted)">約 20–65</span></td></tr>
+        <tr class="hi"><td>35–44 歲</td><td><b>45／45</b>　<span style="color:var(--muted)">約 25–65</span></td><td><b>35／32</b>　<span style="color:var(--muted)">約 16–54</span></td></tr>
+        <tr><td>45–54 歲</td><td><b>37／37</b>　<span style="color:var(--muted)">約 22–51</span></td><td><b>26／23</b>　<span style="color:var(--muted)">約 12–40</span></td></tr>
+        <tr class="hi"><td>55–64 歲</td><td><b>31／33</b>　<span style="color:var(--muted)">約 18–47</span></td><td><b>21／20</b>　<span style="color:var(--muted)">約 9–33</span></td></tr>
+        <tr><td>65–74 歲</td><td><b>28／30</b>　<span style="color:var(--muted)">約 16–43</span></td><td><b>19／19</b>　<span style="color:var(--muted)">約 7–31</span></td></tr>
+      </table>
+      <div style="font-size:18px;color:var(--muted);line-height:1.45">單位：毫秒（ms）。灰色是「約七成健康人落在的範圍」（平均 ± 1 個標準差，男女合併取整數）。條件：躺著休息 5 到 10 分鐘後，用心電圖量 5 分鐘；不含心臟病、糖尿病、服用影響心跳藥物的人。</div>
+      <div class="note-box" style="margin-top:4px;font-size:22px;padding:12px 18px"><b>一句話：</b>65 到 74 歲的平均，大約只有 25 到 34 歲的<b>一半</b>（RMSSD 約 40 → 19），這是正常老化。規律運動、慢呼吸、睡飽，能讓它在<b>自己的範圍內</b>往上。</div>
+    </div>
+    <div style="flex:0 0 470px;display:flex;flex-direction:column;gap:10px">
+      <div class="card small teal" style="font-size:20px;padding:12px 16px"><h3 style="font-size:22px">怎樣算「正常」</h3><p>落在同年齡的範圍內就不用擔心；比範圍低一點也很常見，因為手錶量法不同。<b>最準的比較對象是自己的平常值</b>：固定時間量、看一週平均。</p></div>
+      <div class="card small hi" style="font-size:20px;padding:12px 16px"><h3 style="font-size:22px">什麼時候要注意</h3><p><b>① 連續幾天明顯低於自己的平常值</b>：常見原因是睡不好、喝酒、感冒前兆、太累、壓力大。先休息、做慢呼吸。</p><p><b>② 長期遠低於同齡範圍，又有胸悶、心悸、頭暈、喘</b>：請就醫檢查，不要自己判讀。</p></div>
+      <div class="warn" style="font-size:18px;padding:10px 14px">醫院說的「<b>SDNN 小於 50 毫秒</b>風險較高」，是 <b>24 小時心電圖</b>、心肌梗塞後病人的標準，不能套用在手錶的短時間數值；而且 65 歲以上的健康人也有一部分會低於這類切點。</div>
+    </div>
+  </div>
+  <div class="src">Voss A, et al. PLoS One 2015;10(3):e0118308（德國 KORA 研究 1906 位健康成人，5 分鐘仰躺心電圖）。Natarajan A, et al. Lancet Digit Health 2020;2(12):e650-e657（800 萬名 Fitbit 使用者：年齡越大越低、活動量越多越高）。Kleiger RE, et al. Am J Cardiol 1987;59(4):256-262. Umetani K, et al. J Am Coll Cardiol 1998;31(3):593-601.</div>
 </section>
 <!-- 選擇題：太極與疫苗 -->
 <section class="slide" data-title="選擇題：太極與疫苗" data-note="先讓大家舉手投票再按答案。多數人會選 A 或 C。
@@ -1149,18 +1177,19 @@ body.mobile .two{flex-direction:column}
   <div class="tag">參考文獻</div>
   <h1>今天引用的研究（一）</h1>
   <div class="body ref">
+    <p>ACSM's Guidelines for Exercise Testing and Prescription. 11th ed. Wolters Kluwer; 2021.</p>
     <p>Al Haddad H, Laursen PB, Ahmaidi S, Buchheit M. Influence of cold water face immersion on post-exercise parasympathetic reactivation. Eur J Appl Physiol. 2010;108(3):599-606.</p>
     <p>Behm DG, Warneke K, Blazevich AJ, et al. What are the neurological, neurovascular, and psychological responses to stretching across the general population? Eur J Appl Physiol. 2026;126(6):2977-2987.</p>
+    <p>Bower JE, Irwin MR. Mind-body therapies and control of inflammatory biology: a descriptive review. Brain Behav Immun. 2016;51:1-11.</p>
     <p>Clond M. Emotional Freedom Techniques for anxiety: a systematic review with meta-analysis. J Nerv Ment Dis. 2016;204(5):388-395.</p>
+    <p>de Witte M, Spruit A, van Hooren S, et al. Effects of music interventions on stress-related outcomes: a systematic review and two meta-analyses. Health Psychol Rev. 2020;14(2):294-324.</p>
     <p>Dreisoerner A, Junker NM, Schlotz W, et al. Self-soothing touch and being hugged reduce cortisol responses to stress: a randomized controlled trial on stress, physical touch, and social identity. Compr Psychoneuroendocrinol. 2021;8:100091.</p>
     <p>Frenda S, Pinto G, Nakamura M, et al. Vascular and autonomic recovery after resistance training with and without post-exercise static stretching: a randomized controlled crossover trial. Eur J Appl Physiol. 2026. doi:10.1007/s00421-026-06411-6.</p>
-    <p>Lazzaroni E, Invernizzi R, Fogliato E, et al. Coronavirus disease 2019 emergency and remote eye movement desensitization and reprocessing group therapy with adolescents and young adults: overcoming lockdown with the butterfly hug. Front Psychol. 2021;12:701381.</p>
-    <p>Lehnen GCS, Guerrero RVD, Cunha GMR, et al. Cardiovascular and autonomic responses in young adults during and after mechanoreflex activation via passive forearm stretching: are there sex differences? J Appl Physiol. 2025;139(5):1282-1292.</p>
-    <p>Lehnen GCS, Araujo MS, Neri JV, et al. Passive forearm stretching evokes robust and load-dependent muscle sympathetic nerve activity responses in humans. Am J Physiol Regul Integr Comp Physiol. 2026;330(5):R551-R560.</p>
-    <p>Petviset H, Pakulanon S, Rusmeeroj S, et al. Yoga vs. static stretching: recovery impact on male athletes' post-HIIT heart rate, respiratory rate, blood pressure, and heart rate variability analysis. Int J Exerc Sci. 2025;18(6):79-91.</p>
-    <p>Schmitt L, Munz A, Schmitt C, et al. Acute effects of "Munz Floor" fascial stretching on autonomic nervous responses assessed by heart rate variability. Front Physiol. 2026;17:1793941.</p>
-    <p>Singh B, Olds T, Curtis R, et al. Effectiveness of physical activity interventions for improving depression, anxiety and distress: an overview of systematic reviews. Br J Sports Med. 2023;57(18):1203-1209.</p>
-    <p>Yasukawa T, Yamazato Y, Tanobe K, et al. Effect of stretching on the electroencephalography of people with irritable bowel syndrome. Cureus. 2025;17(9):e92709.</p>
+    <p>Goessl VC, Curtiss JE, Hofmann SG. The effect of heart rate variability biofeedback training on stress and anxiety: a meta-analysis. Psychol Med. 2017;47(15):2578-2586.</p>
+    <p>Grieve R, Goodwin F, Alfaki M, et al. The immediate effect of bilateral self myofascial release on the plantar surface of the feet on hamstring and lumbar spine flexibility. J Bodyw Mov Ther. 2015;19(3):544-552.</p>
+    <p>Irwin MR, Olmstead R, Carrillo C, et al. Cognitive behavioral therapy vs. Tai Chi for late life insomnia and inflammatory risk: a randomized controlled comparative efficacy trial. Sleep. 2014;37(9):1543-1552.</p>
+    <p>Irwin MR, Olmstead R, Carrillo C, et al. Tai Chi Chih compared with cognitive behavioral therapy for the treatment of insomnia in survivors of breast cancer. J Clin Oncol. 2017;35(23):2656-2665.</p>
+    <p>Irwin MR, Olmstead R, Oxman MN. Augmenting immune responses to varicella zoster virus in older adults: a randomized, controlled trial of Tai Chi. J Am Geriatr Soc. 2007;55(4):511-517.</p>
   </div>
 </section>
 <!-- 參考文獻（二） -->
@@ -1168,18 +1197,19 @@ body.mobile .two{flex-direction:column}
   <div class="tag">參考文獻</div>
   <h1>今天引用的研究（二）</h1>
   <div class="body ref">
-    <p>Bower JE, Irwin MR. Mind-body therapies and control of inflammatory biology: a descriptive review. Brain Behav Immun. 2016;51:1-11.</p>
-    <p>de Witte M, Spruit A, van Hooren S, et al. Effects of music interventions on stress-related outcomes: a systematic review and two meta-analyses. Health Psychol Rev. 2020;14(2):294-324.</p>
-    <p>Goessl VC, Curtiss JE, Hofmann SG. The effect of heart rate variability biofeedback training on stress and anxiety: a meta-analysis. Psychol Med. 2017;47(15):2578-2586.</p>
-    <p>Grieve R, Goodwin F, Alfaki M, et al. The immediate effect of bilateral self myofascial release on the plantar surface of the feet on hamstring and lumbar spine flexibility. J Bodyw Mov Ther. 2015;19(3):544-552.</p>
-    <p>Irwin MR, Olmstead R, Oxman MN. Augmenting immune responses to varicella zoster virus in older adults: a randomized, controlled trial of Tai Chi. J Am Geriatr Soc. 2007;55(4):511-517.</p>
-    <p>Irwin MR, Olmstead R, Carrillo C, et al. Cognitive behavioral therapy vs. Tai Chi for late life insomnia and inflammatory risk: a randomized controlled comparative efficacy trial. Sleep. 2014;37(9):1543-1552.</p>
-    <p>Irwin MR, Olmstead R, Carrillo C, et al. Tai Chi Chih compared with cognitive behavioral therapy for the treatment of insomnia in survivors of breast cancer. J Clin Oncol. 2017;35(23):2656-2665.</p>
+    <p>Kleiger RE, Miller JP, Bigger JT, Moss AJ. Decreased heart rate variability and its association with increased mortality after acute myocardial infarction. Am J Cardiol. 1987;59(4):256-262.</p>
     <p>Ko J, Deprez D, Shaw K, et al. Stretching is superior to brisk walking for reducing blood pressure in people with high-normal blood pressure or stage I hypertension. J Phys Act Health. 2021;18(1):21-28.</p>
+    <p>Lazzaroni E, Invernizzi R, Fogliato E, et al. Coronavirus disease 2019 emergency and remote eye movement desensitization and reprocessing group therapy with adolescents and young adults: overcoming lockdown with the butterfly hug. Front Psychol. 2021;12:701381.</p>
+    <p>Lehnen GCS, Araujo MS, Neri JV, et al. Passive forearm stretching evokes robust and load-dependent muscle sympathetic nerve activity responses in humans. Am J Physiol Regul Integr Comp Physiol. 2026;330(5):R551-R560.</p>
+    <p>Lehnen GCS, Guerrero RVD, Cunha GMR, et al. Cardiovascular and autonomic responses in young adults during and after mechanoreflex activation via passive forearm stretching: are there sex differences? J Appl Physiol. 2025;139(5):1282-1292.</p>
     <p>Lomas-Vega R, Obrero-Gaitán E, Molina-Ortega FJ, Del-Pino-Casado R. Tai Chi for risk of falls: a meta-analysis. J Am Geriatr Soc. 2017;65(9):2037-2043.</p>
     <p>Manzoni GM, Pagnini F, Castelnuovo G, Molinari E. Relaxation training for anxiety: a ten-years systematic review with meta-analysis. BMC Psychiatry. 2008;8:41.</p>
     <p>Meier M, Unternaehrer E, Dimitroff SJ, et al. Standardized massage interventions as protocols for the induction of psychophysiological relaxation in the laboratory. Sci Rep. 2020;10:14774.</p>
     <p>Montero-Marín J, Asún S, Estrada-Marcén N, et al. Effectiveness of a stretching program on anxiety levels of workers in a logistic platform. Aten Primaria. 2013;45(7):376-383.</p>
+    <p>Morgan N, Irwin MR, Chung M, Wang C. The effects of mind-body therapies on the immune system: meta-analysis. PLoS One. 2014;9(7):e100903.</p>
+    <p>Mueck-Weymann M, Janshoff G, Mueck H. Stretching increases heart rate variability in healthy athletes complaining about limited muscular flexibility. Clin Auton Res. 2004;14(1):15-18.</p>
+    <p>Natarajan A, Pantelopoulos A, Emir-Farinas H, Natarajan P. Heart rate variability with photoplethysmography in 8 million individuals: a cross-sectional study. Lancet Digit Health. 2020;2(12):e650-e657.</p>
+    <p>Petviset H, Pakulanon S, Rusmeeroj S, et al. Yoga vs. static stretching: recovery impact on male athletes' post-HIIT heart rate, respiratory rate, blood pressure, and heart rate variability analysis. Int J Exerc Sci. 2025;18(6):79-91.</p>
   </div>
 </section>
 <!-- 參考文獻（三） -->
@@ -1187,16 +1217,18 @@ body.mobile .two{flex-direction:column}
   <div class="tag">參考文獻</div>
   <h1>今天引用的研究（三）</h1>
   <div class="body ref">
-    <p>Morgan N, Irwin MR, Chung M, Wang C. The effects of mind-body therapies on the immune system: meta-analysis. PLoS One. 2014;9(7):e100903.</p>
-    <p>Mueck-Weymann M, Janshoff G, Mueck H. Stretching increases heart rate variability in healthy athletes complaining about limited muscular flexibility. Clin Auton Res. 2004;14(1):15-18.</p>
+    <p>Schmitt L, Munz A, Schmitt C, et al. Acute effects of "Munz Floor" fascial stretching on autonomic nervous responses assessed by heart rate variability. Front Physiol. 2026;17:1793941.</p>
+    <p>Singh B, Olds T, Curtis R, et al. Effectiveness of physical activity interventions for improving depression, anxiety and distress: an overview of systematic reviews. Br J Sports Med. 2023;57(18):1203-1209.</p>
     <p>Siu PM, Yu AP, Tam BT, et al. Effects of tai chi or exercise on sleep in older adults with insomnia: a randomized clinical trial. JAMA Netw Open. 2021;4(2):e2037199.</p>
+    <p>Umetani K, Singer DH, McCraty R, Atkinson M. Twenty-four hour time domain heart rate variability and heart rate: relations to age and gender over nine decades. J Am Coll Cardiol. 1998;31(3):593-601.</p>
+    <p>Voss A, Schroeder R, Heitmann A, Peters A, Perz S. Short-term heart rate variability: influence of gender and age in healthy subjects. PLoS One. 2015;10(3):e0118308.</p>
     <p>Wiewelhove T, Döweling A, Schneider C, et al. A meta-analysis of the effects of foam rolling on performance and recovery. Front Physiol. 2019;10:376.</p>
+    <p>Yasukawa T, Yamazato Y, Tanobe K, et al. Effect of stretching on the electroencephalography of people with irritable bowel syndrome. Cureus. 2025;17(9):e92709.</p>
     <p>Zaccaro A, Piarulli A, Laurino M, et al. How breath-control can change your life: a systematic review on psycho-physiological correlates of slow breathing. Front Hum Neurosci. 2018;12:353.</p>
     <p>Zeng ZP, Liu YB, Fang J, et al. Effects of Baduanjin exercise for knee osteoarthritis: a systematic review and meta-analysis. Complement Ther Med. 2020;48:102279.</p>
     <p>Zhou Y, Wang Q, Larkey L, et al. Tai Chi effects on heart rate variability: a systematic review and meta-analysis. J Integr Complement Med. 2024;30(2):121-132.</p>
     <p>Zou L, SasaKi JE, Wang H, et al. A systematic review and meta-analysis of Baduanjin Qigong for health benefits: randomized controlled trials. Evid Based Complement Alternat Med. 2017;2017:4548706.</p>
     <p>Zou L, Sasaki JE, Wei GX, et al. Effects of mind-body exercises (Tai Chi/Yoga) on heart rate variability parameters and perceived stress: a systematic review with meta-analysis. J Clin Med. 2018;7(11):404.</p>
-    <p>ACSM's Guidelines for Exercise Testing and Prescription. 11th ed. Wolters Kluwer; 2021.</p>
   </div>
 </section>
 <!-- 圖片來源 -->
@@ -1233,7 +1265,7 @@ body.mobile .two{flex-direction:column}
   <div class="l"><span class="brand">愛迪樂 × 耕莘 USR</span><button id="tocBtn">目錄 <span class="kbd">M</span></button><button id="viewBtn" title="切換手機版與投影版">版面：投影</button></div>
   <div class="r">
     <button id="prevBtn"><span class="long">◀ 上一頁</span><span class="short">◀</span></button>
-    <span class="cnt" id="cnt">1 / 49</span>
+    <span class="cnt" id="cnt">1 / 50</span>
     <button id="nextBtn"><span class="long">下一頁 ▶</span><span class="short">▶</span></button>
     <button id="noteBtn"><span class="long">講師提示</span><span class="short">提示</span> <span class="kbd">N</span></button>
     <button id="fsBtn" class="dsk">全螢幕 <span class="kbd">F</span></button>
